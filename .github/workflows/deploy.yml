@@ -89,7 +89,9 @@ jobs:
         run: |
           tar -czf backend-bundle.tar.gz \
             --exclude='.env' \
-            --exclude='.env.*' \
+            --exclude='.env.backup' \
+            --exclude='.env.production' \
+            --exclude='.env.local' \
             --exclude='./storage' \
             --exclude='./tests' \
             --exclude='./node_modules' \
