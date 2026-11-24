@@ -1,0 +1,302 @@
+name: CI/CD — Build & Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    name: Build & Test (Frontend + Backend)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── Frontend (Vue 3 + Vite) ───────────────────────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Build frontend
+        env:
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
+        run: npm run build
+
+      # ── Backend (Laravel 13) ──────────────────────────────────────────────
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, bcmath, curl, zip, pdo_mysql, pdo_sqlite, sqlite3, fileinfo
+          tools: composer:v2
+
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.composer/cache/files
+          key: composer-${{ runner.os }}-${{ hashFiles('backend/composer.lock') }}
+          restore-keys: |
+            composer-${{ runner.os }}-
+
+      - name: Install backend dependencies (with dev for testing)
+        working-directory: backend
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Run Laravel tests
+        working-directory: backend
+        run: |
+          cp .env.example .env
+          php artisan key:generate --ansi
+          set +e
+          php artisan test
+          TEST_EXIT=$?
+          set -e
+          rm -f .env
+          exit $TEST_EXIT
+
+      - name: Re-install backend dependencies (production --no-dev)
+        if: github.event_name != 'pull_request'
+        working-directory: backend
+        run: composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+
+      # ── Package Artifacts for Deploy ──────────────────────────────────────
+      - name: Upload frontend dist artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-dist
+          path: dist/
+          include-hidden-files: true
+          retention-days: 1
+
+      - name: Package backend bundle
+        if: github.event_name != 'pull_request'
+        run: |
+          tar -czf backend-bundle.tar.gz \
+            --exclude='.env' \
+            --exclude='.env.*' \
+            --exclude='./storage' \
+            --exclude='./tests' \
+            --exclude='./node_modules' \
+            --exclude='./public/storage' \
+            --exclude='./public/hot' \
+            --exclude='.phpunit*' \
+            -C backend .
+
+      - name: Upload backend bundle artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-bundle
+          path: backend-bundle.tar.gz
+          retention-days: 1
+
+  deploy:
+    name: Deploy to Hostinger Production
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Download frontend dist
+        uses: actions/download-artifact@v4
+        with:
+          name: frontend-dist
+          path: deploy/public_html
+
+      - name: Download backend bundle
+        uses: actions/download-artifact@v4
+        with:
+          name: backend-bundle
+          path: deploy
+
+      - name: Extract backend bundle & prepare public_html
+        run: |
+          mkdir -p deploy/backend
+          tar -xzf deploy/backend-bundle.tar.gz -C deploy/backend
+
+          # Copy Laravel admin static assets into public_html/assets
+          mkdir -p deploy/public_html/assets
+          if [ -d deploy/backend/public/assets ]; then
+            cp -r deploy/backend/public/assets/* deploy/public_html/assets/
+          fi
+
+          # Create Laravel front controller inside public_html
+          cat > deploy/public_html/laravel.php <<'PHP'
+          <?php
+
+          use Illuminate\Foundation\Application;
+          use Illuminate\Http\Request;
+
+          define('LARAVEL_START', microtime(true));
+
+          if (file_exists($maintenance = __DIR__.'/../backend/storage/framework/maintenance.php')) {
+              require $maintenance;
+          }
+
+          require __DIR__.'/../backend/vendor/autoload.php';
+
+          /** @var Application $app */
+          $app = require_once __DIR__.'/../backend/bootstrap/app.php';
+
+          $app->handleRequest(Request::capture());
+          PHP
+
+          # Unified .htaccess: /api, /admin, /login -> Laravel | static files -> direct | else -> Vue SPA
+          cat > deploy/public_html/.htaccess <<'HTACCESS'
+          <IfModule mod_rewrite.c>
+              <IfModule mod_negotiation.c>
+                  Options -MultiViews -Indexes
+              </IfModule>
+
+              RewriteEngine On
+              RewriteBase /
+
+              # Handle Authorization & X-XSRF-Token Headers
+              RewriteCond %{HTTP:Authorization} .
+              RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+              RewriteCond %{HTTP:x-xsrf-token} .
+              RewriteRule .* - [E=HTTP_X_XSRF-TOKEN:%{HTTP:X-XSRF-Token}]
+
+              # Route /api, /admin, and /login to Laravel
+              RewriteRule ^api(/.*)?$ laravel.php [L]
+              RewriteRule ^admin(/.*)?$ laravel.php [L]
+              RewriteRule ^login/?$ laravel.php [L]
+
+              # Serve existing files & directories directly
+              RewriteCond %{REQUEST_FILENAME} -f [OR]
+              RewriteCond %{REQUEST_FILENAME} -d
+              RewriteRule ^ - [L]
+
+              # Everything else -> Vue SPA
+              RewriteRule ^ index.html [L]
+          </IfModule>
+          HTACCESS
+
+      - name: Add Hostinger to known_hosts
+        env:
+          SSH_HOST: ${{ secrets.HOSTINGER_SSH_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT || '65002' }}
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Deploy backend & public_html to Hostinger via rsync
+        env:
+          SSHPASS: ${{ secrets.HOSTINGER_SSH_PASSWORD }}
+          SSH_USER: ${{ secrets.HOSTINGER_SSH_USER }}
+          SSH_HOST: ${{ secrets.HOSTINGER_SSH_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT || '65002' }}
+          DOMAIN: ${{ secrets.HOSTINGER_DOMAIN }}
+        run: |
+          DOMAIN_ROOT="/home/${SSH_USER}/domains/${DOMAIN}"
+          BACKEND_PATH="${DOMAIN_ROOT}/backend"
+          PUBLIC_PATH="${DOMAIN_ROOT}/public_html"
+
+          sshpass -e ssh -p "$SSH_PORT" "${SSH_USER}@${SSH_HOST}" "mkdir -p '${BACKEND_PATH}' '${PUBLIC_PATH}'"
+
+          rsync -az --delete \
+            -e "sshpass -e ssh -p ${SSH_PORT}" \
+            --exclude='.env' \
+            --exclude='storage/' \
+            --exclude='public/storage' \
+            --exclude='bootstrap/cache/*.php' \
+            deploy/backend/ "${SSH_USER}@${SSH_HOST}:${BACKEND_PATH}/"
+
+          rsync -az --delete \
+            -e "sshpass -e ssh -p ${SSH_PORT}" \
+            --exclude='.well-known/' \
+            --exclude='cgi-bin/' \
+            --exclude='storage' \
+            --exclude='.user.ini' \
+            deploy/public_html/ "${SSH_USER}@${SSH_HOST}:${PUBLIC_PATH}/"
+
+      - name: First-time setup & optimize on Hostinger
+        env:
+          SSHPASS: ${{ secrets.HOSTINGER_SSH_PASSWORD }}
+          SSH_USER: ${{ secrets.HOSTINGER_SSH_USER }}
+          SSH_HOST: ${{ secrets.HOSTINGER_SSH_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT || '65002' }}
+          DOMAIN: ${{ secrets.HOSTINGER_DOMAIN }}
+          PHP_BIN: ${{ vars.HOSTINGER_PHP_BIN || 'php' }}
+        run: |
+          DOMAIN_ROOT="/home/${SSH_USER}/domains/${DOMAIN}"
+          BACKEND_PATH="${DOMAIN_ROOT}/backend"
+          PUBLIC_PATH="${DOMAIN_ROOT}/public_html"
+
+          sshpass -e ssh -p "$SSH_PORT" "${SSH_USER}@${SSH_HOST}" \
+            "APP_URL_VAL='https://${DOMAIN}' bash -s" <<EOF
+            set -e
+            cd "${BACKEND_PATH}"
+
+            # 1. Storage & cache directories
+            mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache storage/logs storage/app/public bootstrap/cache
+            chmod -R ug+rwx storage bootstrap/cache
+
+            # 2. First-time .env creation if missing (DB settings can be edited on server later)
+            if [ ! -f .env ]; then
+              cp .env.example .env
+              ${PHP_BIN} -r '
+                \$env = file_get_contents(".env");
+                \$vars = [
+                  "APP_ENV" => "production",
+                  "APP_DEBUG" => "false",
+                  "APP_URL" => getenv("APP_URL_VAL"),
+                  "FRONTEND_URL" => getenv("APP_URL_VAL"),
+                ];
+                foreach (\$vars as \$k => \$v) {
+                  if (\$v === false || \$v === "") continue;
+                  if (preg_match("/^" . preg_quote(\$k, "/") . "=/m", \$env)) {
+                    \$env = preg_replace("/^" . preg_quote(\$k, "/") . "=.*/m", "\$k=\$v", \$env);
+                  } else {
+                    \$env .= "\n\$k=\$v";
+                  }
+                }
+                file_put_contents(".env", \$env);
+              '
+              ${PHP_BIN} artisan key:generate --force
+            fi
+
+            # Generate APP_KEY if still empty
+            if grep -qE '^APP_KEY=\s*$' .env; then
+              ${PHP_BIN} artisan key:generate --force
+            fi
+
+            # 3. Upload limits for audio files (.user.ini in public_html if missing)
+            if [ ! -f "${PUBLIC_PATH}/.user.ini" ]; then
+              printf "upload_max_filesize=256M\npost_max_size=260M\nmemory_limit=512M\n" > "${PUBLIC_PATH}/.user.ini"
+            fi
+
+            # 4. Storage symlinks (both backend/public/storage and public_html/storage)
+            if [ ! -L public/storage ]; then
+              ${PHP_BIN} artisan storage:link
+            fi
+            ln -sfn "${BACKEND_PATH}/storage/app/public" "${PUBLIC_PATH}/storage"
+
+            # 5. Run migrations if DB is already configured in .env
+            ${PHP_BIN} artisan migrate --force || echo "::warning::Migrations skipped/failed — configure DB in .env and re-run if this is the first deploy."
+
+            # 6. Cache & optimize
+            ${PHP_BIN} artisan optimize:clear
+            ${PHP_BIN} artisan optimize
+          EOF
