@@ -2,3 +2,11 @@ node_modules
 dist
 .DS_Store
 *.log
+scripts/.env.sync
+scripts/*.session*
+scripts/tmp_audio/
+scripts/sync.log
+scripts/qr_login.html
+scripts/synced_audios.json
+scripts/synced_audios.xlsx
+telegram-audios.xlsx

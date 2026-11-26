@@ -29,6 +29,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // المحتوى: المدير والمحرر
         Route::resource('videos', VideoController::class)->except('show');
+        Route::get('audios/organize', [AudioController::class, 'organize'])->name('audios.organize');
+        Route::post('audios/recategorize', [AudioController::class, 'recategorize'])->name('audios.recategorize');
         Route::resource('audios', AudioController::class)->except('show');
         Route::resource('lessons', LessonController::class)->except('show');
         Route::resource('posts', PostController::class)->except('show');

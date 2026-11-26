@@ -5,7 +5,10 @@
 @section('content')
 <div class="page-head">
     <div><h1>الصوتيات</h1><p>دروس ومحاضرات صوتية تُشغَّل من مشغّل الموقع.</p></div>
-    <a href="{{ route('admin.audios.create') }}" class="btn btn-primary"><i class="ti ti-upload" aria-hidden="true"></i> رفع صوتية</a>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a href="{{ route('admin.audios.organize') }}" class="btn btn-secondary"><i class="ti ti-arrows-move" aria-hidden="true"></i> تصنيف بالسحب والإفلات</a>
+        <a href="{{ route('admin.audios.create') }}" class="btn btn-primary"><i class="ti ti-upload" aria-hidden="true"></i> رفع صوتية</a>
+    </div>
 </div>
 
 <div class="card">

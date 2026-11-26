@@ -1,0 +1,5654 @@
+{
+  "topics": [
+    {
+      "slug": "khutab",
+      "name": "خطب الجمعة",
+      "icon": "ti-microphone-2",
+      "sort_order": 0
+    },
+    {
+      "slug": "quran",
+      "name": "تلاوات قرآنية",
+      "icon": "ti-book",
+      "sort_order": 1
+    },
+    {
+      "slug": "tafsir",
+      "name": "التفسير",
+      "icon": "ti-book-2",
+      "sort_order": 2
+    },
+    {
+      "slug": "seerah",
+      "name": "السيرة",
+      "icon": "ti-route",
+      "sort_order": 3
+    },
+    {
+      "slug": "tazkiyah",
+      "name": "التزكية",
+      "icon": "ti-heart",
+      "sort_order": 4
+    },
+    {
+      "slug": "fiqh",
+      "name": "الفقه",
+      "icon": "ti-scale",
+      "sort_order": 5
+    },
+    {
+      "slug": "aqeedah",
+      "name": "العقيدة",
+      "icon": "ti-sun",
+      "sort_order": 6
+    },
+    {
+      "slug": "family",
+      "name": "الأسرة",
+      "icon": "ti-home-heart",
+      "sort_order": 7
+    }
+  ],
+  "series": [
+    {
+      "title": "خطب الجمعة",
+      "topic_slug": "khutab",
+      "description": "خطب الجمعة لفضيلة الشيخ محمود الأزهري.",
+      "kind": "audio",
+      "is_featured": true,
+      "sort_order": 1
+    },
+    {
+      "title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "topic_slug": "quran",
+      "description": "تلاوات قرآنية خاشعة بصوت الشيخ محمود الأزهري.",
+      "kind": "audio",
+      "is_featured": true,
+      "sort_order": 2
+    },
+    {
+      "title": "تلاوات صلاة التراويح",
+      "topic_slug": "quran",
+      "description": "مختارات من تلاوات صلاة التراويح.",
+      "kind": "audio",
+      "is_featured": false,
+      "sort_order": 3
+    },
+    {
+      "title": "شرح كتاب بداية الهداية",
+      "topic_slug": "tazkiyah",
+      "description": "مجالس شرح كتاب بداية الهداية للإمام الغزالي.",
+      "kind": "audio",
+      "is_featured": true,
+      "sort_order": 4
+    },
+    {
+      "title": "شرح كتاب الشمائل المحمدية",
+      "topic_slug": "seerah",
+      "description": "مجالس قراءة وشرح كتاب الشمائل المحمدية للإمام الترمذي.",
+      "kind": "audio",
+      "is_featured": true,
+      "sort_order": 5
+    },
+    {
+      "title": "دروس السيرة النبوية",
+      "topic_slug": "seerah",
+      "description": "دروس متسلسلة في السيرة النبوية العطرة.",
+      "kind": "audio",
+      "is_featured": true,
+      "sort_order": 6
+    },
+    {
+      "title": "تفسير سورة القصص",
+      "topic_slug": "tafsir",
+      "description": "مجالس التفسير والتدبر في سورة القصص.",
+      "kind": "audio",
+      "is_featured": false,
+      "sort_order": 7
+    },
+    {
+      "title": "تفسير سورة الكهف",
+      "topic_slug": "tafsir",
+      "description": "مجالس التفسير والتدبر في سورة الكهف.",
+      "kind": "audio",
+      "is_featured": false,
+      "sort_order": 8
+    },
+    {
+      "title": "شرح عجائب القلب",
+      "topic_slug": "tazkiyah",
+      "description": "دروس في شرح كتاب شرح عجائب القلب.",
+      "kind": "audio",
+      "is_featured": false,
+      "sort_order": 9
+    },
+    {
+      "title": "شرح متن أبي شجاع (ابن قاسم)",
+      "topic_slug": "fiqh",
+      "description": "دروس في الفقه الشافعي — شرح ابن قاسم على متن أبي شجاع.",
+      "kind": "audio",
+      "is_featured": false,
+      "sort_order": 10
+    },
+    {
+      "title": "معالم الشريعة",
+      "topic_slug": "fiqh",
+      "description": "سلسلة دروس في معالم الشريعة الإسلامية.",
+      "kind": "audio",
+      "is_featured": false,
+      "sort_order": 11
+    }
+  ],
+  "audios": [
+    {
+      "title": "AUD-20190421-WA0004",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2021/msg_12.m4a",
+      "description": null,
+      "duration": 2174,
+      "published_at": "2021-05-23 01:03:36",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "AUD-20180413-WA0002",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2021/msg_13.m4a",
+      "description": null,
+      "duration": 1992,
+      "published_at": "2021-05-23 01:03:41",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "دروس من تحويل القبلة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2021/msg_14.m4a",
+      "description": null,
+      "duration": 2057,
+      "published_at": "2021-05-23 01:03:53",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 1
+    },
+    {
+      "title": "AUD-20180227-WA0000",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2021/msg_15.m4a",
+      "description": null,
+      "duration": 875,
+      "published_at": "2021-05-23 01:03:54",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "AUD-20180225-WA0001",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2021/msg_16.m4a",
+      "description": null,
+      "duration": 1991,
+      "published_at": "2021-05-23 01:04:01",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "لماذا الصحابة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2021/msg_17.m4a",
+      "description": null,
+      "duration": 2470,
+      "published_at": "2021-05-23 01:04:13",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 2
+    },
+    {
+      "title": "الى الشباب",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2021/msg_18.amr",
+      "description": null,
+      "duration": 2621,
+      "published_at": "2021-05-23 01:04:15",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "PTT-20220222-WA0005",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2022/msg_22.opus",
+      "description": "‏مقطع صوتي من الأزهري",
+      "duration": 82,
+      "published_at": "2022-02-22 05:43:09",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "شرح متن أبي شجاع( 1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_23.m4a",
+      "description": null,
+      "duration": 2718,
+      "published_at": "2023-01-02 21:30:06",
+      "topic_slug": "fiqh",
+      "series_title": "شرح متن أبي شجاع (ابن قاسم)",
+      "series_order": 1
+    },
+    {
+      "title": "الدرس السابع من شرح ابن قاسم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_32.mp3",
+      "description": null,
+      "duration": 2521,
+      "published_at": "2023-01-16 08:24:33",
+      "topic_slug": "fiqh",
+      "series_title": "شرح متن أبي شجاع (ابن قاسم)",
+      "series_order": 2
+    },
+    {
+      "title": "مقدمة السيرة 4 01",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_33.mp3",
+      "description": "مقدمة السيرة 4",
+      "duration": 2658,
+      "published_at": "2023-01-21 20:28:12",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 3
+    },
+    {
+      "title": "صوت ٠١٢",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_34.m4a",
+      "description": "تلاوة آخر يونس وأول هود",
+      "duration": 378,
+      "published_at": "2023-01-21 21:07:18",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "شرح ابن قاسم 8",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_35.m4a",
+      "description": null,
+      "duration": 2868,
+      "published_at": "2023-01-22 23:18:19",
+      "topic_slug": "fiqh",
+      "series_title": "شرح متن أبي شجاع (ابن قاسم)",
+      "series_order": 3
+    },
+    {
+      "title": "من الكبائر (البغي)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_40.m4a",
+      "description": null,
+      "duration": 2217,
+      "published_at": "2023-02-01 08:24:18",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "شف لك شغلانة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_42.m4a",
+      "description": null,
+      "duration": 1533,
+      "published_at": "2023-02-06 20:29:03",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "صوت ٠١٨",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_43.m4a",
+      "description": "شرح ابن قاسم( الاستنجاء)",
+      "duration": 3082,
+      "published_at": "2023-02-15 19:55:05",
+      "topic_slug": "fiqh",
+      "series_title": "شرح متن أبي شجاع (ابن قاسم)",
+      "series_order": 4
+    },
+    {
+      "title": "صوت ٠٢٠",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_44.m4a",
+      "description": "فضل آخر آيتين من سورة البقرة، مهم جدا .",
+      "duration": 3077,
+      "published_at": "2023-02-20 20:59:55",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "سورة الشورى",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_45.m4a",
+      "description": null,
+      "duration": 838,
+      "published_at": "2023-02-21 11:00:18",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "درس السيرة ٢٦-٢",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_46.mp3",
+      "description": null,
+      "duration": 2580,
+      "published_at": "2023-02-27 04:14:51",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 4
+    },
+    {
+      "title": "صوت ٠٢٢",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_47.m4a",
+      "description": "بيني وبين الشيخ أحمد نصر قراءة من سورة الأنعام",
+      "duration": 1648,
+      "published_at": "2023-02-28 22:25:40",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "AUD-20230504-WA0027",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_52.mp3",
+      "description": "‏مقطع صوتي من الأزهري",
+      "duration": 633,
+      "published_at": "2023-05-04 17:47:59",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "AUD-20230504-WA0025",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_53.mp3",
+      "description": "‏مقطع صوتي من الأزهري",
+      "duration": 351,
+      "published_at": "2023-05-06 19:43:44",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "فضل الصلاة والسلام على رسول الله خطبة الجمعة 26 مايو",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_59.mp3",
+      "description": null,
+      "duration": 3401,
+      "published_at": "2023-05-29 07:41:57",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 1
+    },
+    {
+      "title": "التسجيل القياسي 66 (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_60.mp3",
+      "description": null,
+      "duration": 2346,
+      "published_at": "2023-05-29 08:08:02",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "4 5807557513821818724",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_61.mp3",
+      "description": "السيرة النبوية \n(الجهر بالدعوة)",
+      "duration": 1652,
+      "published_at": "2023-06-22 16:56:26",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 5
+    },
+    {
+      "title": "درس الثلاثاء",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_63.mp3",
+      "description": null,
+      "duration": 1386,
+      "published_at": "2023-07-11 18:13:34",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الارقم بن الارقم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_65.m4a",
+      "description": null,
+      "duration": 1417,
+      "published_at": "2023-08-07 21:43:38",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "درس الاحد رعايه الصلاه",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_66.mp3",
+      "description": null,
+      "duration": 2508,
+      "published_at": "2023-08-22 15:19:47",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "قضاء حوائج الناس",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_67.m4a",
+      "description": null,
+      "duration": 1818,
+      "published_at": "2023-08-25 11:34:29",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "تأملات في سورة الصافات",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_68.m4a",
+      "description": null,
+      "duration": 1627,
+      "published_at": "2023-08-27 19:28:06",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "باب التوكل من رياض الصالحين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_69.m4a",
+      "description": null,
+      "duration": 3522,
+      "published_at": "2023-08-30 01:11:51",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "صوت ٠٢٣ sd",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_70.m4a",
+      "description": "باب الاستقامة من رياض الصالحين",
+      "duration": 1743,
+      "published_at": "2023-09-06 06:36:28",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "حال النبي مع ربه",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_71.m4a",
+      "description": null,
+      "duration": 2501,
+      "published_at": "2023-09-08 15:14:15",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 6
+    },
+    {
+      "title": "النبي كما تحدث عن نفسه",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_72.m4a",
+      "description": null,
+      "duration": 2272,
+      "published_at": "2023-09-08 20:20:09",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 7
+    },
+    {
+      "title": "صوت ٠٢٥ sd",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_73.m4a",
+      "description": "مبادئ الدعوة في المجتمع المسلم",
+      "duration": 1481,
+      "published_at": "2023-09-10 22:08:45",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "صوت ٠٢٦ sd",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_74.m4a",
+      "description": "دعوة مجتمع بأسره",
+      "duration": 1786,
+      "published_at": "2023-09-11 19:02:22",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "باب التفكر من رياض الصالحين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_75.m4a",
+      "description": null,
+      "duration": 2303,
+      "published_at": "2023-09-12 17:16:49",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "متى تهون الأمم؟",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_76.m4a",
+      "description": null,
+      "duration": 1507,
+      "published_at": "2023-09-13 18:29:24",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "حال النبي مع أهله",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_77.m4a",
+      "description": null,
+      "duration": 1887,
+      "published_at": "2023-09-16 17:45:07",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 8
+    },
+    {
+      "title": "الهجرة الثانية للحبشة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_78.m4a",
+      "description": null,
+      "duration": 1904,
+      "published_at": "2023-09-17 18:38:58",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 9
+    },
+    {
+      "title": "باب بادروا بالأعمال من رياض الصالحين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_79.m4a",
+      "description": null,
+      "duration": 2902,
+      "published_at": "2023-09-19 17:21:44",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "السعيد من وعظ بغيره",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_80.m4a",
+      "description": null,
+      "duration": 1375,
+      "published_at": "2023-09-20 19:32:48",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "حال النبي مع أصحابه",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_82.m4a",
+      "description": null,
+      "duration": 2037,
+      "published_at": "2023-09-22 10:56:57",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 10
+    },
+    {
+      "title": "باب المجاهدة من رياض الصالحين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_85.m4a",
+      "description": null,
+      "duration": 1908,
+      "published_at": "2023-09-26 17:00:09",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مظاهر رحمة النبي بأمته",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_87.m4a",
+      "description": null,
+      "duration": 2291,
+      "published_at": "2023-09-29 11:31:35",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 11
+    },
+    {
+      "title": "إصلاح ذات البين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_89.m4a",
+      "description": null,
+      "duration": 1820,
+      "published_at": "2023-10-02 18:14:11",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "من رياض الصالحين باب التزود من الخيرات",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_91.m4a",
+      "description": null,
+      "duration": 1788,
+      "published_at": "2023-10-03 16:33:27",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "معاصي القلوب",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_92.m4a",
+      "description": null,
+      "duration": 1989,
+      "published_at": "2023-10-04 18:19:32",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "رحماء بينهم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_96.m4a",
+      "description": null,
+      "duration": 1265,
+      "published_at": "2023-10-09 18:04:45",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "باب كثرة طرق الخير رياض الصالحين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_97.m4a",
+      "description": null,
+      "duration": 3302,
+      "published_at": "2023-10-10 21:28:32",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "قريش عند أبي طالب",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_98.m4a",
+      "description": null,
+      "duration": 1598,
+      "published_at": "2023-10-11 19:05:48",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الوعي الرشيد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_99.m4a",
+      "description": null,
+      "duration": 2270,
+      "published_at": "2023-10-13 12:13:13",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مفاهيم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_100.m4a",
+      "description": null,
+      "duration": 2296,
+      "published_at": "2023-10-15 18:20:20",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "النفاق؛ أي شيء هو",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_102.m4a",
+      "description": null,
+      "duration": 1649,
+      "published_at": "2023-10-16 18:00:19",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الاقتصاد في العبادة من رياض الصالحين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_103.m4a",
+      "description": null,
+      "duration": 2601,
+      "published_at": "2023-10-17 19:43:59",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الدفاع عن الأوطان",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_105.m4a",
+      "description": null,
+      "duration": 2097,
+      "published_at": "2023-10-20 11:02:28",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مقدمة باب الجهاد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_111.m4a",
+      "description": null,
+      "duration": 1541,
+      "published_at": "2023-10-22 18:23:50",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مقدمة باب الجهاد ٢",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_112.m4a",
+      "description": null,
+      "duration": 1756,
+      "published_at": "2023-10-23 22:21:58",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الإنسانية ومخاطر تجاهلها (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_131.m4a",
+      "description": null,
+      "duration": 2033,
+      "published_at": "2023-11-10 12:38:04",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الجهاد ٣",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_132.m4a",
+      "description": null,
+      "duration": 640,
+      "published_at": "2023-11-13 17:34:06",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "درس الشيخ محمود الازهري ١٤نوفمبر",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_134.m4a",
+      "description": "باب وجوب الانقياد لحكم الله ورسوله، من رياض الصالحين",
+      "duration": 1906,
+      "published_at": "2023-11-15 11:05:01",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "وقت الأزمات؛ أمل وعمل",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_136.m4a",
+      "description": null,
+      "duration": 2348,
+      "published_at": "2023-11-17 11:45:38",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الجهاد ٤",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_142.m4a",
+      "description": null,
+      "duration": 1966,
+      "published_at": "2023-11-19 17:51:29",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "باب النهي عن البدع من رياض الصالحين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_146.m4a",
+      "description": null,
+      "duration": 2282,
+      "published_at": "2023-11-21 18:01:42",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الفكرة ودورها",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_148.m4a",
+      "description": null,
+      "duration": 1721,
+      "published_at": "2023-11-22 18:12:31",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "التصورات الشرعية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_153.m4a",
+      "description": null,
+      "duration": 1852,
+      "published_at": "2023-11-27 18:06:19",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "النبيذ",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_154.m4a",
+      "description": null,
+      "duration": 1413,
+      "published_at": "2023-11-27 18:06:19",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 12
+    },
+    {
+      "title": "من سن سنة حسنة أو سيئة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_155.m4a",
+      "description": null,
+      "duration": 1486,
+      "published_at": "2023-11-28 17:31:42",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "التربية ودورها (ندوة مشتركة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_158.m4a",
+      "description": null,
+      "duration": 2198,
+      "published_at": "2023-11-29 17:39:02",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "اليقظة والحذر والإعداد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_161.m4a",
+      "description": null,
+      "duration": 1931,
+      "published_at": "2023-12-01 10:54:58",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "حتى يغيروا",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_165.m4a",
+      "description": null,
+      "duration": 1829,
+      "published_at": "2023-12-06 17:46:46",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الإيجابية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_166.m4a",
+      "description": null,
+      "duration": 1867,
+      "published_at": "2023-12-08 11:28:51",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "تغيير الأفكار",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_169.m4a",
+      "description": null,
+      "duration": 2030,
+      "published_at": "2023-12-10 20:42:18",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "لكننا ننسى",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_172.m4a",
+      "description": null,
+      "duration": 1394,
+      "published_at": "2023-12-11 20:35:43",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "وسائل الثبات في زمان الفتن",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_176.m4a",
+      "description": null,
+      "duration": 2292,
+      "published_at": "2023-12-12 17:50:59",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الصبر ووسائله",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_177.m4a",
+      "description": null,
+      "duration": 2683,
+      "published_at": "2023-12-13 18:12:20",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "نداءات القرآن للنبي",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_180.m4a",
+      "description": null,
+      "duration": 2376,
+      "published_at": "2023-12-15 12:17:53",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "نداءات الرحمن لأهل الإيمان",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_189.m4a",
+      "description": null,
+      "duration": 2283,
+      "published_at": "2023-12-22 15:01:01",
+      "topic_slug": "aqeedah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "بشائر النصر ووسائله",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_191.m4a",
+      "description": null,
+      "duration": 4032,
+      "published_at": "2023-12-24 19:40:38",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "التزكية؛ علم وسلوك",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_193.m4a",
+      "description": null,
+      "duration": 4687,
+      "published_at": "2023-12-25 22:11:47",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "جحر الضب",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_197.m4a",
+      "description": null,
+      "duration": 3925,
+      "published_at": "2023-12-26 20:38:27",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "جريمة الاعتداء على المال العام",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2023/msg_202.m4a",
+      "description": null,
+      "duration": 2308,
+      "published_at": "2023-12-29 14:20:48",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "ولتستبين سبيل المجرمين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_211.m4a",
+      "description": null,
+      "duration": 1787,
+      "published_at": "2024-01-01 04:18:31",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "النصرانية 1",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_212.m4a",
+      "description": null,
+      "duration": 1803,
+      "published_at": "2024-01-01 17:47:17",
+      "topic_slug": "aqeedah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "صوت ٠٢٧",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_218.m4a",
+      "description": "النصرانية 2",
+      "duration": 1789,
+      "published_at": "2024-01-03 23:30:43",
+      "topic_slug": "aqeedah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الصحة الإنجابية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_221.m4a",
+      "description": null,
+      "duration": 1909,
+      "published_at": "2024-01-05 11:35:10",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "صوت ٠٢٧",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_224.m4a",
+      "description": "صدقك وهو كذوب",
+      "duration": 1391,
+      "published_at": "2024-01-08 18:48:41",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "صدقك وهو كذوب",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_225.m4a",
+      "description": null,
+      "duration": 1391,
+      "published_at": "2024-01-09 00:14:58",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "خذو زينتكم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_235.m4a",
+      "description": null,
+      "duration": 2026,
+      "published_at": "2024-01-13 12:49:14",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الأشهر الحرم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_236.m4a",
+      "description": null,
+      "duration": 1473,
+      "published_at": "2024-01-13 17:54:37",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "هدمت كعبتهم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_243.m4a",
+      "description": null,
+      "duration": 2002,
+      "published_at": "2024-01-15 18:02:16",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المنبر الحقيقي",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_244.m4a",
+      "description": null,
+      "duration": 1758,
+      "published_at": "2024-01-17 18:30:01",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "حتى لا يكثر الخبث",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_252.m4a",
+      "description": null,
+      "duration": 1948,
+      "published_at": "2024-01-18 22:22:57",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المخدرات",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_253.m4a",
+      "description": null,
+      "duration": 2141,
+      "published_at": "2024-01-19 12:20:02",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "دروس السيرة ( ما قبل المقاطعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_268.mp3",
+      "description": null,
+      "duration": 1836,
+      "published_at": "2024-01-24 18:54:05",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 13
+    },
+    {
+      "title": "الدفاع عن الأوطان",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_269.m4a",
+      "description": null,
+      "duration": 2462,
+      "published_at": "2024-01-26 12:08:17",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المثبتات عند الشدائد (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_271.m4a",
+      "description": null,
+      "duration": 1817,
+      "published_at": "2024-01-29 22:44:51",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الفرج بعد الشدة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_276.m4a",
+      "description": null,
+      "duration": 2436,
+      "published_at": "2024-02-02 11:45:47",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "جبر الخواطر",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_281.m4a",
+      "description": null,
+      "duration": 2086,
+      "published_at": "2024-02-13 07:56:04",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "شعبان",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_282.m4a",
+      "description": null,
+      "duration": 2588,
+      "published_at": "2024-02-14 18:37:11",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "حق الطفل",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_285.m4a",
+      "description": null,
+      "duration": 1544,
+      "published_at": "2024-02-16 11:45:01",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "أدرك",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_288.m4a",
+      "description": null,
+      "duration": 1005,
+      "published_at": "2024-02-18 18:41:03",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الكرامة أولى",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_289.m4a",
+      "description": null,
+      "duration": 1023,
+      "published_at": "2024-02-19 18:50:29",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "وتواصوا بالحق",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_291.m4a",
+      "description": null,
+      "duration": 1774,
+      "published_at": "2024-02-21 18:44:10",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "تحويل القبلة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_295.m4a",
+      "description": null,
+      "duration": 2314,
+      "published_at": "2024-02-23 14:35:49",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 14
+    },
+    {
+      "title": "الاستعداد لرمضان",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_302.m4a",
+      "description": null,
+      "duration": 1817,
+      "published_at": "2024-03-01 13:06:42",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "عبادة الظاهر",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_312.m4a",
+      "description": null,
+      "duration": 2025,
+      "published_at": "2024-03-06 21:40:41",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "صوت ٠٢٨",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_313.m4a",
+      "description": "جمعة اليوم",
+      "duration": 1992,
+      "published_at": "2024-03-08 16:01:20",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "سلم نفسك",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_314.m4a",
+      "description": null,
+      "duration": 1105,
+      "published_at": "2024-03-10 19:51:25",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "رسالة أمة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_318.m4a",
+      "description": null,
+      "duration": 1138,
+      "published_at": "2024-03-11 19:45:37",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "لا أنا",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_321.m4a",
+      "description": null,
+      "duration": 1006,
+      "published_at": "2024-03-12 21:03:03",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "20240314 202241",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_325.mp3",
+      "description": "الجنة للجميع !",
+      "duration": 1653,
+      "published_at": "2024-03-14 22:24:09",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "رمضان شهر الطاعات",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_326.m4a",
+      "description": null,
+      "duration": 2189,
+      "published_at": "2024-03-15 11:53:27",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "AUD-20240316-WA0001",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_329.mp3",
+      "description": "آمال أخروية .",
+      "duration": 966,
+      "published_at": "2024-03-16 02:31:29",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الليلة ال٨",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_333.mp3",
+      "description": "المحبة أولا .",
+      "duration": 1199,
+      "published_at": "2024-03-18 04:25:27",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "AudioCutter الشيخ محمود الأزهري (2)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_338.mp3",
+      "description": "فضفضة ...",
+      "duration": 687,
+      "published_at": "2024-03-19 23:00:38",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "زيغة الحكيم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_340.m4a",
+      "description": null,
+      "duration": 1563,
+      "published_at": "2024-03-20 14:58:47",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "وَقِفُوهُمْ إِنَّهُم مَّسْئُولُونَ ...(2)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_342.mp3",
+      "description": null,
+      "duration": 918,
+      "published_at": "2024-03-21 22:25:26",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "رمضان شهر الانتصارات",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_343.m4a",
+      "description": null,
+      "duration": 2287,
+      "published_at": "2024-03-22 12:01:15",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "اقفل تليفونك",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_345.m4a",
+      "description": null,
+      "duration": 1168,
+      "published_at": "2024-03-23 14:30:34",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مفاهيم خاطئة عن الإسلام",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_347.mp3",
+      "description": "مفاهيم خاطئة عن الإسلام ..",
+      "duration": 784,
+      "published_at": "2024-03-23 22:33:32",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "طاعة للخالق وإحسان للخلق",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_349.m4a",
+      "description": null,
+      "duration": 1519,
+      "published_at": "2024-03-24 14:29:39",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "من آداب تلاوة سورة الفاتحة و فضائلها",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_350.mp3",
+      "description": "من آداب تلاوة سورة الفاتحة و فضائلها",
+      "duration": 1334,
+      "published_at": "2024-03-24 23:05:20",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "عبادة الصيام",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_353.mp3",
+      "description": "عبادة الصيام.",
+      "duration": 1133,
+      "published_at": "2024-03-25 21:59:03",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "فساد تصور الناس عن الله تبارك وتعالى(2)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_359.mp3",
+      "description": "( أَلَمْ يَعْلَم بِأَنَّ اللَّهَ يَرَىٰ )",
+      "duration": 1381,
+      "published_at": "2024-03-28 15:27:23",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المقصود من الإعتكاف (2)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_361.mp3",
+      "description": "أقتربت العشر الأواخر فاستعدوا..",
+      "duration": 1262,
+      "published_at": "2024-03-28 23:07:18",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "العشر الأواخر",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_363.m4a",
+      "description": null,
+      "duration": 2262,
+      "published_at": "2024-03-29 11:57:17",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "رسالة إلى أهل المسجد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_365.m4a",
+      "description": null,
+      "duration": 1416,
+      "published_at": "2024-03-31 12:43:53",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "أحكام الزكاة و آداب المسجد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_368.mp3",
+      "description": null,
+      "duration": 1999,
+      "published_at": "2024-04-01 13:23:57",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "التراث الإسلامي( جلسة حوارية)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_369.m4a",
+      "description": null,
+      "duration": 3177,
+      "published_at": "2024-04-01 15:27:04",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "ليلة قدرك هي قرارك",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_376.m4a",
+      "description": null,
+      "duration": 919,
+      "published_at": "2024-04-04 01:23:10",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الطاعة المهلكة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_378.m4a",
+      "description": "فَلَا تُزَكُّوا أَنْفُسَكُمْ.",
+      "duration": 790,
+      "published_at": "2024-04-05 01:54:26",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الإحسان إلى الخلق",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_379.m4a",
+      "description": null,
+      "duration": 2270,
+      "published_at": "2024-04-06 14:40:50",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "لماذا التراث؟",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_380.m4a",
+      "description": null,
+      "duration": 1937,
+      "published_at": "2024-04-06 14:40:50",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "بُرهنُ صدق",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_381.m4a",
+      "description": null,
+      "duration": 956,
+      "published_at": "2024-04-07 17:14:03",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "صِغاركم كِباركم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_383.m4a",
+      "description": null,
+      "duration": 1097,
+      "published_at": "2024-04-08 17:17:30",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "018سورة الكهف-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_387.mp3",
+      "description": null,
+      "duration": 1247,
+      "published_at": "2024-04-12 12:15:54",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 1
+    },
+    {
+      "title": "036سورة يس -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_388.mp3",
+      "description": null,
+      "duration": 686,
+      "published_at": "2024-04-12 12:15:54",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 2
+    },
+    {
+      "title": "إيجار جديد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_392.m4a",
+      "description": null,
+      "duration": 1990,
+      "published_at": "2024-04-15 21:17:06",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "055سورة الرحمن-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_393.mp3",
+      "description": null,
+      "duration": 444,
+      "published_at": "2024-04-16 06:30:47",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 3
+    },
+    {
+      "title": "056سورة الواقعة-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_394.mp3",
+      "description": null,
+      "duration": 450,
+      "published_at": "2024-04-16 06:30:47",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 4
+    },
+    {
+      "title": "057سورة الحديد-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_395.mp3",
+      "description": null,
+      "duration": 605,
+      "published_at": "2024-04-16 06:30:47",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 5
+    },
+    {
+      "title": "058سورة المجادلة-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_396.mp3",
+      "description": null,
+      "duration": 480,
+      "published_at": "2024-04-16 06:30:47",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 6
+    },
+    {
+      "title": "019سورة مريم -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_398.mp3",
+      "description": null,
+      "duration": 989,
+      "published_at": "2024-04-16 11:19:39",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 7
+    },
+    {
+      "title": "066سورة التحريم-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_401.mp3",
+      "description": "سورة التحريم- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 241,
+      "published_at": "2024-04-18 01:59:47",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 1
+    },
+    {
+      "title": "067سورة الملك-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_402.mp3",
+      "description": "سورة الملك- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 295,
+      "published_at": "2024-04-18 01:59:48",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 2
+    },
+    {
+      "title": "068سورة القلم-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_403.mp3",
+      "description": "سورة القلم- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 299,
+      "published_at": "2024-04-18 01:59:48",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 3
+    },
+    {
+      "title": "069سورة الحاقة-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_404.mp3",
+      "description": "سورة الحاقة- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 304,
+      "published_at": "2024-04-18 01:59:48",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 4
+    },
+    {
+      "title": "التاجر الصدوق",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_413.m4a",
+      "description": null,
+      "duration": 2279,
+      "published_at": "2024-04-19 14:38:14",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "039سورة الزمر من الأية 10 حتى الأية 23 الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_416.mp3",
+      "description": null,
+      "duration": 236,
+      "published_at": "2024-04-20 22:58:49",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 8
+    },
+    {
+      "title": "070سورة المعارج-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_417.mp3",
+      "description": "سورة المعارج- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 209,
+      "published_at": "2024-04-21 09:53:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 5
+    },
+    {
+      "title": "071سورة نوح -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_418.mp3",
+      "description": "سورة نوح- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 219,
+      "published_at": "2024-04-21 09:53:58",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 6
+    },
+    {
+      "title": "072سورة الجن -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_419.mp3",
+      "description": "سورة الجن- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 256,
+      "published_at": "2024-04-21 09:53:58",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 7
+    },
+    {
+      "title": "073سورة المزمل -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_420.mp3",
+      "description": "سورة المزمل- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 188,
+      "published_at": "2024-04-21 09:53:58",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 8
+    },
+    {
+      "title": "074سورة المدثر-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_421.mp3",
+      "description": "سورة المدثر- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 245,
+      "published_at": "2024-04-21 09:53:58",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 9
+    },
+    {
+      "title": "لا يشكر الله من لا يشكر الناس",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_423.m4a",
+      "description": null,
+      "duration": 982,
+      "published_at": "2024-04-21 22:14:16",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "042سورة الشورى -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_427.mp3",
+      "description": "سورة الشورى- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 836,
+      "published_at": "2024-04-24 21:30:37",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 10
+    },
+    {
+      "title": "041سورة فصلت -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_428.mp3",
+      "description": "سورة فصلت - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 785,
+      "published_at": "2024-04-24 21:30:37",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 11
+    },
+    {
+      "title": "لا إله إلا الله هي المعنى الأول والآخر",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_429.mp3",
+      "description": "لا إله إلا الله \nهي المعنى الأول والآخر",
+      "duration": 1446,
+      "published_at": "2024-04-24 22:01:34",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "043سورة الزخرف -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_430.mp3",
+      "description": "سورة الزخرف - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 891,
+      "published_at": "2024-04-25 15:16:21",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 12
+    },
+    {
+      "title": "تطبيقات حسن الخلق",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_431.m4a",
+      "description": null,
+      "duration": 2138,
+      "published_at": "2024-04-26 13:08:56",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "أحيي قلبك وأيقظه بهذه الوصية الغالية الباكية من سيدناالعالم الع…",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_435.m4a",
+      "description": "أحي قلبك.\nسيدي ولي الله المرحوم بإذن الله الراحل دكتور أسامة عبدالعظيم",
+      "duration": 236,
+      "published_at": "2024-04-27 03:18:46",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "رَبِحَ البَيْع",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_436.mp3",
+      "description": null,
+      "duration": 1384,
+      "published_at": "2024-04-29 06:52:18",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "039سورة الزمر-الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_437.mp3",
+      "description": "سورة الزمر - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 993,
+      "published_at": "2024-04-29 21:39:28",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 13
+    },
+    {
+      "title": "040سورة غافر -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_438.mp3",
+      "description": "سورة غافر - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 1053,
+      "published_at": "2024-04-29 21:39:28",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 14
+    },
+    {
+      "title": "لماذا نختلف",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_440.m4a",
+      "description": null,
+      "duration": 2089,
+      "published_at": "2024-05-02 00:52:10",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "006سورة الأنعام -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_445.mp3",
+      "description": null,
+      "duration": 2778,
+      "published_at": "2024-05-03 22:56:23",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 9
+    },
+    {
+      "title": "أمانة العامل والصانع",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_446.m4a",
+      "description": null,
+      "duration": 2399,
+      "published_at": "2024-05-04 03:56:31",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الاحتفال بشم النسيم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_452.m4a",
+      "description": "وَمَا قَتَلُوهُ وَمَا صَلَبُوهُ وَلَٰكِن شُبِّهَ لَهُمْ",
+      "duration": 1770,
+      "published_at": "2024-05-05 20:20:13",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "026سورة الشعراء -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_453.mp3",
+      "description": "سورة الشعراء - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 1369,
+      "published_at": "2024-05-05 21:45:10",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 15
+    },
+    {
+      "title": "054سورة القمر -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_459.mp3",
+      "description": "سورة القمر - للشيخ محمود الأزهري- عشاء 27 شوال 1445 هـ",
+      "duration": 341,
+      "published_at": "2024-05-06 21:07:10",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 10
+    },
+    {
+      "title": "الحج ٢",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_461.m4a",
+      "description": null,
+      "duration": 1457,
+      "published_at": "2024-05-09 20:46:05",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "027سورة النمل -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_462.mp3",
+      "description": "سورة النمل - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 1173,
+      "published_at": "2024-05-09 21:11:33",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 16
+    },
+    {
+      "title": "التنمر",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_464.m4a",
+      "description": null,
+      "duration": 2230,
+      "published_at": "2024-05-10 16:42:36",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المصالح العامة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_472.m4a",
+      "description": null,
+      "duration": 1496,
+      "published_at": "2024-05-17 11:21:41",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "028سورة القصص -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_481.mp3",
+      "description": "سورة القصص - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 1397,
+      "published_at": "2024-05-21 06:16:40",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 17
+    },
+    {
+      "title": "029سورة العنكبوت -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_486.mp3",
+      "description": null,
+      "duration": 978,
+      "published_at": "2024-05-23 21:50:13",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 11
+    },
+    {
+      "title": "الحج",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_487.m4a",
+      "description": null,
+      "duration": 2390,
+      "published_at": "2024-05-24 11:31:47",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "031سورة لقمان -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_491.mp3",
+      "description": null,
+      "duration": 526,
+      "published_at": "2024-05-27 03:06:28",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 12
+    },
+    {
+      "title": "030سورة الروم -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_494.mp3",
+      "description": null,
+      "duration": 775,
+      "published_at": "2024-05-27 17:31:20",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 13
+    },
+    {
+      "title": "حق الله في المال",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_500.m4a",
+      "description": null,
+      "duration": 1754,
+      "published_at": "2024-05-31 11:51:46",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "033سورة الأحزاب -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_504.mp3",
+      "description": null,
+      "duration": 1032,
+      "published_at": "2024-06-01 22:35:35",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 14
+    },
+    {
+      "title": "032سورة السجدة -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_506.mp3",
+      "description": null,
+      "duration": 300,
+      "published_at": "2024-06-02 18:07:44",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 15
+    },
+    {
+      "title": "034سورة سبأ -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_507.mp3",
+      "description": "سورة سبأ - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 767,
+      "published_at": "2024-06-03 02:02:51",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 18
+    },
+    {
+      "title": "035سورة فاطر -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_509.mp3",
+      "description": null,
+      "duration": 868,
+      "published_at": "2024-06-05 23:59:21",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 16
+    },
+    {
+      "title": "037سورة الصافات -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_512.mp3",
+      "description": null,
+      "duration": 892,
+      "published_at": "2024-06-07 06:40:00",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 17
+    },
+    {
+      "title": "أعمال العشر",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_515.m4a",
+      "description": "خطبة الجمعة",
+      "duration": 1926,
+      "published_at": "2024-06-09 23:21:16",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 2
+    },
+    {
+      "title": "021سورةالأنبياء -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_516.mp3",
+      "description": "سورة الأنبياء- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 1002,
+      "published_at": "2024-06-23 00:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 19
+    },
+    {
+      "title": "022سورة الحج -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_517.mp3",
+      "description": "سورة الحج- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 1086,
+      "published_at": "2024-06-23 00:16:07",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 20
+    },
+    {
+      "title": "شرح حديث الوصايا الخمس-1",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_521.mp3",
+      "description": null,
+      "duration": 1427,
+      "published_at": "2024-06-27 12:32:08",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "قوة الأوطان",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_522.m4a",
+      "description": null,
+      "duration": 1996,
+      "published_at": "2024-06-28 11:14:36",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المصيف",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_526.m4a",
+      "description": null,
+      "duration": 104,
+      "published_at": "2024-07-02 09:49:58",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "4 5773800118847279780",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_527.mp3",
+      "description": "الوصايا الخمس 2",
+      "duration": 1976,
+      "published_at": "2024-07-02 10:47:12",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "4 5778410839253980984",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_529.mp3",
+      "description": "الوصايا الخمس 3",
+      "duration": 1561,
+      "published_at": "2024-07-04 22:19:02",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "4 5789691914454308030",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_530.mp3",
+      "description": "الوصايا الخمس 4",
+      "duration": 1622,
+      "published_at": "2024-07-08 12:32:01",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "لا تحزن",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_532.m4a",
+      "description": null,
+      "duration": 2326,
+      "published_at": "2024-07-12 18:09:36",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "025سورة الفرقان -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_533.mp3",
+      "description": "سورة الفرقان - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 841,
+      "published_at": "2024-07-15 02:21:29",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 21
+    },
+    {
+      "title": "عاشوراء",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_534.mp3",
+      "description": "عاشوراء.mp3",
+      "duration": 1009,
+      "published_at": "2024-07-15 02:23:04",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "015سورة الحجر -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_536.mp3",
+      "description": "سورة الحجر - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 593,
+      "published_at": "2024-07-16 22:06:38",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 22
+    },
+    {
+      "title": "جبر الخواطر",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_538.m4a",
+      "description": null,
+      "duration": 2414,
+      "published_at": "2024-07-19 12:55:25",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "017سورة الإسراء -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_539.mp3",
+      "description": "سورة الإسراء - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 1444,
+      "published_at": "2024-07-20 23:51:00",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 23
+    },
+    {
+      "title": "013سورة الرعد -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_542.mp3",
+      "description": "013سورة الرعد -الشيخ محمود الأزهري",
+      "duration": 844,
+      "published_at": "2024-07-23 21:52:53",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 18
+    },
+    {
+      "title": "الرزق الخفي",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_543.m4a",
+      "description": null,
+      "duration": 2098,
+      "published_at": "2024-07-26 11:42:07",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "014سورة إبراهيم -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_545.mp3",
+      "description": "014سورة إبراهيم-الشيخ محمود الأزهري",
+      "duration": 950,
+      "published_at": "2024-07-26 13:38:36",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 19
+    },
+    {
+      "title": "010سورة يونس -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_546.mp3",
+      "description": "010سورة يونس -الشيخ محمود الأزهري",
+      "duration": 1706,
+      "published_at": "2024-07-27 14:06:54",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 20
+    },
+    {
+      "title": "011سورة هود -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_548.mp3",
+      "description": "سورة هود - للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 1831,
+      "published_at": "2024-07-27 21:30:17",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 24
+    },
+    {
+      "title": "004سورة النساء -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_574.mp3",
+      "description": "سورة النساء- للشيخ محمود الأزهري- تراويح رمضان 1445 هـ",
+      "duration": 3088,
+      "published_at": "2024-08-06 14:35:00",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 25
+    },
+    {
+      "title": "نعمه الماء",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_583.m4a",
+      "description": "تسجيل أخي الجميل محمد رمزي.",
+      "duration": 1823,
+      "published_at": "2024-08-09 22:55:09",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "112سورة الإخلاص -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_590.mp3",
+      "description": null,
+      "duration": 11,
+      "published_at": "2024-08-10 18:15:55",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 21
+    },
+    {
+      "title": "113سورة الفلق -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_591.mp3",
+      "description": null,
+      "duration": 18,
+      "published_at": "2024-08-10 18:15:55",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 22
+    },
+    {
+      "title": "114سورة الناس -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_592.mp3",
+      "description": null,
+      "duration": 21,
+      "published_at": "2024-08-10 18:15:55",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 23
+    },
+    {
+      "title": "099سورة الزلزلة -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_593.mp3",
+      "description": null,
+      "duration": 35,
+      "published_at": "2024-08-10 18:15:55",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 24
+    },
+    {
+      "title": "100سورة العاديات -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_594.mp3",
+      "description": null,
+      "duration": 38,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 25
+    },
+    {
+      "title": "101سورة القارعة -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_595.mp3",
+      "description": null,
+      "duration": 32,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 26
+    },
+    {
+      "title": "102سورة التكاثر -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_596.mp3",
+      "description": null,
+      "duration": 28,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 27
+    },
+    {
+      "title": "103سورة العصر -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_597.mp3",
+      "description": null,
+      "duration": 15,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 28
+    },
+    {
+      "title": "104سورة الهمزة -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_598.mp3",
+      "description": null,
+      "duration": 32,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 29
+    },
+    {
+      "title": "105سورة الفيل -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_599.mp3",
+      "description": null,
+      "duration": 21,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 30
+    },
+    {
+      "title": "106سورة قريش -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_600.mp3",
+      "description": null,
+      "duration": 18,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 31
+    },
+    {
+      "title": "107سورة الماعون -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_601.mp3",
+      "description": null,
+      "duration": 24,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 32
+    },
+    {
+      "title": "108سورة الكوثر -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_602.mp3",
+      "description": null,
+      "duration": 11,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 33
+    },
+    {
+      "title": "109سورة الكافرون -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_603.mp3",
+      "description": null,
+      "duration": 21,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 34
+    },
+    {
+      "title": "110سورة النصر -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_604.mp3",
+      "description": null,
+      "duration": 19,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 35
+    },
+    {
+      "title": "111سورة المسد -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_605.mp3",
+      "description": null,
+      "duration": 21,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 36
+    },
+    {
+      "title": "098سورة البينة -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_606.mp3",
+      "description": null,
+      "duration": 70,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 37
+    },
+    {
+      "title": "087سورة الأعلى -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_607.mp3",
+      "description": null,
+      "duration": 60,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 38
+    },
+    {
+      "title": "088سورة الغاشية -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_608.mp3",
+      "description": null,
+      "duration": 94,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 39
+    },
+    {
+      "title": "089سورة الفجر -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_609.mp3",
+      "description": null,
+      "duration": 118,
+      "published_at": "2024-08-10 18:15:56",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 40
+    },
+    {
+      "title": "090سورة البلد -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_610.mp3",
+      "description": null,
+      "duration": 73,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 41
+    },
+    {
+      "title": "091سورة الشمس -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_611.mp3",
+      "description": null,
+      "duration": 62,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 42
+    },
+    {
+      "title": "092سورة الليل -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_612.mp3",
+      "description": null,
+      "duration": 71,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 43
+    },
+    {
+      "title": "093سورة الشرح -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_613.mp3",
+      "description": null,
+      "duration": 36,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 44
+    },
+    {
+      "title": "094سورة الشرح -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_614.mp3",
+      "description": null,
+      "duration": 23,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 45
+    },
+    {
+      "title": "095سورة التين -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_615.mp3",
+      "description": null,
+      "duration": 30,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 46
+    },
+    {
+      "title": "096سورة العلق -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_616.mp3",
+      "description": null,
+      "duration": 58,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 47
+    },
+    {
+      "title": "097سورة القدر -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_617.mp3",
+      "description": null,
+      "duration": 25,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 48
+    },
+    {
+      "title": "086سورة الطارق -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_618.mp3",
+      "description": null,
+      "duration": 61,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 49
+    },
+    {
+      "title": "081سورة التكوير -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_619.mp3",
+      "description": null,
+      "duration": 94,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 50
+    },
+    {
+      "title": "082سورة الإنفطار -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_620.mp3",
+      "description": null,
+      "duration": 79,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 51
+    },
+    {
+      "title": "083سورة المطففين -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_621.mp3",
+      "description": null,
+      "duration": 169,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 52
+    },
+    {
+      "title": "084سورة الإنشقاق -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_622.mp3",
+      "description": null,
+      "duration": 99,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 53
+    },
+    {
+      "title": "085سورة البروج -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_623.mp3",
+      "description": null,
+      "duration": 95,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 54
+    },
+    {
+      "title": "078سورة النبأ -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_624.mp3",
+      "description": null,
+      "duration": 207,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 55
+    },
+    {
+      "title": "079سورة النازعات -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_625.mp3",
+      "description": null,
+      "duration": 181,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 56
+    },
+    {
+      "title": "080سورة عبس -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_626.mp3",
+      "description": null,
+      "duration": 154,
+      "published_at": "2024-08-10 18:15:57",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 57
+    },
+    {
+      "title": "003سورة أل عمران -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_647.mp3",
+      "description": null,
+      "duration": 3736,
+      "published_at": "2024-08-16 14:32:18",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 58
+    },
+    {
+      "title": "المحبة .. إعادة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_650.m4a",
+      "description": null,
+      "duration": 3103,
+      "published_at": "2024-08-18 18:01:39",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الطائف",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_656.m4a",
+      "description": "درس السيرة",
+      "duration": 1950,
+      "published_at": "2024-08-20 07:10:14",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 15
+    },
+    {
+      "title": "شعب الإيمان",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_663.m4a",
+      "description": null,
+      "duration": 1925,
+      "published_at": "2024-08-21 17:35:46",
+      "topic_slug": "aqeedah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "4 5927132049042314646",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_669.mp3",
+      "description": null,
+      "duration": 1519,
+      "published_at": "2024-08-23 11:56:45",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "4 5938147514875122476",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_682.mp3",
+      "description": "من مهام الرسول",
+      "duration": 2062,
+      "published_at": "2024-08-27 02:47:15",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "د. احمد سعيد مندور",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_688.m4a",
+      "description": null,
+      "duration": 677,
+      "published_at": "2024-08-30 12:53:50",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "أفتِّانٌ انت يا معاذ",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_689.m4a",
+      "description": null,
+      "duration": 2146,
+      "published_at": "2024-08-30 12:53:50",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "في سبيل الله",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_694.m4a",
+      "description": null,
+      "duration": 870,
+      "published_at": "2024-09-06 16:47:04",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "وَأَخَذْنَ مِنْكُمْ مِيثَاقًا غَلِيظًا",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_696.m4a",
+      "description": null,
+      "duration": 2837,
+      "published_at": "2024-09-06 20:12:59",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مقدمة لقراءة كتاب الشمائل المحمدية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_702.m4a",
+      "description": null,
+      "duration": 3353,
+      "published_at": "2024-09-08 20:21:26",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 1
+    },
+    {
+      "title": "المجلس الأول كتاب شمائل النبي",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_705.m4a",
+      "description": null,
+      "duration": 3391,
+      "published_at": "2024-09-09 20:47:44",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 2
+    },
+    {
+      "title": "المجلس الثاني من كتاب الشمائل المحمدية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_708.m4a",
+      "description": null,
+      "duration": 3124,
+      "published_at": "2024-09-10 21:08:18",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 3
+    },
+    {
+      "title": "المجلس الثالث من الشمائل",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_709.m4a",
+      "description": null,
+      "duration": 3185,
+      "published_at": "2024-09-11 17:35:58",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 4
+    },
+    {
+      "title": "المجلس الرابع كتاب الشمائل",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_712.m4a",
+      "description": null,
+      "duration": 2979,
+      "published_at": "2024-09-12 18:11:52",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 5
+    },
+    {
+      "title": "ميلاد الهدى",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_713.m4a",
+      "description": null,
+      "duration": 2889,
+      "published_at": "2024-09-13 10:53:40",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المجلس الخامس كتاب الشمائل",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_714.m4a",
+      "description": null,
+      "duration": 3159,
+      "published_at": "2024-09-15 18:21:19",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 6
+    },
+    {
+      "title": "المجلس السادس من الشمائل",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_718.m4a",
+      "description": null,
+      "duration": 2770,
+      "published_at": "2024-09-16 18:56:43",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 7
+    },
+    {
+      "title": "المجلس السابع من الشمائل المحمدية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_722.m4a",
+      "description": null,
+      "duration": 2973,
+      "published_at": "2024-09-17 18:23:35",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 8
+    },
+    {
+      "title": "المجلس الثامن من الشمائل المحمدية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_723.m4a",
+      "description": null,
+      "duration": 3149,
+      "published_at": "2024-09-18 18:22:03",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 9
+    },
+    {
+      "title": "وَسَلامٌ عَلَيْهِ يَوْمَ وُلِدَ وَيَوْمَ يَمُوتُ وَيَوْمَ يُبْعَثُ",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_729.m4a",
+      "description": null,
+      "duration": 2814,
+      "published_at": "2024-09-20 11:18:55",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المجلس العاشر من الشمائل المحمدية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_731.m4a",
+      "description": null,
+      "duration": 2551,
+      "published_at": "2024-09-23 19:09:41",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 10
+    },
+    {
+      "title": "المجلس الحادي عشر من الشمائل المحمدية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_732.m4a",
+      "description": null,
+      "duration": 2930,
+      "published_at": "2024-09-24 18:14:10",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 11
+    },
+    {
+      "title": "المجلس الثاني عشر من الشمائل المحمدية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_734.m4a",
+      "description": null,
+      "duration": 2083,
+      "published_at": "2024-10-01 16:53:50",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 12
+    },
+    {
+      "title": "المجلس الثالث عشر من الشمائل المحمدية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_745.m4a",
+      "description": null,
+      "duration": 2703,
+      "published_at": "2024-10-03 18:54:47",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 13
+    },
+    {
+      "title": "وَمَا النَّصْرُ إلَّا مِنْ عِنْدِ اللَّهِ",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_746.m4a",
+      "description": null,
+      "duration": 2353,
+      "published_at": "2024-10-04 10:46:04",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المجلس الرابع عشر من الشمائل المحمدية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_758.m4a",
+      "description": null,
+      "duration": 3105,
+      "published_at": "2024-10-06 18:29:53",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 14
+    },
+    {
+      "title": "المجلس الخامس عشر من الشمائل المحمدية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_763.m4a",
+      "description": null,
+      "duration": 2592,
+      "published_at": "2024-10-07 17:47:57",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 15
+    },
+    {
+      "title": "4 5776084311304325403",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_770.m4a",
+      "description": null,
+      "duration": 3031,
+      "published_at": "2024-10-08 19:58:57",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "رَحِمَ اللَّهُ رَجُلًا سَمْحًا",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_786.m4a",
+      "description": null,
+      "duration": 2806,
+      "published_at": "2024-10-11 10:43:48",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "ختام مجالس الشمائل",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_792.m4a",
+      "description": null,
+      "duration": 2346,
+      "published_at": "2024-10-13 16:36:14",
+      "topic_slug": "seerah",
+      "series_title": "شرح كتاب الشمائل المحمدية",
+      "series_order": 16
+    },
+    {
+      "title": "قبول الأعمال",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_797.m4a",
+      "description": null,
+      "duration": 1481,
+      "published_at": "2024-10-15 17:51:07",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "إنشغل بنفسك اولا",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_800.m4a",
+      "description": null,
+      "duration": 2468,
+      "published_at": "2024-10-16 19:28:09",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "لَا يَسْخَرْ قَوْمٌ مِنْ قَوْمٍ",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_806.m4a",
+      "description": null,
+      "duration": 2554,
+      "published_at": "2024-10-18 10:45:22",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الاخوة و اساس الدين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_818.m4a",
+      "description": null,
+      "duration": 1787,
+      "published_at": "2024-10-21 20:48:23",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "البينة على من ادعى",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_821.m4a",
+      "description": null,
+      "duration": 1730,
+      "published_at": "2024-10-22 18:15:26",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الحَذَرُ مِنَ الدُّنْيَا",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_823.m4a",
+      "description": null,
+      "duration": 2036,
+      "published_at": "2024-10-23 18:31:06",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "وَقُولُوا لِلنَّاسِ حُسْنًا",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_827.m4a",
+      "description": null,
+      "duration": 2620,
+      "published_at": "2024-10-25 10:35:53",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مقدمه لكتاب بدايه الهدايه",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_847.m4a",
+      "description": null,
+      "duration": 1581,
+      "published_at": "2024-10-29 17:38:39",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 1
+    },
+    {
+      "title": "المجلس الأول من بدايه الهدايه",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_854.m4a",
+      "description": null,
+      "duration": 2307,
+      "published_at": "2024-10-30 18:12:47",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 2
+    },
+    {
+      "title": "وَأَعِدُّواْ لَهُمْ مَّا اسْتَطَعْتُمْ مِّنْ قُوَّةٍ",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_863.m4a",
+      "description": null,
+      "duration": 2770,
+      "published_at": "2024-11-01 13:38:18",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المجلس الثاني من بداية الهدايه",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_873.m4a",
+      "description": null,
+      "duration": 2230,
+      "published_at": "2024-11-03 17:55:14",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 3
+    },
+    {
+      "title": "المجلس الثالث(بداية الهداية)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_876.m4a",
+      "description": null,
+      "duration": 2260,
+      "published_at": "2024-11-04 19:00:55",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 4
+    },
+    {
+      "title": "المجلس الرابع من بدايه الهدايه",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_878.m4a",
+      "description": null,
+      "duration": 1873,
+      "published_at": "2024-11-05 17:43:19",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 5
+    },
+    {
+      "title": "بداية الهداية( المجلس الخامس)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_882.m4a",
+      "description": null,
+      "duration": 1638,
+      "published_at": "2024-11-06 18:57:36",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 6
+    },
+    {
+      "title": "AUD-20241108-WA0026",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_892.m4a",
+      "description": "‏مقطع صوتي من الأزهري",
+      "duration": 1909,
+      "published_at": "2024-11-09 04:38:43",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الهداية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_915.m4a",
+      "description": null,
+      "duration": 1817,
+      "published_at": "2024-11-12 21:00:24",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "AUD-20241112-WA0027",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_916.mp3",
+      "description": "رسالة إلى مدخن",
+      "duration": 266,
+      "published_at": "2024-11-13 03:10:30",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المجلس السادس مكرر بداية الهداية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_921.m4a",
+      "description": null,
+      "duration": 2214,
+      "published_at": "2024-11-13 18:39:44",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 7
+    },
+    {
+      "title": "المال العام ( خطبة الجمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_924.m4a",
+      "description": null,
+      "duration": 2332,
+      "published_at": "2024-11-15 13:09:50",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 3
+    },
+    {
+      "title": "المجلس السابع( بداية الهداية) (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_932.m4a",
+      "description": null,
+      "duration": 2329,
+      "published_at": "2024-11-18 05:18:28",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 8
+    },
+    {
+      "title": "أنت عند الله غالٍ (6)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_934.m4a",
+      "description": null,
+      "duration": 2495,
+      "published_at": "2024-11-22 17:18:20",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "بداية الهداية 8",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_935.m4a",
+      "description": null,
+      "duration": 2209,
+      "published_at": "2024-11-24 20:24:16",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 9
+    },
+    {
+      "title": "4 5931317434542724899",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_937.m4a",
+      "description": null,
+      "duration": 2750,
+      "published_at": "2024-11-29 13:46:52",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "بداية الهداية 9",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_942.mp3",
+      "description": null,
+      "duration": 2400,
+      "published_at": "2024-12-02 08:15:48",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 10
+    },
+    {
+      "title": "بداية الهداية 10",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_943.m4a",
+      "description": null,
+      "duration": 1167,
+      "published_at": "2024-12-02 19:15:52",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 11
+    },
+    {
+      "title": "بداية الهداية 11",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_947.m4a",
+      "description": null,
+      "duration": 1993,
+      "published_at": "2024-12-04 22:10:15",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 12
+    },
+    {
+      "title": "الدعوه الي الله بصحبه الشيخ حازم ابو ضيف",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_956.m4a",
+      "description": null,
+      "duration": 2288,
+      "published_at": "2024-12-08 17:53:51",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "لغه القرآن والحفاظ على الهويه",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_957.m4a",
+      "description": null,
+      "duration": 2280,
+      "published_at": "2024-12-08 21:41:07",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "بداية الهداية 12 التيمم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_969.m4a",
+      "description": null,
+      "duration": 1649,
+      "published_at": "2024-12-09 19:39:02",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 13
+    },
+    {
+      "title": "بداية الهداية 13 الخروج للمسجد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_977.m4a",
+      "description": null,
+      "duration": 2450,
+      "published_at": "2024-12-11 18:39:52",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 14
+    },
+    {
+      "title": "4 5979039902795306650",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_981.mp3",
+      "description": "خطبة الجمعة( صناعة العقول )",
+      "duration": 2284,
+      "published_at": "2024-12-15 10:56:14",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 4
+    },
+    {
+      "title": "بداية الهداية 13 آداب دخول المسجد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_986.m4a",
+      "description": null,
+      "duration": 2449,
+      "published_at": "2024-12-16 05:52:21",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 15
+    },
+    {
+      "title": "بداية الهداية 14",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_989.mp3",
+      "description": null,
+      "duration": 1879,
+      "published_at": "2024-12-17 10:18:52",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 16
+    },
+    {
+      "title": "بداية الهداية 15 وظائف قبل الشروق",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_990.m4a",
+      "description": null,
+      "duration": 2022,
+      "published_at": "2024-12-18 17:52:34",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 17
+    },
+    {
+      "title": "الطفولة بناء وأمل خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_991.mp3",
+      "description": null,
+      "duration": 2067,
+      "published_at": "2024-12-21 16:58:33",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 5
+    },
+    {
+      "title": "بداية الهداية 16",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_992.m4a",
+      "description": null,
+      "duration": 2066,
+      "published_at": "2024-12-22 18:16:46",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 18
+    },
+    {
+      "title": "بداية الهداية 17",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_996.m4a",
+      "description": null,
+      "duration": 2307,
+      "published_at": "2024-12-23 20:07:57",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 19
+    },
+    {
+      "title": "بداية الهداية 18",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_997.m4a",
+      "description": null,
+      "duration": 1873,
+      "published_at": "2024-12-24 21:27:35",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 20
+    },
+    {
+      "title": "بداية الهداية 19",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_998.m4a",
+      "description": null,
+      "duration": 2007,
+      "published_at": "2024-12-26 07:49:05",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 21
+    },
+    {
+      "title": "خطبه الجمعه (المخدرات)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_1000.m4a",
+      "description": null,
+      "duration": 1881,
+      "published_at": "2024-12-27 12:51:59",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 6
+    },
+    {
+      "title": "بدون اسم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_1001.m4a",
+      "description": null,
+      "duration": 1962,
+      "published_at": "2024-12-29 18:22:34",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "بداية الهداية 21",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2024/msg_1007.m4a",
+      "description": null,
+      "duration": 1650,
+      "published_at": "2024-12-31 23:40:03",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 22
+    },
+    {
+      "title": "فما ظنكم برب العالمين. خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1010.m4a",
+      "description": null,
+      "duration": 2045,
+      "published_at": "2025-01-03 20:41:05",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 7
+    },
+    {
+      "title": "تصور الشرع الشريف",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1011.m4a",
+      "description": null,
+      "duration": 1620,
+      "published_at": "2025-01-05 18:01:26",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "بداية الهداية 22",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1012.m4a",
+      "description": null,
+      "duration": 1835,
+      "published_at": "2025-01-06 21:43:46",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 23
+    },
+    {
+      "title": "بداية الهداية 23",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1014.m4a",
+      "description": null,
+      "duration": 1380,
+      "published_at": "2025-01-09 13:06:05",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 24
+    },
+    {
+      "title": "بسط الوجه خطبة الجمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1015.m4a",
+      "description": null,
+      "duration": 1795,
+      "published_at": "2025-01-10 11:33:14",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 8
+    },
+    {
+      "title": "بداية الهداية 24",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1016.m4a",
+      "description": null,
+      "duration": 945,
+      "published_at": "2025-01-12 22:10:10",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 25
+    },
+    {
+      "title": "بداية الهداية 25",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1018.m4a",
+      "description": null,
+      "duration": 2236,
+      "published_at": "2025-01-14 04:37:03",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 26
+    },
+    {
+      "title": "بداية الهداية 26",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1019.m4a",
+      "description": null,
+      "duration": 2018,
+      "published_at": "2025-01-14 20:44:21",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 27
+    },
+    {
+      "title": "خطورة التكفير ( خطبة الجمعة )",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1024.m4a",
+      "description": null,
+      "duration": 1768,
+      "published_at": "2025-01-17 11:28:29",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 9
+    },
+    {
+      "title": "اقرأ بنظارة الإسلام (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1028.m4a",
+      "description": null,
+      "duration": 1899,
+      "published_at": "2025-01-19 20:06:11",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "بداية الهداية 27",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1030.m4a",
+      "description": null,
+      "duration": 2198,
+      "published_at": "2025-01-20 19:54:55",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 28
+    },
+    {
+      "title": "بداية الهداية 28",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1041.m4a",
+      "description": null,
+      "duration": 2451,
+      "published_at": "2025-01-22 19:55:26",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 29
+    },
+    {
+      "title": "نعمة الأمن خطبة الجمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1045.m4a",
+      "description": null,
+      "duration": 1970,
+      "published_at": "2025-01-24 14:43:32",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 10
+    },
+    {
+      "title": "بداية الهداية 29",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1046.m4a",
+      "description": null,
+      "duration": 2067,
+      "published_at": "2025-01-26 19:00:57",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 30
+    },
+    {
+      "title": "بداية الهداية 30",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1048.m4a",
+      "description": null,
+      "duration": 1855,
+      "published_at": "2025-01-27 18:29:43",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 31
+    },
+    {
+      "title": "بداية الهداية 31",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1049.m4a",
+      "description": null,
+      "duration": 1777,
+      "published_at": "2025-01-29 20:19:05",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 32
+    },
+    {
+      "title": "الحال أبلغ من المقال خطبة الجمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1053.m4a",
+      "description": null,
+      "duration": 1869,
+      "published_at": "2025-01-31 12:45:39",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 11
+    },
+    {
+      "title": "أهلاً شعبان",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1056.m4a",
+      "description": null,
+      "duration": 1189,
+      "published_at": "2025-02-02 18:10:27",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "بداية الهداية 32",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1058.m4a",
+      "description": null,
+      "duration": 2149,
+      "published_at": "2025-02-03 21:18:11",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 33
+    },
+    {
+      "title": "بداية الهداية 33",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1065.m4a",
+      "description": null,
+      "duration": 2190,
+      "published_at": "2025-02-05 22:10:23",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 34
+    },
+    {
+      "title": "وذروا ظاهر الإثم وباطنه خطبة الجمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1069.m4a",
+      "description": null,
+      "duration": 2016,
+      "published_at": "2025-02-07 14:21:48",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 12
+    },
+    {
+      "title": "بداية الهداية 34",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1070.m4a",
+      "description": null,
+      "duration": 2077,
+      "published_at": "2025-02-10 09:27:48",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 35
+    },
+    {
+      "title": "ندوة عن تحويل القبلة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1071.m4a",
+      "description": null,
+      "duration": 1889,
+      "published_at": "2025-02-10 21:51:42",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 16
+    },
+    {
+      "title": "بداية الهداية 35",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1077.m4a",
+      "description": null,
+      "duration": 1535,
+      "published_at": "2025-02-13 20:44:57",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 36
+    },
+    {
+      "title": "تحويل القبلة خطبة الجمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1080.m4a",
+      "description": null,
+      "duration": 2254,
+      "published_at": "2025-02-14 11:52:16",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 13
+    },
+    {
+      "title": "بداية الهداية 36",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1085.m4a",
+      "description": null,
+      "duration": 1440,
+      "published_at": "2025-02-16 23:49:33",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 37
+    },
+    {
+      "title": "بداية الهداية 37",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1086.m4a",
+      "description": null,
+      "duration": 2296,
+      "published_at": "2025-02-17 21:13:11",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 38
+    },
+    {
+      "title": "بداية الهداية 38",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1089.m4a",
+      "description": null,
+      "duration": 2042,
+      "published_at": "2025-02-19 20:56:29",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 39
+    },
+    {
+      "title": "إن هذا الدين متين خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1091.m4a",
+      "description": null,
+      "duration": 2004,
+      "published_at": "2025-02-21 12:10:47",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 14
+    },
+    {
+      "title": "بداية الهداية 39",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1092.m4a",
+      "description": null,
+      "duration": 2064,
+      "published_at": "2025-02-23 18:37:09",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 40
+    },
+    {
+      "title": "بداية الهداية 40",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1094.m4a",
+      "description": null,
+      "duration": 2952,
+      "published_at": "2025-02-24 19:06:48",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 41
+    },
+    {
+      "title": "بداية الهداية 41",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1096.m4a",
+      "description": null,
+      "duration": 1623,
+      "published_at": "2025-02-26 21:59:15",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 42
+    },
+    {
+      "title": "يا باغي الخير أقبل خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1099.m4a",
+      "description": null,
+      "duration": 1644,
+      "published_at": "2025-02-28 13:04:44",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 15
+    },
+    {
+      "title": "بداية الهداية 41",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1100.m4a",
+      "description": null,
+      "duration": 1109,
+      "published_at": "2025-03-02 16:20:10",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 43
+    },
+    {
+      "title": "بداية الهداية 42",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1102.m4a",
+      "description": null,
+      "duration": 1577,
+      "published_at": "2025-03-03 21:36:27",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 44
+    },
+    {
+      "title": "تراويح 4",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1103.m4a",
+      "description": null,
+      "duration": 1189,
+      "published_at": "2025-03-03 21:36:27",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 26
+    },
+    {
+      "title": "بداية الهداية 43",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1104.m4a",
+      "description": null,
+      "duration": 2298,
+      "published_at": "2025-03-04 16:37:40",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 45
+    },
+    {
+      "title": "تراويح 5",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1105.m4a",
+      "description": null,
+      "duration": 716,
+      "published_at": "2025-03-04 19:19:05",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 27
+    },
+    {
+      "title": "بداية الهداية 44 الأدب مع الوالدين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1108.m4a",
+      "description": null,
+      "duration": 1849,
+      "published_at": "2025-03-05 16:44:52",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 46
+    },
+    {
+      "title": "تراويح 7",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1111.m4a",
+      "description": null,
+      "duration": 768,
+      "published_at": "2025-03-06 19:36:53",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 28
+    },
+    {
+      "title": "تعزيز الهوية(خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1112.m4a",
+      "description": null,
+      "duration": 2260,
+      "published_at": "2025-03-07 11:36:45",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 16
+    },
+    {
+      "title": "تراويح 8",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1113.m4a",
+      "description": null,
+      "duration": 708,
+      "published_at": "2025-03-07 22:15:09",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 29
+    },
+    {
+      "title": "تراويح 6",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1114.m4a",
+      "description": null,
+      "duration": 743,
+      "published_at": "2025-03-07 22:19:54",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 30
+    },
+    {
+      "title": "بداية الهداية 46",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1115.m4a",
+      "description": null,
+      "duration": 2397,
+      "published_at": "2025-03-09 15:13:06",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 47
+    },
+    {
+      "title": "تراويح 10",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1117.m4a",
+      "description": null,
+      "duration": 1101,
+      "published_at": "2025-03-10 20:03:59",
+      "topic_slug": "quran",
+      "series_title": "تلاوات صلاة التراويح",
+      "series_order": 31
+    },
+    {
+      "title": "بداية الهداية 47",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1118.m4a",
+      "description": null,
+      "duration": 2873,
+      "published_at": "2025-03-11 15:25:43",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 48
+    },
+    {
+      "title": "48 ختام مجالس بداية الهداية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1123.m4a",
+      "description": null,
+      "duration": 4204,
+      "published_at": "2025-03-12 15:54:49",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح كتاب بداية الهداية",
+      "series_order": 49
+    },
+    {
+      "title": "مدارك المرام 2",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1130.m4a",
+      "description": null,
+      "duration": 1272,
+      "published_at": "2025-03-17 14:38:56",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مدارك المرام 3",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1133.m4a",
+      "description": null,
+      "duration": 2059,
+      "published_at": "2025-03-18 15:20:06",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "أمك ثم أمك ( خطبة جمعة )",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1137.m4a",
+      "description": null,
+      "duration": 2221,
+      "published_at": "2025-03-21 20:40:54",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 17
+    },
+    {
+      "title": "دور الزكاة ( خطية جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1138.m4a",
+      "description": null,
+      "duration": 2406,
+      "published_at": "2025-03-28 12:31:02",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 18
+    },
+    {
+      "title": "رعاية اليتيم(خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1144.m4a",
+      "description": null,
+      "duration": 1662,
+      "published_at": "2025-04-04 13:56:53",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 19
+    },
+    {
+      "title": "047سورة محمد -الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1149.mp3",
+      "description": null,
+      "duration": 627,
+      "published_at": "2025-04-07 07:36:28",
+      "topic_slug": "quran",
+      "series_title": "تلاوات قرآنية — الشيخ محمود الأزهري",
+      "series_order": 59
+    },
+    {
+      "title": "4 6028558912918132817",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1150.m4a",
+      "description": "قضية الستر في ميزان الشرع",
+      "duration": 2284,
+      "published_at": "2025-04-07 20:32:36",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "سؤال حول سورة الإخلاص",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1154.mp3",
+      "description": null,
+      "duration": 523,
+      "published_at": "2025-04-09 12:12:17",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "أنا ( نور ونار) خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1155.m4a",
+      "description": null,
+      "duration": 1937,
+      "published_at": "2025-04-12 08:03:22",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 20
+    },
+    {
+      "title": "العقل والعلم خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1163.m4a",
+      "description": null,
+      "duration": 1558,
+      "published_at": "2025-04-18 13:19:20",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 21
+    },
+    {
+      "title": "آلاء الله 1 الإيجاد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1170.m4a",
+      "description": null,
+      "duration": 1688,
+      "published_at": "2025-04-22 05:20:06",
+      "topic_slug": "aqeedah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الإيمان بالغيب 2",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1171.m4a",
+      "description": null,
+      "duration": 1563,
+      "published_at": "2025-04-22 05:20:06",
+      "topic_slug": "aqeedah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الأرض المباركة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1178.m4a",
+      "description": null,
+      "duration": 1598,
+      "published_at": "2025-04-25 12:06:55",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "نعمة الرزق ( الإمداد)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1184.m4a",
+      "description": null,
+      "duration": 1827,
+      "published_at": "2025-04-27 19:20:13",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "نعمة الرزق 2",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1185.m4a",
+      "description": null,
+      "duration": 2472,
+      "published_at": "2025-04-28 22:18:31",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "ونزرع فيأكل من بعدنا ( خطبة جمعة )",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1186.m4a",
+      "description": null,
+      "duration": 1646,
+      "published_at": "2025-05-02 11:02:32",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 22
+    },
+    {
+      "title": "محرفوا معاني القرآن (خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1187.m4a",
+      "description": null,
+      "duration": 2101,
+      "published_at": "2025-05-09 11:33:50",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 23
+    },
+    {
+      "title": "لماذا الكلام عن النعم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1188.m4a",
+      "description": null,
+      "duration": 1754,
+      "published_at": "2025-05-11 17:58:44",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الوسطية خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1191.m4a",
+      "description": null,
+      "duration": 1842,
+      "published_at": "2025-05-16 14:25:46",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 24
+    },
+    {
+      "title": "4 5861715170228705403",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1193.m4a",
+      "description": "بم سبق الصحابةُ؟",
+      "duration": 1552,
+      "published_at": "2025-05-19 20:01:13",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 17
+    },
+    {
+      "title": "4 5868533959092083919",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1194.m4a",
+      "description": "حال القلب مع العبادة",
+      "duration": 1826,
+      "published_at": "2025-05-21 21:25:51",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "فتراحموا",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1195.m4a",
+      "description": null,
+      "duration": 1734,
+      "published_at": "2025-05-23 14:50:15",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "عشر ذي الحجة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1197.m4a",
+      "description": null,
+      "duration": 1719,
+      "published_at": "2025-05-31 22:11:19",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الأوطان. خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1205.m4a",
+      "description": null,
+      "duration": 1938,
+      "published_at": "2025-06-13 14:39:40",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 25
+    },
+    {
+      "title": "4 5947003776094181750",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1218.m4a",
+      "description": "مراتب الأعمال",
+      "duration": 1512,
+      "published_at": "2025-06-17 20:02:46",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "طلب السلامة. خطية جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1230.m4a",
+      "description": null,
+      "duration": 2180,
+      "published_at": "2025-06-20 16:05:46",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 26
+    },
+    {
+      "title": "الهجرة والأمل (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1261.m4a",
+      "description": null,
+      "duration": 1940,
+      "published_at": "2025-06-27 12:25:33",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 18
+    },
+    {
+      "title": "السلام رسالة الإسلام خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1291.m4a",
+      "description": null,
+      "duration": 2286,
+      "published_at": "2025-07-04 18:24:12",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 27
+    },
+    {
+      "title": "4 6005699598025235499",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1301.m4a",
+      "description": "حقيقه الدين",
+      "duration": 1818,
+      "published_at": "2025-07-07 19:39:49",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "4 6008154339338623378",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1306.m4a",
+      "description": "الجوارح تعمل والقلوب تتوكل",
+      "duration": 1995,
+      "published_at": "2025-07-08 16:48:38",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "س&ج",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1307.m4a",
+      "description": null,
+      "duration": 2373,
+      "published_at": "2025-07-09 04:52:51",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "سورة القصص 2",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1308.m4a",
+      "description": null,
+      "duration": 3530,
+      "published_at": "2025-07-10 18:29:19",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 1
+    },
+    {
+      "title": "سورة القصص 3",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1309.m4a",
+      "description": null,
+      "duration": 2020,
+      "published_at": "2025-07-10 18:29:53",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 2
+    },
+    {
+      "title": "فقه ابن عباس( خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1311.m4a",
+      "description": null,
+      "duration": 2419,
+      "published_at": "2025-07-11 12:14:37",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 28
+    },
+    {
+      "title": "الاتحاد قوة خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1327.m4a",
+      "description": null,
+      "duration": 1183,
+      "published_at": "2025-07-18 23:36:29",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 29
+    },
+    {
+      "title": "اتق الله حيثما كنت",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1328.m4a",
+      "description": null,
+      "duration": 1202,
+      "published_at": "2025-07-21 21:36:32",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "إدارة الوقت خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1339.m4a",
+      "description": null,
+      "duration": 1705,
+      "published_at": "2025-07-25 13:22:22",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 30
+    },
+    {
+      "title": "لا تغلو ( خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1368.m4a",
+      "description": null,
+      "duration": 1519,
+      "published_at": "2025-08-08 13:36:37",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 31
+    },
+    {
+      "title": "درس السيرة( الوظيفة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1371.m4a",
+      "description": null,
+      "duration": 1965,
+      "published_at": "2025-08-11 19:27:05",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 19
+    },
+    {
+      "title": "سورة القصص 5",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1372.m4a",
+      "description": null,
+      "duration": 3294,
+      "published_at": "2025-08-13 21:43:37",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 3
+    },
+    {
+      "title": "إعلاء قيمة العمل خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1374.m4a",
+      "description": null,
+      "duration": 1476,
+      "published_at": "2025-08-15 11:15:17",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 32
+    },
+    {
+      "title": "قل لا أسألكم عليه أجراً إلا المودة في القربى",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1379.m4a",
+      "description": null,
+      "duration": 1270,
+      "published_at": "2025-08-17 18:04:03",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مثل المؤمن. خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1386.m4a",
+      "description": null,
+      "duration": 1362,
+      "published_at": "2025-08-22 12:26:16",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 33
+    },
+    {
+      "title": "سماحة الإسلام",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1390.m4a",
+      "description": null,
+      "duration": 1493,
+      "published_at": "2025-08-29 12:42:16",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المولد الشريف",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1398.m4a",
+      "description": null,
+      "duration": 1545,
+      "published_at": "2025-09-05 14:42:00",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 20
+    },
+    {
+      "title": "عندما يكون الضعف سلاحا",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1416.m4a",
+      "description": null,
+      "duration": 1192,
+      "published_at": "2025-09-11 03:34:36",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "بيعه العقبه الثانيه",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1417.m4a",
+      "description": null,
+      "duration": 1424,
+      "published_at": "2025-09-11 03:35:10",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 21
+    },
+    {
+      "title": "طيب الأثر",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1418.m4a",
+      "description": null,
+      "duration": 1589,
+      "published_at": "2025-09-12 21:41:21",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "النبي المُعَلِّم",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1425.m4a",
+      "description": null,
+      "duration": 1885,
+      "published_at": "2025-09-20 08:04:03",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 22
+    },
+    {
+      "title": "اليقين خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1436.m4a",
+      "description": null,
+      "duration": 1623,
+      "published_at": "2025-09-26 11:49:17",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 34
+    },
+    {
+      "title": "الوطن خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1438.m4a",
+      "description": null,
+      "duration": 1522,
+      "published_at": "2025-10-03 12:18:45",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 35
+    },
+    {
+      "title": "خواطر حول سورة القصص",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1441.m4a",
+      "description": null,
+      "duration": 1289,
+      "published_at": "2025-10-04 08:37:24",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 4
+    },
+    {
+      "title": "خيركم لاهله (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1442.m4a",
+      "description": null,
+      "duration": 2089,
+      "published_at": "2025-10-04 08:37:49",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "حديث القرآن عن اليقين",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1443.m4a",
+      "description": null,
+      "duration": 1549,
+      "published_at": "2025-10-04 08:38:08",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مفهوم الهجرة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1445.m4a",
+      "description": null,
+      "duration": 1533,
+      "published_at": "2025-10-08 20:02:58",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 23
+    },
+    {
+      "title": "لَا تَتَّبِعُوا خُطُوَاتِ الشَّيْطَانِ 1",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1448.m4a",
+      "description": null,
+      "duration": 1073,
+      "published_at": "2025-10-10 20:49:47",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "من أحداث الهجرة (درس السيرة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1450.m4a",
+      "description": null,
+      "duration": 1370,
+      "published_at": "2025-10-13 22:28:52",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 24
+    },
+    {
+      "title": "ماء مدين سورة القصص",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1451.m4a",
+      "description": null,
+      "duration": 1160,
+      "published_at": "2025-10-15 20:44:33",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 5
+    },
+    {
+      "title": "بالتي هي أحسن خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1452.m4a",
+      "description": null,
+      "duration": 1537,
+      "published_at": "2025-10-17 12:06:13",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 36
+    },
+    {
+      "title": "شرح عجائب القلب",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1456.m4a",
+      "description": null,
+      "duration": 1373,
+      "published_at": "2025-10-19 16:41:07",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح عجائب القلب",
+      "series_order": 1
+    },
+    {
+      "title": "السودان جليبيب هذه الأمة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1462.mp3",
+      "description": null,
+      "duration": 1051,
+      "published_at": "2025-10-22 03:43:55",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "VID20251022184446",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1463.mp3",
+      "description": null,
+      "duration": 1735,
+      "published_at": "2025-10-23 04:00:16",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "البيئة هى الأم الكبرى",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1466.m4a",
+      "description": null,
+      "duration": 1795,
+      "published_at": "2025-10-24 15:53:00",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "س وج الرضاع وحق الزوج والزوجه (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1472.m4a",
+      "description": null,
+      "duration": 2001,
+      "published_at": "2025-10-29 23:09:17",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "ما أنزلنا عليك القرآن لتشقى خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1473.m4a",
+      "description": null,
+      "duration": 1629,
+      "published_at": "2025-10-31 18:59:36",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 37
+    },
+    {
+      "title": "الأطفال ومواقع التواصل خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1474.m4a",
+      "description": null,
+      "duration": 1956,
+      "published_at": "2025-11-07 22:52:09",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 38
+    },
+    {
+      "title": "الأحكام بالظواهر(خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1476.m4a",
+      "description": null,
+      "duration": 1750,
+      "published_at": "2025-11-14 12:18:48",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 39
+    },
+    {
+      "title": "شرح عجائب القلب 1",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1477.m4a",
+      "description": null,
+      "duration": 2074,
+      "published_at": "2025-11-16 20:36:34",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح عجائب القلب",
+      "series_order": 2
+    },
+    {
+      "title": "القصص آية 27،28",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1480.m4a",
+      "description": null,
+      "duration": 2140,
+      "published_at": "2025-11-20 03:47:22",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 6
+    },
+    {
+      "title": "كن جميلا( خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1485.m4a",
+      "description": null,
+      "duration": 1709,
+      "published_at": "2025-11-22 22:16:12",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 40
+    },
+    {
+      "title": "شرح عجائب القلب 2",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1488.m4a",
+      "description": null,
+      "duration": 1657,
+      "published_at": "2025-11-23 16:11:37",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح عجائب القلب",
+      "series_order": 3
+    },
+    {
+      "title": "احترام الكبار(خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1490.m4a",
+      "description": null,
+      "duration": 1602,
+      "published_at": "2025-11-28 13:41:45",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 41
+    },
+    {
+      "title": "شرح عجائب القلب 3 (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1491.m4a",
+      "description": null,
+      "duration": 2138,
+      "published_at": "2025-11-30 21:26:42",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح عجائب القلب",
+      "series_order": 4
+    },
+    {
+      "title": "درس السيرة(في دار الندوة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1492.m4a",
+      "description": null,
+      "duration": 1285,
+      "published_at": "2025-12-01 17:32:18",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 25
+    },
+    {
+      "title": "العقول المحمدية",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1494.m4a",
+      "description": null,
+      "duration": 1693,
+      "published_at": "2025-12-06 09:03:06",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "شرح عجائب القلب 4",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1497.m4a",
+      "description": null,
+      "duration": 2620,
+      "published_at": "2025-12-08 09:20:31",
+      "topic_slug": "tazkiyah",
+      "series_title": "شرح عجائب القلب",
+      "series_order": 5
+    },
+    {
+      "title": "درس السيرة(الهجرة1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1498.m4a",
+      "description": null,
+      "duration": 1771,
+      "published_at": "2025-12-08 19:39:27",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 26
+    },
+    {
+      "title": "القصص",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1499.mp3",
+      "description": null,
+      "duration": 2076,
+      "published_at": "2025-12-10 20:29:09",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 7
+    },
+    {
+      "title": "درس السيرة(الهجرة2)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1500.m4a",
+      "description": null,
+      "duration": 1346,
+      "published_at": "2025-12-15 23:09:13",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 27
+    },
+    {
+      "title": "موعظة بعنوان(... كانوا ...)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1501.m4a",
+      "description": null,
+      "duration": 1046,
+      "published_at": "2025-12-17 19:42:22",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "التطرف الرياضي خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1502.m4a",
+      "description": null,
+      "duration": 2048,
+      "published_at": "2025-12-19 16:13:28",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 42
+    },
+    {
+      "title": "المال العام",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1503.m4a",
+      "description": null,
+      "duration": 1906,
+      "published_at": "2025-12-19 16:14:04",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "السيرة( الهجرة3)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1507.m4a",
+      "description": null,
+      "duration": 1686,
+      "published_at": "2025-12-22 20:21:34",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 28
+    },
+    {
+      "title": "تربية الأولاد(خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1508.m4a",
+      "description": null,
+      "duration": 2147,
+      "published_at": "2025-12-28 17:13:33",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 43
+    },
+    {
+      "title": "القصص ٢٤-١٢-٢٠٢٥",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2025/msg_1510.mp3",
+      "description": null,
+      "duration": 2195,
+      "published_at": "2025-12-31 15:14:14",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 8
+    },
+    {
+      "title": "قيمة الوقت. خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1511.m4a",
+      "description": null,
+      "duration": 1990,
+      "published_at": "2026-01-02 14:17:42",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 44
+    },
+    {
+      "title": "معالم الشريعة(المقدمة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1513.m4a",
+      "description": null,
+      "duration": 2659,
+      "published_at": "2026-01-05 18:14:18",
+      "topic_slug": "fiqh",
+      "series_title": "معالم الشريعة",
+      "series_order": 1
+    },
+    {
+      "title": "السيرة(طريق الهجرة1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1514.m4a",
+      "description": null,
+      "duration": 1666,
+      "published_at": "2026-01-05 18:14:19",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 29
+    },
+    {
+      "title": "الاحترام(خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1516.m4a",
+      "description": null,
+      "duration": 1993,
+      "published_at": "2026-01-09 14:33:13",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 45
+    },
+    {
+      "title": "معالم الشريعة 1",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1520.m4a",
+      "description": null,
+      "duration": 1485,
+      "published_at": "2026-01-13 04:50:16",
+      "topic_slug": "fiqh",
+      "series_title": "معالم الشريعة",
+      "series_order": 2
+    },
+    {
+      "title": "من فقه الابتلاء",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1521.m4a",
+      "description": null,
+      "duration": 1859,
+      "published_at": "2026-01-13 04:51:09",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "حفل الإسراء والمعراج",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1523.m4a",
+      "description": null,
+      "duration": 4725,
+      "published_at": "2026-01-15 20:40:07",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 30
+    },
+    {
+      "title": "من دروس الإسراء(خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1525.m4a",
+      "description": null,
+      "duration": 1879,
+      "published_at": "2026-01-17 16:19:50",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 46
+    },
+    {
+      "title": "طريق الهجرة 2",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1528.m4a",
+      "description": null,
+      "duration": 2158,
+      "published_at": "2026-01-19 20:34:50",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 31
+    },
+    {
+      "title": "المهن طريق العمران والإيمانخطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1530.m4a",
+      "description": null,
+      "duration": 1674,
+      "published_at": "2026-01-23 11:37:28",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 47
+    },
+    {
+      "title": "بطولات لا تنسى( خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1533.m4a",
+      "description": null,
+      "duration": 1613,
+      "published_at": "2026-01-30 13:52:04",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 48
+    },
+    {
+      "title": "ما قدمت لغد( موعظة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1534.m4a",
+      "description": null,
+      "duration": 980,
+      "published_at": "2026-02-01 19:57:53",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "القصص آية ٣٨ إلى ٤٢",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1535.m4a",
+      "description": null,
+      "duration": 1997,
+      "published_at": "2026-02-05 07:39:58",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 9
+    },
+    {
+      "title": "مش هانرد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1536.mp3",
+      "description": null,
+      "duration": 1696,
+      "published_at": "2026-02-09 14:18:58",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "يوم بدر(خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1560.m4a",
+      "description": null,
+      "duration": 1933,
+      "published_at": "2026-03-06 11:37:51",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 49
+    },
+    {
+      "title": "الصحبة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1578.m4a",
+      "description": null,
+      "duration": 1283,
+      "published_at": "2026-03-11 14:53:06",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "منزلة الشهيد(خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1579.m4a",
+      "description": null,
+      "duration": 2005,
+      "published_at": "2026-03-13 11:46:25",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 50
+    },
+    {
+      "title": "التحرش الإلكتروني خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1583.m4a",
+      "description": null,
+      "duration": 2050,
+      "published_at": "2026-03-27 14:13:31",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 51
+    },
+    {
+      "title": "قولا ثقيلا",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1584.m4a",
+      "description": null,
+      "duration": 2029,
+      "published_at": "2026-03-30 11:59:19",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "رعاية اليتيم خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1586.m4a",
+      "description": null,
+      "duration": 2034,
+      "published_at": "2026-04-03 12:29:04",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 52
+    },
+    {
+      "title": "سنة أولى ذكر",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1587.m4a",
+      "description": null,
+      "duration": 2168,
+      "published_at": "2026-04-05 23:55:52",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "رمزية الهجرة( درس السيرة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1595.m4a",
+      "description": null,
+      "duration": 1918,
+      "published_at": "2026-04-07 04:16:28",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 32
+    },
+    {
+      "title": "سورة القصص آية ٥٠ وحتى ٥٥ مجلس التفسير",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1601.m4a",
+      "description": null,
+      "duration": 1739,
+      "published_at": "2026-04-08 22:55:37",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 10
+    },
+    {
+      "title": "ْمفهوم الوِرد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1604.mp3",
+      "description": null,
+      "duration": 2540,
+      "published_at": "2026-04-13 21:18:50",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "النصوص الشرعية(خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1605.m4a",
+      "description": null,
+      "duration": 1567,
+      "published_at": "2026-04-13 21:40:05",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 53
+    },
+    {
+      "title": "الثلاثاء س،ج (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1606.m4a",
+      "description": null,
+      "duration": 1630,
+      "published_at": "2026-04-15 19:52:47",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "القصص آية 56",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1607.m4a",
+      "description": null,
+      "duration": 1928,
+      "published_at": "2026-04-15 20:03:27",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 11
+    },
+    {
+      "title": "حقائق منسية خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1608.m4a",
+      "description": null,
+      "duration": 1938,
+      "published_at": "2026-04-17 22:27:41",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 54
+    },
+    {
+      "title": "أنا وأخوي على الدرس",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1609.m4a",
+      "description": null,
+      "duration": 3347,
+      "published_at": "2026-04-21 10:08:37",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "خيمة أم معبد درس السيرة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1610.m4a",
+      "description": null,
+      "duration": 1973,
+      "published_at": "2026-04-21 10:11:19",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 33
+    },
+    {
+      "title": "القصص ٥٩،٥٨،٥٧",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1611.m4a",
+      "description": null,
+      "duration": 1817,
+      "published_at": "2026-04-22 17:54:30",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 12
+    },
+    {
+      "title": "الأرض المباركة خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1612.m4a",
+      "description": null,
+      "duration": 1653,
+      "published_at": "2026-04-24 20:39:59",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 55
+    },
+    {
+      "title": "الرحمة خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1617.m4a",
+      "description": null,
+      "duration": 1790,
+      "published_at": "2026-05-08 10:49:03",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 56
+    },
+    {
+      "title": "ذم الهوى",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1619.m4a",
+      "description": null,
+      "duration": 0,
+      "published_at": "2026-05-11 18:59:27",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "عشر ذي الحجة خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1623.m4a",
+      "description": null,
+      "duration": 1892,
+      "published_at": "2026-05-16 02:58:40",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 57
+    },
+    {
+      "title": "الرضا خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1627.m4a",
+      "description": null,
+      "duration": 1726,
+      "published_at": "2026-06-05 19:48:44",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 58
+    },
+    {
+      "title": "السيرة( في بيت أبي أيوب)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1634.m4a",
+      "description": null,
+      "duration": 1509,
+      "published_at": "2026-06-08 22:37:29",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 34
+    },
+    {
+      "title": "أحكام الهجرة (السيرة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1635.m4a",
+      "description": null,
+      "duration": 2346,
+      "published_at": "2026-06-08 22:38:48",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 35
+    },
+    {
+      "title": "زوجك ظهرك",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1637.m4a",
+      "description": null,
+      "duration": 2913,
+      "published_at": "2026-06-08 23:31:20",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "استقرار الأسرة خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1641.m4a",
+      "description": null,
+      "duration": 2007,
+      "published_at": "2026-06-12 22:49:00",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 59
+    },
+    {
+      "title": "فقه الهجرة خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1643.m4a",
+      "description": null,
+      "duration": 1831,
+      "published_at": "2026-06-19 23:43:52",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 60
+    },
+    {
+      "title": "مواسم الطاعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1644.m4a",
+      "description": null,
+      "duration": 1869,
+      "published_at": "2026-06-23 06:38:43",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مجتمع المدينة1(سيرة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1645.m4a",
+      "description": null,
+      "duration": 1718,
+      "published_at": "2026-06-23 06:39:05",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "سورة القصص مفهوم السكن بالليل",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1646.m4a",
+      "description": null,
+      "duration": 2782,
+      "published_at": "2026-06-23 06:39:43",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 13
+    },
+    {
+      "title": "اطب مطعمك تكن مستجاب الدعوه",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1647.m4a",
+      "description": null,
+      "duration": 1425,
+      "published_at": "2026-06-24 02:34:54",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "عاشوراء",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1649.m4a",
+      "description": null,
+      "duration": 1182,
+      "published_at": "2026-06-25 02:11:29",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "سلامة الصدر(خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1652.m4a",
+      "description": null,
+      "duration": 1803,
+      "published_at": "2026-06-26 11:33:22",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 61
+    },
+    {
+      "title": "ادخلوا مصر. خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1654.m4a",
+      "description": null,
+      "duration": 1690,
+      "published_at": "2026-07-03 12:51:12",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 62
+    },
+    {
+      "title": "قارون ٢",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1655.m4a",
+      "description": null,
+      "duration": 1457,
+      "published_at": "2026-07-05 22:39:09",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 14
+    },
+    {
+      "title": "فلسفة الطعام فى الإسلام ٤",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1656.m4a",
+      "description": null,
+      "duration": 1863,
+      "published_at": "2026-07-05 22:40:06",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "قارون 3 سورة القصص",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1659.m4a",
+      "description": null,
+      "duration": 2162,
+      "published_at": "2026-07-09 01:00:26",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 15
+    },
+    {
+      "title": "الرفق خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1662.m4a",
+      "description": null,
+      "duration": 1884,
+      "published_at": "2026-07-10 16:12:59",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 63
+    },
+    {
+      "title": "قارون4 سورة القصص",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1667.m4a",
+      "description": null,
+      "duration": 1535,
+      "published_at": "2026-07-16 03:21:25",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 16
+    },
+    {
+      "title": "في معنى الصلاة على سيدنا رسول الله",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1673.m4a",
+      "description": null,
+      "duration": 2278,
+      "published_at": "2026-07-16 18:13:48",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 36
+    },
+    {
+      "title": "باب الافتقار إلى الله",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1674.m4a",
+      "description": null,
+      "duration": 1875,
+      "published_at": "2026-07-16 21:04:15",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "حق الطريق خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1675.m4a",
+      "description": null,
+      "duration": 1705,
+      "published_at": "2026-07-17 12:34:40",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 64
+    },
+    {
+      "title": "استكمال حق الطريق (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1682.m4a",
+      "description": null,
+      "duration": 1340,
+      "published_at": "2026-07-20 12:41:41",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "وصية للشباب من عقد نكاح-1",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1683.m4a",
+      "description": null,
+      "duration": 696,
+      "published_at": "2026-07-20 12:52:10",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "المؤاخاة درس السيرة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1684.m4a",
+      "description": null,
+      "duration": 1641,
+      "published_at": "2026-07-20 19:20:22",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 37
+    },
+    {
+      "title": "(تلك الدار الآخرة) سورة القصص",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1690.m4a",
+      "description": null,
+      "duration": 1527,
+      "published_at": "2026-07-24 14:23:35",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 17
+    },
+    {
+      "title": "نعمة الماء خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1691.m4a",
+      "description": null,
+      "duration": 2121,
+      "published_at": "2026-07-24 14:26:51",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 65
+    },
+    {
+      "title": "درس خادم عام",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1693.m4a",
+      "description": null,
+      "duration": 3067,
+      "published_at": "2026-07-26 19:12:40",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "خواتيم سورة القصص",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1698.m4a",
+      "description": null,
+      "duration": 1658,
+      "published_at": "2026-07-30 01:43:36",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 18
+    },
+    {
+      "title": "الرشوه وأثرها فى إفساد المجتمع",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1703.m4a",
+      "description": null,
+      "duration": 1611,
+      "published_at": "2026-07-31 23:21:19",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "درس خادم عام ٢",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1707.m4a",
+      "description": null,
+      "duration": 1902,
+      "published_at": "2026-08-02 19:00:23",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "القصص من ٦٠الى ٦٨",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1712.m4a",
+      "description": null,
+      "duration": 1491,
+      "published_at": "2026-08-05 18:56:18",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 19
+    },
+    {
+      "title": "سورة القصص المقاصد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1713.m4a",
+      "description": null,
+      "duration": 2517,
+      "published_at": "2026-08-05 19:29:33",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة القصص",
+      "series_order": 20
+    },
+    {
+      "title": "التنمر خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1720.m4a",
+      "description": null,
+      "duration": 2059,
+      "published_at": "2026-08-07 12:30:28",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 66
+    },
+    {
+      "title": "بين يدي سورة الكهف",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1735.m4a",
+      "description": null,
+      "duration": 2722,
+      "published_at": "2026-08-13 12:32:44",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة الكهف",
+      "series_order": 1
+    },
+    {
+      "title": "الإحسان إلى المساكين خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1737.m4a",
+      "description": null,
+      "duration": 1853,
+      "published_at": "2026-08-14 11:19:28",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 67
+    },
+    {
+      "title": "رسول الله(من مظاهر وحدة الأمة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1738.m4a",
+      "description": null,
+      "duration": 1732,
+      "published_at": "2026-08-16 17:46:13",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 38
+    },
+    {
+      "title": "(رسول الله) خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1749.m4a",
+      "description": null,
+      "duration": 2190,
+      "published_at": "2026-08-21 13:13:07",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 68
+    },
+    {
+      "title": "ذكرى المولد ١٤٤٨",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1759.m4a",
+      "description": null,
+      "duration": 4832,
+      "published_at": "2026-08-27 07:48:53",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 39
+    },
+    {
+      "title": "نبي الرحمة. خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1762.m4a",
+      "description": null,
+      "duration": 1989,
+      "published_at": "2026-08-28 11:38:13",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 69
+    },
+    {
+      "title": "Track 6",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1775.m4a",
+      "description": null,
+      "duration": 2136,
+      "published_at": "2026-09-11 15:46:04",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "ح ( إن الله فرض فرائض)1",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1778.m4a",
+      "description": null,
+      "duration": 1157,
+      "published_at": "2026-09-14 18:14:17",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "إن الله فرض فرائض ٢",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1779.m4a",
+      "description": null,
+      "duration": 2102,
+      "published_at": "2026-09-16 19:49:45",
+      "topic_slug": "fiqh",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "سورة الكهف 2",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1780.m4a",
+      "description": null,
+      "duration": 2643,
+      "published_at": "2026-09-16 19:54:21",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة الكهف",
+      "series_order": 2
+    },
+    {
+      "title": "( منازل الناس) خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1783.m4a",
+      "description": null,
+      "duration": 1924,
+      "published_at": "2026-09-18 14:06:44",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 70
+    },
+    {
+      "title": "جالس تجانس",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1788.m4a",
+      "description": null,
+      "duration": 1893,
+      "published_at": "2026-09-20 19:26:12",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "تأسيس مجتمع المدينة. درس السيرة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1791.m4a",
+      "description": null,
+      "duration": 1962,
+      "published_at": "2026-09-21 18:38:15",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 40
+    },
+    {
+      "title": "سورة الكهف 3",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1792.m4a",
+      "description": null,
+      "duration": 2303,
+      "published_at": "2026-09-23 18:30:30",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة الكهف",
+      "series_order": 3
+    },
+    {
+      "title": "البيئة و الحفاظ عليها خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1793.m4a",
+      "description": null,
+      "duration": 1904,
+      "published_at": "2026-09-25 13:39:56",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 71
+    },
+    {
+      "title": "أسباب حُسْنُ العلاقة مع الله",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1795.m4a",
+      "description": null,
+      "duration": 1720,
+      "published_at": "2026-09-28 21:44:48",
+      "topic_slug": "tazkiyah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "زينة الدنيا، سورة الكهف4",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1796.m4a",
+      "description": null,
+      "duration": 2556,
+      "published_at": "2026-09-30 19:12:04",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة الكهف",
+      "series_order": 4
+    },
+    {
+      "title": "كيف نحفظ الوطن ( خطبة جمعة )",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1798.m4a",
+      "description": null,
+      "duration": 1751,
+      "published_at": "2026-10-02 10:37:25",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 72
+    },
+    {
+      "title": "الكهف 5 (1)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1801.m4a",
+      "description": null,
+      "duration": 3004,
+      "published_at": "2026-10-07 18:51:28",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة الكهف",
+      "series_order": 5
+    },
+    {
+      "title": "وَأَعِدُّوا (خطبة جمعة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1802.m4a",
+      "description": null,
+      "duration": 2285,
+      "published_at": "2026-10-09 11:28:37",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 73
+    },
+    {
+      "title": "تعظيم الله فى قلب العبد",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1807.m4a",
+      "description": null,
+      "duration": 1026,
+      "published_at": "2026-10-16 14:51:13",
+      "topic_slug": "aqeedah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "تأسيس مجتمع المدينة ٢ درس السيرة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1808.m4a",
+      "description": null,
+      "duration": 1147,
+      "published_at": "2026-10-16 14:54:31",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 41
+    },
+    {
+      "title": "خطبة الجمعه لفضيلة الشيخ محمود الأزهري",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1810.mp3",
+      "description": null,
+      "duration": 2457,
+      "published_at": "2026-10-16 19:46:22",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 74
+    },
+    {
+      "title": "ثوابت الإسلام (المقدمة)",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1812.m4a",
+      "description": null,
+      "duration": 1029,
+      "published_at": "2026-10-21 04:56:02",
+      "topic_slug": "aqeedah",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الذوق العام خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1813.m4a",
+      "description": null,
+      "duration": 2033,
+      "published_at": "2026-10-23 15:51:40",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 75
+    },
+    {
+      "title": "دور الأسرة في الذوق العام 1",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1814.m4a",
+      "description": null,
+      "duration": 2159,
+      "published_at": "2026-10-25 20:28:29",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "مخاطر الألعاب الرقمية. خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1816.m4a",
+      "description": null,
+      "duration": 2401,
+      "published_at": "2026-10-30 13:45:41",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 76
+    },
+    {
+      "title": "سرية سيف البحر سيرة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1820.m4a",
+      "description": null,
+      "duration": 1808,
+      "published_at": "2026-11-02 21:50:51",
+      "topic_slug": "seerah",
+      "series_title": "دروس السيرة النبوية",
+      "series_order": 42
+    },
+    {
+      "title": "العمل والإنتاج خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1822.m4a",
+      "description": null,
+      "duration": 1900,
+      "published_at": "2026-11-06 13:16:50",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 77
+    },
+    {
+      "title": "لقاء حول سورة ق",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1823.m4a",
+      "description": null,
+      "duration": 1906,
+      "published_at": "2026-11-06 17:43:35",
+      "topic_slug": "tafsir",
+      "series_title": null,
+      "series_order": 0
+    },
+    {
+      "title": "الكهف( قصة الفتية )",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1831.m4a",
+      "description": "الكهف 6",
+      "duration": 2616,
+      "published_at": "2026-11-18 19:55:08",
+      "topic_slug": "tafsir",
+      "series_title": "تفسير سورة الكهف",
+      "series_order": 6
+    },
+    {
+      "title": "حقوق الطفل- خطبة جمعة",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1833.m4a",
+      "description": null,
+      "duration": 2354,
+      "published_at": "2026-11-20 11:33:11",
+      "topic_slug": "khutab",
+      "series_title": "خطب الجمعة",
+      "series_order": 78
+    },
+    {
+      "title": "عملي- حقوق الطفل",
+      "external_url": "https://archive.org/download/mahmoud-azhary-audios-2026/msg_1834.m4a",
+      "description": null,
+      "duration": 450,
+      "published_at": "2026-11-20 11:35:31",
+      "topic_slug": "family",
+      "series_title": null,
+      "series_order": 0
+    }
+  ]
+}

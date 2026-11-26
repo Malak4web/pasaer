@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Audio;
+use App\Models\Series;
+use App\Models\Topic;
 use App\Support\Arabic;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 
 class AudioController extends CrudController
 {
@@ -55,5 +59,64 @@ class AudioController extends CrudController
         unset($data['file'], $data['remove_file']);
 
         return $data;
+    }
+
+    /** صفحة إعادة تصنيف الصوتيات بالسحب والإفلات */
+    public function organize(): View
+    {
+        $topics = Topic::orderBy('sort_order')->orderBy('name')->get(['id', 'name', 'icon']);
+        $seriesList = Series::where('kind', 'audio')->orderBy('sort_order')->orderBy('title')->get(['id', 'title', 'topic_id']);
+        $audios = Audio::query()
+            ->orderByDesc('published_at')
+            ->orderByDesc('id')
+            ->get(['id', 'title', 'topic_id', 'series_id', 'series_order', 'duration', 'published_at', 'status'])
+            ->map(fn (Audio $a) => [
+                'id' => $a->id,
+                'title' => $a->title,
+                'topic_id' => $a->topic_id,
+                'series_id' => $a->series_id,
+                'series_order' => $a->series_order,
+                'duration' => Arabic::formatDuration($a->duration),
+                'date' => $a->published_at?->format('Y-m-d') ?? '',
+                'status' => $a->status,
+                'edit_url' => route('admin.audios.edit', $a),
+            ]);
+
+        return view('admin.audios.organize', compact('topics', 'seriesList', 'audios'));
+    }
+
+    /** حفظ إعادة التصنيف (سحب وإفلات) عبر AJAX */
+    public function recategorize(Request $request): JsonResponse
+    {
+        $field = $request->input('field');
+        if (! in_array($field, ['topic_id', 'series_id'], true)) {
+            return response()->json(['ok' => false, 'message' => 'حقل التصنيف غير صالح.'], 422);
+        }
+
+        $table = $field === 'topic_id' ? 'topics' : 'series';
+        $data = $request->validate([
+            'ids' => ['required', 'array', 'min:1'],
+            'ids.*' => ['integer', 'exists:audios,id'],
+            'value' => ['nullable', 'integer', "exists:{$table},id"],
+        ]);
+
+        $value = $data['value'] ?? null;
+        $update = [$field => $value];
+
+        // عند نقل صوتية إلى سلسلة لها موضوع محدد، نربطها بنفس الموضوع تلقائيًا لو لم يكن لها موضوع
+        if ($field === 'series_id' && $value !== null) {
+            $seriesTopicId = Series::whereKey($value)->value('topic_id');
+            if ($seriesTopicId) {
+                $update['topic_id'] = $seriesTopicId;
+            }
+        }
+
+        $updated = Audio::whereIn('id', $data['ids'])->update($update);
+
+        return response()->json([
+            'ok' => true,
+            'updated' => $updated,
+            'applied' => $update,
+        ]);
     }
 }

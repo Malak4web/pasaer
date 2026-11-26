@@ -8,6 +8,7 @@
         ['admin.lessons.index', 'الدروس', 'ti-book', $drafts(\App\Models\Lesson::class)],
         ['admin.posts.index', 'المنشورات', 'ti-notes', $drafts(\App\Models\Post::class)],
         'التنظيم',
+        ['admin.audios.organize', 'تصنيف الصوتيات', 'ti-arrows-move', null],
         ['admin.series.index', 'السلاسل', 'ti-stack-2', null],
         ['admin.topics.index', 'المواضيع', 'ti-category', null],
     ];
@@ -27,7 +28,7 @@
     <link rel="icon" href="{{ asset('assets/admin/favicon.svg') }}" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
     <link rel="stylesheet" href="{{ asset('assets/admin/admin.css') }}?v={{ filemtime(public_path('assets/admin/admin.css')) }}">
 </head>
