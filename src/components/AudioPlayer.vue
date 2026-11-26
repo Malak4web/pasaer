@@ -53,7 +53,7 @@ watch(
 <template>
   <Transition name="slide">
     <section v-if="p.track" class="player" aria-label="مشغّل الصوتيات">
-      <div class="seek">
+      <div v-if="!p.isLive" class="seek">
         <label for="seek" class="sr-only">موضع التشغيل</label>
         <input
           id="seek"
@@ -69,32 +69,33 @@ watch(
       </div>
 
       <div class="row">
-        <RouterLink :to="`/audio/${p.track.id}`" class="now">
+        <RouterLink :to="p.isLive ? '/tools?tab=radio' : `/audio/${p.track.id}`" class="now">
           <span class="art" :class="{ on: p.playing }" aria-hidden="true">
-            <i class="ti ti-headphones"></i>
+            <i class="ti" :class="p.isLive ? 'ti-radio' : 'ti-headphones'"></i>
           </span>
           <span class="txt">
             <span class="title">{{ p.track.title }}</span>
             <span class="sub">
-              {{ sub }}
+              <span v-if="p.isLive" class="live-badge"><span class="live-dot"></span> بث مباشر</span>
+              {{ p.isLive ? (p.track.subtitle || 'إذاعة القرآن الكريم') : sub }}
               <span v-if="p.isDemo" class="demo" title="لم يُضف ملف صوتي بعد، التشغيل محاكاة">تجريبي</span>
             </span>
           </span>
         </RouterLink>
 
         <div class="controls">
-          <button class="ctl hide-sm" aria-label="السابق" @click="p.prev"><i class="ti ti-player-skip-forward" aria-hidden="true"></i></button>
-          <button class="ctl hide-sm" aria-label="ترجيع ١٥ ثانية" @click="p.skip(-15)"><i class="ti ti-rewind-forward-15" aria-hidden="true"></i></button>
+          <button v-if="!p.isLive" class="ctl hide-sm" aria-label="السابق" @click="p.prev"><i class="ti ti-player-skip-forward" aria-hidden="true"></i></button>
+          <button v-if="!p.isLive" class="ctl hide-sm" aria-label="ترجيع ١٥ ثانية" @click="p.skip(-15)"><i class="ti ti-rewind-forward-15" aria-hidden="true"></i></button>
           <button class="main" :aria-label="p.playing ? 'إيقاف مؤقت' : 'تشغيل'" @click="p.toggle">
             <i class="ti" :class="p.playing ? 'ti-player-pause' : 'ti-player-play'" aria-hidden="true"></i>
           </button>
-          <button class="ctl hide-sm" aria-label="تقديم ١٥ ثانية" @click="p.skip(15)"><i class="ti ti-rewind-backward-15" aria-hidden="true"></i></button>
-          <button class="ctl hide-sm" aria-label="التالي" @click="p.next"><i class="ti ti-player-skip-back" aria-hidden="true"></i></button>
+          <button v-if="!p.isLive" class="ctl hide-sm" aria-label="تقديم ١٥ ثانية" @click="p.skip(15)"><i class="ti ti-rewind-backward-15" aria-hidden="true"></i></button>
+          <button v-if="!p.isLive" class="ctl hide-sm" aria-label="التالي" @click="p.next"><i class="ti ti-player-skip-back" aria-hidden="true"></i></button>
         </div>
 
         <div class="extra">
-          <span class="time">{{ clock(p.position) }} / {{ clock(p.duration) }}</span>
-          <button class="rate" :aria-label="`سرعة التشغيل ${rateLabel}`" @click="p.cycleRate">{{ rateLabel }}</button>
+          <span v-if="!p.isLive" class="time">{{ clock(p.position) }} / {{ clock(p.duration) }}</span>
+          <button v-if="!p.isLive" class="rate" :aria-label="`سرعة التشغيل ${rateLabel}`" @click="p.cycleRate">{{ rateLabel }}</button>
           <button class="ctl" aria-label="إغلاق المشغّل" @click="close"><i class="ti ti-x" aria-hidden="true"></i></button>
         </div>
       </div>
@@ -169,6 +170,9 @@ watch(
 .now:hover .title { color: var(--primary); }
 .sub { font-size: 12px; color: var(--text-3); display: flex; align-items: center; gap: 6px; white-space: nowrap; overflow: hidden; }
 .demo { background: var(--sand); color: var(--sand-text); font-size: 11px; padding: 0 6px; border-radius: 4px; }
+.live-badge { display: inline-flex; align-items: center; gap: 5px; background: #fee2e2; color: #b91c1c; font-size: 11px; font-weight: 600; padding: 0 7px; border-radius: 999px; }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: #dc2626; animation: livePulse 1.4s infinite; }
+@keyframes livePulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
 
 .controls { display: flex; align-items: center; gap: 4px; }
 .ctl {

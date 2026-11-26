@@ -34,6 +34,7 @@ export const usePlayerStore = defineStore('player', () => {
   const audio = typeof Audio !== 'undefined' ? new Audio() : null
   let demoTimer = null
   const isDemo = computed(() => !!track.value && !track.value.src)
+  const isLive = computed(() => !!track.value?.isLive)
 
   // ---------- audio element wiring ----------
   if (audio) {
@@ -64,19 +65,19 @@ export const usePlayerStore = defineStore('player', () => {
   // ---------- actions ----------
   function play(t, list) {
     if (list) queue.value = list
-    if (track.value?.id === t.id) return resume()
+    if (track.value?.id === t.id) return toggle()
 
     pause()
     track.value = t
-    duration.value = t.duration || 0
-    const saved = progress.value[t.id]
+    duration.value = t.isLive ? 0 : (t.duration || 0)
+    const saved = t.isLive ? null : progress.value[t.id]
     position.value = saved && saved.position < (saved.duration || Infinity) - 5 ? saved.position : 0
 
     if (t.src && audio) {
-      api.audioPlayed(t.id) // إحصائية التشغيل في لوحة التحكم
+      if (!t.isLive) api.audioPlayed(t.id) // إحصائية التشغيل في لوحة التحكم
       audio.src = t.src
-      audio.currentTime = position.value
-      audio.playbackRate = rate.value
+      if (!t.isLive) audio.currentTime = position.value
+      audio.playbackRate = t.isLive ? 1 : rate.value
       audio.play().catch(() => (playing.value = false))
     } else {
       startDemo()
@@ -139,7 +140,7 @@ export const usePlayerStore = defineStore('player', () => {
   // ---------- persist listening progress (throttled) ----------
   let lastSaved = 0
   watch(position, (p) => {
-    if (!track.value) return
+    if (!track.value || track.value.isLive) return
     const now = Date.now()
     if (now - lastSaved < 3000 && playing.value) return
     lastSaved = now
@@ -164,7 +165,7 @@ export const usePlayerStore = defineStore('player', () => {
   }
 
   return {
-    track, queue, playing, position, duration, rate, expanded, isDemo,
+    track, queue, playing, position, duration, rate, expanded, isDemo, isLive,
     continueListening,
     play, pause, resume, toggle, seek, skip, next, prev, setRate, cycleRate,
     isCurrent, progressOf

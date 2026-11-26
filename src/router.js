@@ -11,6 +11,7 @@ const routes = [
   { path: '/series/:id', name: 'series', component: () => import('./views/SeriesDetail.vue') },
   { path: '/posts', name: 'posts', component: () => import('./views/PostsView.vue'), meta: { title: 'المنشورات' } },
   { path: '/posts/:id', name: 'post', component: () => import('./views/ReadView.vue'), props: { kind: 'post' } },
+  { path: '/tools', name: 'tools', component: () => import('./views/ToolsView.vue'), meta: { title: 'أدوات المسلم وإذاعة القرآن' } },
   { path: '/topics/:id', name: 'topic', component: () => import('./views/TopicView.vue') },
   { path: '/search', name: 'search', component: () => import('./views/SearchView.vue'), meta: { title: 'البحث' } },
   { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('./views/NotFound.vue'), meta: { title: 'الصفحة غير موجودة' } }

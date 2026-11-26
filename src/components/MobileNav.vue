@@ -31,7 +31,7 @@ import { mainNav } from './nav'
     background: var(--bg);
     border-top: 1px solid var(--border);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     z-index: 30;
   }
   .mitem {
