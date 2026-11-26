@@ -60,7 +60,7 @@ main { padding-bottom: 24px; }
 
 @media (max-width: 900px) {
   .main-col { margin-inline-start: 0; }
-  main { padding-bottom: calc(var(--mobile-nav-h) + 16px); }
-  .has-player main { padding-bottom: calc(var(--mobile-nav-h) + var(--player-h) + 16px); }
+  main { padding-bottom: calc(var(--mobile-nav-h) + env(safe-area-inset-bottom) + 20px); }
+  .has-player main { padding-bottom: calc(var(--mobile-nav-h) + var(--player-h) + env(safe-area-inset-bottom) + 28px); }
 }
 </style>

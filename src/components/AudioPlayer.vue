@@ -16,10 +16,18 @@ function onSeek(e) {
 
 function close() {
   p.pause()
+  p.expanded = false
   p.track = null
 }
 
-// مسافة = تشغيل/إيقاف، الأسهم = تقديم/ترجيع (خارج حقول الكتابة)
+function openExpanded(e) {
+  if (window.innerWidth <= 900) {
+    e.preventDefault()
+    p.expanded = true
+  }
+}
+
+// مسافة = تشغيل/إيقاف (خارج حقول الكتابة)
 function onKey(e) {
   if (!p.track) return
   const tag = e.target.tagName
@@ -51,8 +59,75 @@ watch(
 </script>
 
 <template>
+  <!-- شاشة المشغّل الكاملة على الموبايل -->
+  <Transition name="sheet-up">
+    <section v-if="p.track && p.expanded" class="full-player" aria-label="المشغّل الكامل">
+      <div class="fp-top">
+        <button type="button" class="ctl" aria-label="تصغير المشغّل" @click="p.expanded = false">
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <span class="fp-eyebrow">{{ p.isLive ? 'إذاعة مباشرة' : 'جاري التشغيل' }}</span>
+        <button type="button" class="ctl" aria-label="إغلاق المشغّل" @click="close">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+
+      <div class="fp-body">
+        <div class="fp-art" :class="{ on: p.playing }" aria-hidden="true">
+          <i class="ti" :class="p.isLive ? 'ti-radio' : 'ti-headphones'"></i>
+        </div>
+
+        <div class="fp-info">
+          <span v-if="p.isLive" class="live-badge"><span class="live-dot"></span> بث مباشر</span>
+          <h2>{{ p.track.title }}</h2>
+          <p>{{ p.isLive ? (p.track.subtitle || 'إذاعة القرآن الكريم') : sub }}</p>
+        </div>
+
+        <div v-if="!p.isLive" class="fp-seek">
+          <input
+            type="range"
+            min="0"
+            :max="p.duration || 0"
+            step="1"
+            :value="p.position"
+            :style="{ '--pct': pct + '%' }"
+            aria-label="موضع التشغيل"
+            @input="onSeek"
+          />
+          <div class="fp-times">
+            <span>{{ clock(p.position) }}</span>
+            <span>{{ clock(p.duration) }}</span>
+          </div>
+        </div>
+
+        <div class="fp-controls">
+          <button v-if="!p.isLive" class="ctl lg" aria-label="السابق" @click="p.prev"><i class="ti ti-player-skip-forward"></i></button>
+          <button v-if="!p.isLive" class="ctl lg" aria-label="ترجيع ١٥ ثانية" @click="p.skip(-15)"><i class="ti ti-rewind-forward-15"></i></button>
+          <button class="main lg" :aria-label="p.playing ? 'إيقاف مؤقت' : 'تشغيل'" @click="p.toggle">
+            <i class="ti" :class="p.playing ? 'ti-player-pause' : 'ti-player-play'"></i>
+          </button>
+          <button v-if="!p.isLive" class="ctl lg" aria-label="تقديم ١٥ ثانية" @click="p.skip(15)"><i class="ti ti-rewind-backward-15"></i></button>
+          <button v-if="!p.isLive" class="ctl lg" aria-label="التالي" @click="p.next"><i class="ti ti-player-skip-back"></i></button>
+        </div>
+
+        <div class="fp-foot">
+          <button v-if="!p.isLive" class="rate lg" @click="p.cycleRate">السرعة: {{ rateLabel }}</button>
+          <RouterLink
+            :to="p.isLive ? '/tools?tab=radio' : `/audio/${p.track.id}`"
+            class="fp-link"
+            @click="p.expanded = false"
+          >
+            <i class="ti ti-list-details"></i>
+            {{ p.isLive ? 'كل المحطات' : 'تفاصيل الصوتية' }}
+          </RouterLink>
+        </div>
+      </div>
+    </section>
+  </Transition>
+
+  <!-- الشريط السفلي (Desktop) / البطاقة الطافية (Mobile Mini-Player) -->
   <Transition name="slide">
-    <section v-if="p.track" class="player" aria-label="مشغّل الصوتيات">
+    <section v-if="p.track && !p.expanded" class="player" aria-label="مشغّل الصوتيات">
       <div v-if="!p.isLive" class="seek">
         <label for="seek" class="sr-only">موضع التشغيل</label>
         <input
@@ -69,7 +144,7 @@ watch(
       </div>
 
       <div class="row">
-        <RouterLink :to="p.isLive ? '/tools?tab=radio' : `/audio/${p.track.id}`" class="now">
+        <RouterLink :to="p.isLive ? '/tools?tab=radio' : `/audio/${p.track.id}`" class="now" @click="openExpanded">
           <span class="art" :class="{ on: p.playing }" aria-hidden="true">
             <i class="ti" :class="p.isLive ? 'ti-radio' : 'ti-headphones'"></i>
           </span>
@@ -96,6 +171,7 @@ watch(
         <div class="extra">
           <span v-if="!p.isLive" class="time">{{ clock(p.position) }} / {{ clock(p.duration) }}</span>
           <button v-if="!p.isLive" class="rate" :aria-label="`سرعة التشغيل ${rateLabel}`" @click="p.cycleRate">{{ rateLabel }}</button>
+          <button class="ctl show-sm" aria-label="توسيع المشغّل" @click="p.expanded = true"><i class="ti ti-chevron-up" aria-hidden="true"></i></button>
           <button class="ctl" aria-label="إغلاق المشغّل" @click="close"><i class="ti ti-x" aria-hidden="true"></i></button>
         </div>
       </div>
@@ -170,7 +246,7 @@ watch(
 .now:hover .title { color: var(--primary); }
 .sub { font-size: 12px; color: var(--text-3); display: flex; align-items: center; gap: 6px; white-space: nowrap; overflow: hidden; }
 .demo { background: var(--sand); color: var(--sand-text); font-size: 11px; padding: 0 6px; border-radius: 4px; }
-.live-badge { display: inline-flex; align-items: center; gap: 5px; background: #fee2e2; color: #b91c1c; font-size: 11px; font-weight: 600; padding: 0 7px; border-radius: 999px; }
+.live-badge { display: inline-flex; align-items: center; gap: 5px; background: #fee2e2; color: #b91c1c; font-size: 11px; font-weight: 600; padding: 1px 8px; border-radius: 999px; }
 .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #dc2626; animation: livePulse 1.4s infinite; }
 @keyframes livePulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
 
@@ -181,6 +257,7 @@ watch(
   font-size: 20px; color: var(--text-2);
 }
 .ctl:hover { background: var(--surface); color: var(--text); }
+.ctl.lg { width: 46px; height: 46px; font-size: 24px; }
 .main {
   width: 44px; height: 44px; border-radius: 50%;
   display: grid; place-items: center;
@@ -189,9 +266,10 @@ watch(
   transition: background 0.15s var(--ease), transform 0.15s var(--ease);
 }
 .main:hover { background: var(--primary-hover); }
-.main:active { transform: scale(0.95); }
+.main:active { transform: scale(0.94); }
+.main.lg { width: 66px; height: 66px; font-size: 30px; box-shadow: 0 10px 26px rgba(47, 107, 90, 0.28); }
 
-.extra { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.extra { display: flex; align-items: center; justify-content: flex-end; gap: 6px; }
 .time { font-size: 12px; color: var(--text-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .rate {
   height: 28px; min-width: 44px; padding: 0 8px;
@@ -199,14 +277,92 @@ watch(
   background: var(--surface); color: var(--text-2);
 }
 .rate:hover { background: var(--surface-2); color: var(--text); }
+.rate.lg { height: 38px; padding: 0 16px; font-size: 14px; }
+.show-sm { display: none; }
+
+/* Full-screen Mobile Now-Playing Sheet */
+.full-player {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  padding: calc(14px + env(safe-area-inset-top)) 22px calc(28px + env(safe-area-inset-bottom));
+}
+.fp-top { display: flex; align-items: center; justify-content: space-between; }
+.fp-eyebrow { font-size: 13px; font-weight: 600; color: var(--text-3); }
+.fp-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+}
+.fp-art {
+  width: 132px; height: 132px; border-radius: 28px;
+  background: var(--audio); color: var(--audio-text);
+  display: grid; place-items: center; font-size: 58px;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.fp-art.on {
+  background: var(--primary); color: var(--on-primary);
+  box-shadow: 0 18px 42px rgba(47, 107, 90, 0.28);
+  transform: scale(1.03);
+}
+.fp-info { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.fp-info h2 { font-size: 21px; line-height: 1.45; margin: 0; }
+.fp-info p { font-size: 14.5px; color: var(--text-2); margin: 0; }
+.fp-seek { width: 100%; display: flex; flex-direction: column; gap: 8px; }
+.fp-seek input {
+  width: 100%; height: 22px; margin: 0; background: transparent;
+  -webkit-appearance: none; appearance: none; cursor: pointer;
+}
+.fp-seek input::-webkit-slider-runnable-track {
+  height: 5px; border-radius: 999px;
+  background: linear-gradient(to left, var(--primary) var(--pct), var(--border) var(--pct));
+}
+.fp-seek input::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 16px; height: 16px; margin-top: -5.5px;
+  border-radius: 50%; background: var(--primary);
+}
+.fp-times { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.fp-controls { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.fp-foot { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.fp-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 38px; padding: 0 16px; border-radius: 999px;
+  background: var(--primary-soft); color: var(--primary);
+  font-size: 14px; font-weight: 500;
+}
 
 .slide-enter-active, .slide-leave-active { transition: transform 0.25s var(--ease); }
 .slide-enter-from, .slide-leave-to { transform: translateY(100%); }
+.sheet-up-enter-active, .sheet-up-leave-active { transition: transform 0.28s var(--ease); }
+.sheet-up-enter-from, .sheet-up-leave-to { transform: translateY(100%); }
 
 @media (max-width: 900px) {
-  .player { inset-inline-start: 0; bottom: var(--mobile-nav-h); }
-  .row { grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; padding: 0 12px; }
-  .hide-sm, .time { display: none; }
-  .main { margin: 0; }
+  .player {
+    inset-inline: 10px;
+    bottom: calc(var(--mobile-nav-h) + env(safe-area-inset-bottom) + 8px);
+    height: 62px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: color-mix(in srgb, var(--bg) 94%, transparent);
+    backdrop-filter: saturate(1.5) blur(14px);
+    -webkit-backdrop-filter: saturate(1.5) blur(14px);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+  .seek input { top: 0; height: 4px; pointer-events: none; }
+  .row { grid-template-columns: minmax(0, 1fr) auto auto; gap: 6px; padding: 0 10px; }
+  .art { width: 40px; height: 40px; border-radius: 10px; font-size: 20px; }
+  .hide-sm, .time, .rate { display: none; }
+  .show-sm { display: grid; }
+  .main { width: 40px; height: 40px; font-size: 20px; margin: 0; }
 }
 </style>

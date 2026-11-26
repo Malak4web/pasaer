@@ -1,0 +1,19 @@
+{
+  "name": "بصائر",
+  "short_name": "بصائر",
+  "description": "مرئيات وصوتيات ودروس دعوية وإذاعة القرآن وأدوات المسلم في مكان واحد",
+  "start_url": "/",
+  "display": "standalone",
+  "dir": "rtl",
+  "lang": "ar",
+  "background_color": "#ffffff",
+  "theme_color": "#2F6B5A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

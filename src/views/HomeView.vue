@@ -80,7 +80,7 @@ async function playLatestAudio() {
         <h2 id="series-title">سلاسل مختارة</h2>
         <RouterLink to="/lessons">كل السلاسل ←</RouterLink>
       </div>
-      <div class="grid-cards">
+      <div class="grid-cards series-row">
         <SeriesCard v-for="s in home.data.value.series" :key="s.id" :series="s" />
       </div>
     </section>
@@ -107,8 +107,21 @@ async function playLatestAudio() {
 .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
 
 @media (max-width: 760px) {
-  .hero { grid-template-columns: 1fr; gap: 14px; padding: 12px; }
+  .hero { grid-template-columns: 1fr; gap: 14px; padding: 12px; border-radius: 18px; }
   .hero-body { padding: 0 4px 4px; }
   .hero-body h1 { font-size: 21px; }
+  .actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .actions .btn { justify-content: center; height: 42px; }
+  .series-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    margin-inline: -16px;
+    padding: 2px 16px 8px;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+  }
+  .series-row::-webkit-scrollbar { display: none; }
+  .series-row > * { flex: 0 0 78%; scroll-snap-align: start; }
 }
 </style>

@@ -297,8 +297,8 @@ onBeforeUnmount(() => clearInterval(timer))
 </script>
 
 <template>
-  <div class="tools-page">
-    <header class="head">
+  <div class="page tools-page">
+    <header class="page-head">
       <h1>أدوات المسلم وإذاعة القرآن</h1>
       <p>إذاعة القرآن الكريم المباشرة، ومواقيت الصلاة، وعداد رمضان، والأذكار، والسبحة، وحاسبة الزكاة في مكان واحد هادئ.</p>
     </header>
@@ -541,13 +541,29 @@ onBeforeUnmount(() => clearInterval(timer))
 .head h1 { margin: 0 0 6px; font-size: 24px; font-weight: 700; }
 .head p { margin: 0; color: var(--text-2); font-size: 15px; }
 
-.tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 .tab {
   display: inline-flex; align-items: center; gap: 7px;
-  padding: 9px 14px; border-radius: 999px;
+  padding: 9px 14px; border-radius: 999px; flex-shrink: 0;
   background: var(--surface); border: 1px solid var(--border);
   color: var(--text-2); font-size: 14px; font-weight: 500;
   transition: .15s var(--ease);
+}
+@media (max-width: 900px) {
+  .tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-inline: -16px;
+    padding: 2px 16px 6px;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { scroll-snap-align: start; min-height: 40px; }
 }
 .tab:hover { background: var(--surface-2); color: var(--text); }
 .tab.active { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
