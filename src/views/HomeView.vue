@@ -4,7 +4,9 @@ import { api } from '@/api'
 import { useFetch } from '@/composables/useFetch'
 import { usePlayerStore } from '@/stores/player'
 import { useSiteStore } from '@/stores/site'
-import { relDate } from '@/utils/format'
+import { useQuranStore } from '@/stores/quran'
+import { RADIO_STATIONS } from '@/data/muslimTools'
+import { relDate, toArDigits } from '@/utils/format'
 import ContinueCard from '@/components/ContinueCard.vue'
 import VideoThumb from '@/components/VideoThumb.vue'
 import FeedItem from '@/components/FeedItem.vue'
@@ -14,7 +16,13 @@ import StateView from '@/components/StateView.vue'
 
 const player = usePlayerStore()
 const store = useSiteStore()
+const quran = useQuranStore()
 const topic = ref('')
+
+function toggleRadio() {
+  if (player.isLive && player.playing) player.pause()
+  else player.play(RADIO_STATIONS[0])
+}
 
 const home = useFetch(() => api.home())
 const feed = useFetch(() => api.feed({ topic: topic.value, per_page: 8 }), [topic])
@@ -35,6 +43,41 @@ async function playLatestAudio() {
 <template>
   <div class="page">
     <ContinueCard v-if="resume" :entry="resume" />
+
+    <!-- بوابة الوصول السريع الهادئة -->
+    <section class="hub-grid" aria-label="الوصول السريع">
+      <RouterLink to="/quran" class="hub-card">
+        <span class="hub-ico"><i class="ti ti-book-2"></i></span>
+        <span class="hub-txt">
+          <strong>المصحف الشريف</strong>
+          <small>{{ quran.lastRead ? `متابعة صفحة ${toArDigits(quran.lastRead.page || 1)}` : '٦٠٤ صفحة · ٨ روايات' }}</small>
+        </span>
+      </RouterLink>
+
+      <button type="button" class="hub-card" :class="{ live: player.isLive && player.playing }" @click="toggleRadio">
+        <span class="hub-ico"><i class="ti" :class="player.isLive && player.playing ? 'ti-player-pause' : 'ti-radio'"></i></span>
+        <span class="hub-txt">
+          <strong>إذاعة القرآن</strong>
+          <small>{{ player.isLive && player.playing ? 'بث مباشر شغّال الآن' : 'القاهرة · بث مباشر' }}</small>
+        </span>
+      </button>
+
+      <RouterLink to="/tools?tab=prayer" class="hub-card">
+        <span class="hub-ico"><i class="ti ti-clock"></i></span>
+        <span class="hub-txt">
+          <strong>أدوات المسلم</strong>
+          <small>الصلاة · الأذكار · الزكاة</small>
+        </span>
+      </RouterLink>
+
+      <RouterLink to="/audio" class="hub-card">
+        <span class="hub-ico"><i class="ti ti-headphones"></i></span>
+        <span class="hub-txt">
+          <strong>المكتبة الصوتية</strong>
+          <small>خطب ودروس وتلاوات</small>
+        </span>
+      </RouterLink>
+    </section>
 
     <StateView :loading="home.loading.value" :error="home.error.value" skeleton="page" @retry="home.reload">
       <section v-if="featured" class="hero" aria-labelledby="hero-title">
@@ -88,6 +131,31 @@ async function playLatestAudio() {
 </template>
 
 <style scoped>
+.hub-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.hub-card {
+  display: flex; align-items: center; gap: 12px; text-align: right;
+  padding: 14px; border-radius: var(--radius);
+  background: var(--card); border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+  transition: border-color .15s var(--ease), transform .12s var(--ease), background .15s var(--ease);
+}
+.hub-card:hover { border-color: var(--primary); background: var(--surface); }
+.hub-card:active { transform: scale(0.98); }
+.hub-card.live { border-color: var(--primary); background: var(--primary-soft); }
+.hub-ico {
+  width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+  background: var(--primary-soft); color: var(--primary);
+  display: grid; place-items: center; font-size: 21px;
+}
+.hub-card.live .hub-ico { background: var(--primary); color: var(--on-primary); }
+.hub-txt { display: flex; flex-direction: column; min-width: 0; line-height: 1.35; }
+.hub-txt strong { font-size: 14.5px; font-weight: 700; color: var(--text); }
+.hub-txt small { font-size: 12px; color: var(--text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+@media (max-width: 900px) {
+  .hub-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hub-card { padding: 12px; }
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
