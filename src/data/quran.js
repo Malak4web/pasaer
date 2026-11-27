@@ -1,3 +1,17 @@
+export const QURAN_CDN = 'https://cdn.jsdelivr.net/gh/fawazahmed0/quran-api@1'
+
+// ٨ روايات معتمدة لقراءة المصحف كاملًا (٦٠٤ صفحة بدون أي تحميل بين الصفحات)
+export const READING_RIWAYAT = [
+  { id: 'ara-quranuthmanihaf', name: 'حفص عن عاصم', short: 'حفص' },
+  { id: 'ara-quranwarsh', name: 'ورش عن نافع', short: 'ورش' },
+  { id: 'ara-quranqaloon', name: 'قالون عن نافع', short: 'قالون' },
+  { id: 'ara-quranshouba', name: 'شعبة عن عاصم', short: 'شعبة' },
+  { id: 'ara-qurandoori', name: 'الدوري عن أبي عمرو', short: 'الدوري' },
+  { id: 'ara-quransoosi', name: 'السوسي عن أبي عمرو', short: 'السوسي' },
+  { id: 'ara-quranbazzi', name: 'البزي عن ابن كثير', short: 'البزي' },
+  { id: 'ara-quranqumbul', name: 'قنبل عن ابن كثير', short: 'قنبل' }
+]
+
 export const QURAN_RECITERS = [
   { id: 'ar.husary', name: 'محمود خليل الحصري (المرتّل)', mp3Base: 'https://server13.mp3quran.net/husr/' },
   { id: 'ar.minshawi', name: 'محمد صديق المنشاوي (المرتّل)', mp3Base: 'https://server10.mp3quran.net/minsh/' },

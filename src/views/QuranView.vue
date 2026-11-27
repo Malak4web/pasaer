@@ -5,6 +5,8 @@ import { useQuranStore } from '@/stores/quran'
 import { usePlayerStore } from '@/stores/player'
 import { toArDigits } from '@/utils/format'
 import {
+  QURAN_CDN,
+  READING_RIWAYAT,
   QURAN_RECITERS,
   QURAN_TAFSIRS,
   QURAN_JUZS,
@@ -14,6 +16,11 @@ import {
   normalizeAr
 } from '@/data/quran'
 
+// كاش دائم في الذاكرة لتقليب الصفحات والروايات في ٠ مللي ثانية بدون أي تحميل
+let cachedInfo = null
+const riwayahCache = new Map() // riwayahId -> Map("chapter:verse", text)
+const tafsirCache = new Map() // `${page}:${tafsirId}` -> Map("chapter:verse", text)
+
 const route = useRoute()
 const router = useRouter()
 const qs = useQuranStore()
@@ -22,8 +29,8 @@ const globalPlayer = usePlayerStore()
 const API_BASE = (import.meta.env.VITE_API_URL || '/api').replace(/\/$/, '')
 
 const SECTIONS = [
-  { id: 'read', label: 'المصحف (صفحة بصفحة)', icon: 'ti-book-2' },
-  { id: 'qiraat', label: 'مصحف القراءات', icon: 'ti-book' },
+  { id: 'read', label: 'مصحف القراءة والقراءات', icon: 'ti-book-2' },
+  { id: 'qiraat', label: 'صوتيات القراءات (٢٠)', icon: 'ti-headphones' },
   { id: 'downloads', label: 'التحميل (آيات وأجزاء)', icon: 'ti-download' },
   { id: 'surahs', label: 'السور (١١٤)', icon: 'ti-list-numbers' },
   { id: 'juzs', label: 'الأجزاء (٣٠)', icon: 'ti-books' },
@@ -34,21 +41,107 @@ const activeSection = ref(SECTIONS.some((s) => s.id === route.query.tab) ? route
 function setSection(id) {
   activeSection.value = id
   router.replace({ query: { ...route.query, tab: id } })
-  if (id === 'qiraat' && !riwayat.value.length) loadRiwayat()
+  if (id === 'qiraat' && !riwayatAudio.value.length) loadRiwayatAudio()
 }
 
-/* ==================== 1. قائمة الـ 114 سورة ==================== */
-const surahs = ref([])
+/* ==================== 1. تحميل فهرس المصحف + الرواية مرة واحدة فقط ==================== */
+const surahs = ref([]) // [{ number, name, englishName, revelationType, numberOfAyahs, startPage, globalStart }]
+const pagesMeta = ref({}) // { [1..604]: [{ key, number, numberInSurah, surahNumber, surahName, revelationType, juz }] }
+const activeRiwayahMap = ref(new Map()) // "chapter:verse" -> text
+const initLoading = ref(false)
+const riwayahSwitching = ref(false)
+const initError = ref('')
+
 const surahSearch = ref('')
 const revFilter = ref('all')
 
-async function loadSurahsList() {
-  try {
-    const res = await fetch('https://api.alquran.cloud/v1/surah')
-    const json = await res.json()
-    surahs.value = json.data || []
-  } catch {}
+function buildMetadata(info) {
+  const chList = []
+  const pMap = {}
+  let globalIdx = 0
+
+  for (const ch of info.chapters || []) {
+    const startPage = ch.verses?.[0]?.page || 1
+    const globalStart = globalIdx + 1
+    const revType = ch.revelation === 'Mecca' ? 'Meccan' : 'Medinan'
+    chList.push({
+      number: ch.chapter,
+      name: ch.arabicname,
+      englishName: ch.name,
+      revelationType: revType,
+      numberOfAyahs: (ch.verses || []).length,
+      startPage,
+      globalStart
+    })
+    for (const v of ch.verses || []) {
+      globalIdx += 1
+      const p = v.page || 1
+      if (!pMap[p]) pMap[p] = []
+      pMap[p].push({
+        key: `${ch.chapter}:${v.verse}`,
+        number: globalIdx,
+        numberInSurah: v.verse,
+        surahNumber: ch.chapter,
+        surahName: ch.arabicname,
+        revelationType: revType,
+        juz: v.juz || 1
+      })
+    }
+  }
+  surahs.value = chList
+  pagesMeta.value = pMap
 }
+
+async function ensureRiwayahLoaded(riwayahId) {
+  if (riwayahCache.has(riwayahId)) {
+    activeRiwayahMap.value = riwayahCache.get(riwayahId)
+    return
+  }
+  riwayahSwitching.value = true
+  try {
+    const res = await fetch(`${QURAN_CDN}/editions/${riwayahId}.min.json`)
+    if (!res.ok) throw new Error('HTTP ' + res.status)
+    const json = await res.json()
+    const map = new Map()
+    for (const v of json.quran || []) {
+      map.set(`${v.chapter}:${v.verse}`, v.text)
+    }
+    riwayahCache.set(riwayahId, map)
+    activeRiwayahMap.value = map
+  } finally {
+    riwayahSwitching.value = false
+  }
+}
+
+async function initMushaf() {
+  initError.value = ''
+  if (!cachedInfo) {
+    initLoading.value = true
+    try {
+      const [infoRes] = await Promise.all([
+        fetch(`${QURAN_CDN}/info.json`),
+        ensureRiwayahLoaded(qs.prefs.riwayahId || 'ara-quranuthmanihaf')
+      ])
+      if (!infoRes.ok) throw new Error('HTTP ' + infoRes.status)
+      cachedInfo = await infoRes.json()
+      buildMetadata(cachedInfo)
+    } catch {
+      initError.value = 'تعذّر تحميل المصحف الآن. تأكد من الاتصال بالإنترنت وحاول مرة أخرى.'
+    } finally {
+      initLoading.value = false
+    }
+  } else {
+    buildMetadata(cachedInfo)
+    await ensureRiwayahLoaded(qs.prefs.riwayahId || 'ara-quranuthmanihaf')
+  }
+}
+
+watch(() => qs.prefs.riwayahId, async (newId) => {
+  if (!newId) return
+  try {
+    await ensureRiwayahLoaded(newId)
+  } catch {}
+})
 
 const filteredSurahs = computed(() => {
   const q = normalizeAr(surahSearch.value)
@@ -67,102 +160,45 @@ function surahByNum(num) {
   return surahs.value.find((s) => s.number === num)
 }
 
-/* ==================== 2. المصحف صفحة بصفحة (1 – 604) ==================== */
-const currentPage = ref(Number(route.query.page) || qs.lastRead?.page || 1)
+/* ==================== 2. عرض الصفحة الفوري (0ms — بدون أي تحميل!) ==================== */
+const currentPage = ref(Math.min(604, Math.max(1, Number(route.query.page) || qs.lastRead?.page || 1)))
 const pageInput = ref(currentPage.value)
-const pageAyahs = ref([]) // [{ number, numberInSurah, text, audio, tafsir, surah, juz, hizbQuarter }]
-const pageSurahs = ref([]) // قائمة السور الظاهرة في هذه الصفحة
-const pageJuz = ref(1)
-const loadingPage = ref(false)
-const pageError = ref('')
 const selectedAyahKey = ref(null)
 const copiedAyah = ref(null)
+const pageTafsirMap = ref(new Map())
 
-async function loadPage(pageNum, highlightAyahKey = null, autoPlayFromStart = false) {
-  const p = Math.min(604, Math.max(1, Number(pageNum) || 1))
-  currentPage.value = p
-  pageInput.value = p
-  stopRecitation()
-  loadingPage.value = true
-  pageError.value = ''
-  selectedAyahKey.value = null
-
-  try {
-    const recId = qs.prefs.reciterId || 'ar.husary'
-    const tafId = qs.prefs.tafsirId || 'ar.muyassar'
-    const [uthRes, audRes, tafRes] = await Promise.all([
-      fetch(`https://api.alquran.cloud/v1/page/${p}/quran-uthmani`),
-      fetch(`https://api.alquran.cloud/v1/page/${p}/${recId}`),
-      fetch(`https://api.alquran.cloud/v1/page/${p}/${tafId}`)
-    ])
-    if (!uthRes.ok) throw new Error('HTTP ' + uthRes.status)
-    const [uthJson, audJson, tafJson] = await Promise.all([
-      uthRes.json(),
-      audRes.ok ? audRes.json() : Promise.resolve({ data: { ayahs: [] } }),
-      tafRes.ok ? tafRes.json() : Promise.resolve({ data: { ayahs: [] } })
-    ])
-
-    const uthList = uthJson.data?.ayahs || []
-    const audList = audJson.data?.ayahs || []
-    const tafList = tafJson.data?.ayahs || []
-
-    const surahNamesSet = []
-    pageAyahs.value = uthList.map((a, idx) => {
-      const sNum = a.surah?.number || 1
-      const sName = a.surah?.name || ''
-      if (sName && !surahNamesSet.includes(sName)) surahNamesSet.push(sName)
-
-      let txt = a.text
-      if (sNum !== 1 && sNum !== 9 && a.numberInSurah === 1) {
-        txt = txt.replace(/^بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ\s*/u, '').trim() || a.text
-      }
-      return {
-        key: `${sNum}:${a.numberInSurah}`,
-        number: a.number,
-        numberInSurah: a.numberInSurah,
-        text: txt,
-        audio: audList[idx]?.audio || `https://cdn.islamic.network/quran/audio/128/${recId}/${a.number}.mp3`,
-        tafsir: tafList[idx]?.text || '',
-        surahNumber: sNum,
-        surahName: sName,
-        revelationType: a.surah?.revelationType || 'Meccan',
-        juz: a.juz || 1
-      }
-    })
-
-    pageSurahs.value = surahNamesSet
-    pageJuz.value = pageAyahs.value[0]?.juz || 1
-
-    const first = pageAyahs.value[0]
-    if (first) {
-      qs.setLastRead({
-        surah: first.surahNumber,
-        surahName: first.surahName,
-        ayah: first.numberInSurah,
-        page: p
-      })
-    }
-
-    if (highlightAyahKey) {
-      selectedAyahKey.value = highlightAyahKey
-      await nextTick()
-      const el = document.getElementById(`ayah-${highlightAyahKey}`)
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-
-    if (autoPlayFromStart && pageAyahs.value.length) {
-      playAyahAt(0)
-    }
-  } catch {
-    pageError.value = 'تعذّر تحميل صفحة المصحف الآن. تأكد من الاتصال بالإنترنت وحاول مرة أخرى.'
-  } finally {
-    loadingPage.value = false
-  }
+function stripLeadingBasmala(text, surahNumber, ayahInSurah) {
+  if (surahNumber === 1 || surahNumber === 9 || ayahInSurah !== 1) return text
+  return text.replace(/^بِسْمِ\s+[^\s]+\s+[^\s]+\s+[^\s]+\s*/u, (m) => (m.includes('حِيم') ? '' : m)).trim() || text
 }
 
-// تقسيم آيات الصفحة إلى مجموعات حسب السورة لعرض عنوان السورة والبسملة في موضعها الصحيح
+const pageAyahs = computed(() => {
+  const metaList = pagesMeta.value[currentPage.value] || []
+  const rMap = activeRiwayahMap.value
+  const tMap = pageTafsirMap.value
+  const recId = qs.prefs.reciterId || 'ar.husary'
+
+  return metaList.map((m) => {
+    const rawText = rMap.get(m.key) || ''
+    return {
+      ...m,
+      text: stripLeadingBasmala(rawText, m.surahNumber, m.numberInSurah),
+      audio: `https://cdn.islamic.network/quran/audio/128/${recId}/${m.number}.mp3`,
+      tafsir: tMap.get(m.key) || ''
+    }
+  })
+})
+
+const pageSurahs = computed(() => {
+  const names = []
+  for (const a of pageAyahs.value) {
+    if (a.surahName && !names.includes(a.surahName)) names.push(a.surahName)
+  }
+  return names
+})
+
+const pageJuz = computed(() => pageAyahs.value[0]?.juz || 1)
+
 const pageBlocks = computed(() => {
   const blocks = []
   let cur = null
@@ -183,36 +219,102 @@ const pageBlocks = computed(() => {
   return blocks
 })
 
-function openPage(p, highlightKey = null) {
-  activeSection.value = 'read'
-  router.replace({ query: { tab: 'read', page: p } })
-  loadPage(p, highlightKey)
+// تحميل التفسير في الخلفية عند الحاجة فقط (لا يعطّل تقليب الصفحات أبدًا)
+async function loadPageTafsirIfNeeded(pageNum) {
+  const tafId = qs.prefs.tafsirId || 'ar.muyassar'
+  const cacheKey = `${pageNum}:${tafId}`
+  if (tafsirCache.has(cacheKey)) {
+    pageTafsirMap.value = tafsirCache.get(cacheKey)
+    return
+  }
+  try {
+    const res = await fetch(`https://api.alquran.cloud/v1/page/${pageNum}/${tafId}`)
+    if (!res.ok) return
+    const json = await res.json()
+    const m = new Map()
+    for (const a of json.data?.ayahs || []) {
+      m.set(`${a.surah?.number}:${a.numberInSurah}`, a.text || '')
+    }
+    tafsirCache.set(cacheKey, m)
+    if (currentPage.value === pageNum && qs.prefs.tafsirId === tafId) {
+      pageTafsirMap.value = m
+    }
+  } catch {}
 }
 
-async function openSurahPage(surahNum, ayahNum = 1) {
+function goToPage(p, highlightKey = null, autoPlay = false) {
+  const target = Math.min(604, Math.max(1, Number(p) || 1))
+  stopRecitation()
+  currentPage.value = target
+  pageInput.value = target
+  selectedAyahKey.value = highlightKey
   activeSection.value = 'read'
-  loadingPage.value = true
-  try {
-    const res = await fetch(`https://api.alquran.cloud/v1/ayah/${surahNum}:${ayahNum}/quran-uthmani`)
-    const json = await res.json()
-    const targetPage = json.data?.page || 1
-    router.replace({ query: { tab: 'read', page: targetPage } })
-    await loadPage(targetPage, ayahNum > 1 ? `${surahNum}:${ayahNum}` : null)
-  } catch {
-    await loadPage(1)
+  router.replace({ query: { tab: 'read', page: target } })
+
+  const first = pagesMeta.value[target]?.[0]
+  if (first) {
+    qs.setLastRead({ surah: first.surahNumber, surahName: first.surahName, ayah: first.numberInSurah, page: target })
   }
+
+  if (qs.prefs.showTafsir || highlightKey) {
+    loadPageTafsirIfNeeded(target)
+  }
+
+  nextTick(() => {
+    if (highlightKey) {
+      const el = document.getElementById(`ayah-${highlightKey}`)
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' })
+    }
+    if (autoPlay && pageAyahs.value.length) playAyahAt(0)
+  })
+}
+
+function openSurahPage(surahNum, ayahNum = 1) {
+  const s = surahByNum(surahNum)
+  if (!s) return
+  if (ayahNum <= 1) {
+    goToPage(s.startPage)
+    return
+  }
+  // البحث الفوري في الذاكرة عن صفحة الآية المطلوبة (0ms)
+  const key = `${surahNum}:${ayahNum}`
+  for (let p = s.startPage; p <= 604; p++) {
+    if ((pagesMeta.value[p] || []).some((m) => m.key === key)) {
+      goToPage(p, key)
+      return
+    }
+  }
+  goToPage(s.startPage)
 }
 
 function openJuzPage(juzNum) {
-  const p = JUZ_START_PAGES[juzNum - 1] || 1
-  openPage(p)
+  goToPage(JUZ_START_PAGES[juzNum - 1] || 1)
 }
 
-watch(() => [qs.prefs.reciterId, qs.prefs.tafsirId], () => {
-  if (activeSection.value === 'read' && pageAyahs.value.length) {
-    loadPage(currentPage.value)
+watch(() => [qs.prefs.showTafsir, qs.prefs.tafsirId, selectedAyahKey.value], () => {
+  if (qs.prefs.showTafsir || selectedAyahKey.value) {
+    loadPageTafsirIfNeeded(currentPage.value)
   }
 })
+
+// دعم السحب باللمس يمينًا ويسارًا لتقليب الصفحات على الموبايل
+let touchStartX = 0
+let touchStartY = 0
+function onTouchStart(e) {
+  touchStartX = e.changedTouches[0].clientX
+  touchStartY = e.changedTouches[0].clientY
+}
+function onTouchEnd(e) {
+  const dx = e.changedTouches[0].clientX - touchStartX
+  const dy = e.changedTouches[0].clientY - touchStartY
+  if (Math.abs(dx) > 65 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+    // في العربي RTL: السحب لليمين يفتح الصفحة التالية، ولليسار الصفحة السابقة
+    if (dx > 0 && currentPage.value < 604) goToPage(currentPage.value + 1)
+    else if (dx < 0 && currentPage.value > 1) goToPage(currentPage.value - 1)
+  }
+}
 
 /* ==================== 3. التلاوة المتزامنة آية بآية مع قلب الصفحة تلقائيًا ==================== */
 const ayahAudio = typeof Audio !== 'undefined' ? new Audio() : null
@@ -245,8 +347,7 @@ if (ayahAudio) {
     if (playingAyahIdx.value + 1 < pageAyahs.value.length) {
       playAyahAt(playingAyahIdx.value + 1)
     } else if (currentPage.value < 604) {
-      // الانتقال التلقائي للصفحة التالية مع استمرار التلاوة
-      loadPage(currentPage.value + 1, null, true)
+      goToPage(currentPage.value + 1, null, true)
     } else {
       isReciting.value = false
       playingAyahIdx.value = -1
@@ -318,9 +419,9 @@ async function shareAyah(a) {
   copyAyah(a)
 }
 
-/* ==================== 4. مصحف القراءات والروايات (20 رواية) ==================== */
-const riwayat = ref([])
-const selectedRewayaId = ref(2) // الافتراضي: ورش عن نافع
+/* ==================== 4. صوتيات القراءات والروايات (20 رواية) ==================== */
+const riwayatAudio = ref([])
+const selectedRewayaId = ref(2)
 const qiraatReciters = ref([])
 const selectedQiraatReciter = ref(null)
 const qiraatSurahSearch = ref('')
@@ -331,15 +432,15 @@ function isExcludedReciter(name) {
   return EXCLUDED_RECITER_KEYWORDS.some((kw) => n.includes(normalizeAr(kw)))
 }
 
-async function loadRiwayat() {
+async function loadRiwayatAudio() {
   loadingQiraat.value = true
   try {
     const res = await fetch('https://mp3quran.net/api/v3/riwayat?language=ar')
     const json = await res.json()
-    riwayat.value = json.riwayat || []
+    riwayatAudio.value = json.riwayat || []
     await loadQiraatReciters(selectedRewayaId.value)
   } catch {
-    riwayat.value = []
+    riwayatAudio.value = []
   } finally {
     loadingQiraat.value = false
   }
@@ -359,7 +460,6 @@ async function loadQiraatReciters(rewayaId) {
           ? {
               id: r.id,
               name: r.name,
-              moshafName: moshaf.name,
               server: moshaf.server,
               surahList: String(moshaf.surah_list || '').split(',').map(Number).filter(Boolean)
             }
@@ -391,7 +491,7 @@ const qiraatSurahs = computed(() => {
 
 function playQiraatSurah(s) {
   const rec = selectedQiraatReciter.value
-  const rew = riwayat.value.find((r) => r.id === selectedRewayaId.value)?.name || ''
+  const rew = riwayatAudio.value.find((r) => r.id === selectedRewayaId.value)?.name || ''
   globalPlayer.play({
     id: `qiraat-${rec.id}-${s.number}`,
     title: `${s.name} — ${rew}`,
@@ -408,14 +508,13 @@ const dlReciter = ref(qs.prefs.reciterId || 'ar.husary')
 const dlJuz = ref(30)
 const dlProgress = ref('')
 
-// تحميل نطاق آيات محدد (من آية X إلى آية Y)
-const rangeSurah = ref(2) // الافتراضي: البقرة (آية الكرسي 255)
+const rangeSurah = ref(2)
 const rangeFrom = ref(255)
 const rangeTo = ref(257)
 const rangeBusy = ref(false)
 const rangeMsg = ref('')
 
-const rangeSurahObj = computed(() => surahByNum(rangeSurah.value) || { number: 2, name: 'سورة البقرة', numberOfAyahs: 286 })
+const rangeSurahObj = computed(() => surahByNum(rangeSurah.value) || { number: 2, name: 'سورة البقرة', numberOfAyahs: 286, globalStart: 8 })
 watch(rangeSurah, () => {
   const max = rangeSurahObj.value.numberOfAyahs || 1
   rangeFrom.value = 1
@@ -425,62 +524,39 @@ watch(rangeSurah, () => {
 
 const rangeCount = computed(() => Math.max(0, (Number(rangeTo.value) || 0) - (Number(rangeFrom.value) || 0) + 1))
 
-async function downloadAyahRangeMp3() {
-  const max = rangeSurahObj.value.numberOfAyahs || 1
+function downloadAyahRangeMp3() {
+  const s = rangeSurahObj.value
+  const max = s.numberOfAyahs || 1
   const from = Math.max(1, Math.min(max, Number(rangeFrom.value) || 1))
   const to = Math.max(from, Math.min(max, Number(rangeTo.value) || from))
   if (to - from + 1 > 60) {
     rangeMsg.value = 'الحد الأقصى للدمج المباشر ٦٠ آية في المرة الواحدة (للسورة الكاملة استخدم التحميل بالأسفل).'
     return
   }
-  rangeBusy.value = true
-  rangeMsg.value = 'جاري تجهيز ودمج ملف الصوت...'
-  try {
-    // جلب الرقم العالمي للآية الأولى والأخيرة من alquran.cloud
-    const [r1, r2] = await Promise.all([
-      fetch(`https://api.alquran.cloud/v1/ayah/${rangeSurah.value}:${from}/quran-uthmani`).then((r) => r.json()),
-      fetch(`https://api.alquran.cloud/v1/ayah/${rangeSurah.value}:${to}/quran-uthmani`).then((r) => r.json())
-    ])
-    const gFrom = r1.data?.number
-    const gTo = r2.data?.number
-    if (!gFrom || !gTo) throw new Error('Ayah lookup failed')
-
-    const filename = `surah-${rangeSurah.value}-ayah-${from}-to-${to}.mp3`
-    const dlUrl = `${API_BASE}/quran/download-range?reciter=${encodeURIComponent(dlReciter.value)}&from=${gFrom}&to=${gTo}&name=${encodeURIComponent(filename)}`
-    triggerDownload(dlUrl, filename)
-    rangeMsg.value = `بدأ تحميل الملف المدمج (${toArDigits(to - from + 1)} آية): ${filename}`
-  } catch {
-    rangeMsg.value = 'تعذّر تجهيز التحميل الآن — حاول مرة أخرى.'
-  } finally {
-    rangeBusy.value = false
-  }
+  const gFrom = (s.globalStart || 1) + (from - 1)
+  const gTo = (s.globalStart || 1) + (to - 1)
+  const filename = `surah-${s.number}-ayah-${from}-to-${to}.mp3`
+  const dlUrl = `${API_BASE}/quran/download-range?reciter=${encodeURIComponent(dlReciter.value)}&from=${gFrom}&to=${gTo}&name=${encodeURIComponent(filename)}`
+  triggerDownload(dlUrl, filename)
+  rangeMsg.value = `بدأ تحميل الملف المدمج (${toArDigits(to - from + 1)} آية): ${filename}`
 }
 
-async function downloadAyahRangeText() {
-  const max = rangeSurahObj.value.numberOfAyahs || 1
+function downloadAyahRangeText() {
+  const s = rangeSurahObj.value
+  const max = s.numberOfAyahs || 1
   const from = Math.max(1, Math.min(max, Number(rangeFrom.value) || 1))
   const to = Math.max(from, Math.min(max, Number(rangeTo.value) || from))
-  rangeBusy.value = true
-  rangeMsg.value = 'جاري تجهيز نص الآيات...'
-  try {
-    const res = await fetch(`https://api.alquran.cloud/v1/surah/${rangeSurah.value}/quran-uthmani`)
-    const json = await res.json()
-    const slice = (json.data?.ayahs || []).filter((a) => a.numberInSurah >= from && a.numberInSurah <= to)
-    const lines = [
-      `${rangeSurahObj.value.name} — من الآية ${from} إلى الآية ${to}`,
-      '='.repeat(40),
-      ...slice.map((a) => `(${a.numberInSurah}) ${a.text}`)
-    ]
-    const blob = new Blob([lines.join('\n\n')], { type: 'text/plain;charset=utf-8' })
-    const url = URL.createObjectURL(blob)
-    triggerDownload(url, `surah-${rangeSurah.value}-ayah-${from}-${to}.txt`)
-    setTimeout(() => URL.revokeObjectURL(url), 3000)
-    rangeMsg.value = `تم تنزيل نص ${toArDigits(slice.length)} آية بنجاح.`
-  } catch {
-    rangeMsg.value = 'تعذّر تحميل النص الآن.'
-  } finally {
-    rangeBusy.value = false
+  const rMap = activeRiwayahMap.value
+  const rewName = READING_RIWAYAT.find((r) => r.id === qs.prefs.riwayahId)?.name || 'حفص عن عاصم'
+  const lines = [`${s.name} (${rewName}) — من الآية ${from} إلى الآية ${to}`, '='.repeat(40)]
+  for (let i = from; i <= to; i++) {
+    lines.push(`(${i}) ${rMap.get(`${s.number}:${i}`) || ''}`)
   }
+  const blob = new Blob([lines.join('\n\n')], { type: 'text/plain;charset=utf-8' })
+  const url = URL.createObjectURL(blob)
+  triggerDownload(url, `surah-${s.number}-ayah-${from}-${to}.txt`)
+  setTimeout(() => URL.revokeObjectURL(url), 3000)
+  rangeMsg.value = `تم تنزيل نص ${toArDigits(to - from + 1)} آية بنجاح.`
 }
 
 const dlSurahNumbers = computed(() => {
@@ -499,29 +575,26 @@ function triggerDownload(url, filename) {
   a.remove()
 }
 
-async function downloadJuzText(juzNum) {
-  dlProgress.value = `جاري تجهيز نص الجزء ${toArDigits(juzNum)}...`
-  try {
-    const res = await fetch(`https://api.alquran.cloud/v1/juz/${juzNum}/quran-uthmani`)
-    const json = await res.json()
-    const list = json.data?.ayahs || []
-    const lines = [`القرآن الكريم — الجزء ${juzNum}`, '='.repeat(40)]
-    let lastS = null
-    for (const a of list) {
-      if (a.surah?.number !== lastS) {
-        lastS = a.surah?.number
-        lines.push(`\n--- ${a.surah?.name || ''} ---`)
+function downloadJuzText(juzNum) {
+  const rMap = activeRiwayahMap.value
+  const rewName = READING_RIWAYAT.find((r) => r.id === qs.prefs.riwayahId)?.name || ''
+  const lines = [`القرآن الكريم — الجزء ${juzNum} (${rewName})`, '='.repeat(40)]
+  let lastS = null
+  for (let p = 1; p <= 604; p++) {
+    for (const m of pagesMeta.value[p] || []) {
+      if (m.juz !== juzNum) continue
+      if (m.surahNumber !== lastS) {
+        lastS = m.surahNumber
+        lines.push(`\n--- ${m.surahName} ---`)
       }
-      lines.push(`(${a.numberInSurah}) ${a.text}`)
+      lines.push(`(${m.numberInSurah}) ${rMap.get(m.key) || ''}`)
     }
-    const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' })
-    const url = URL.createObjectURL(blob)
-    triggerDownload(url, `quran-juz-${juzNum}.txt`)
-    setTimeout(() => URL.revokeObjectURL(url), 3000)
-    dlProgress.value = `تم تنزيل نص الجزء ${toArDigits(juzNum)} بنجاح.`
-  } catch {
-    dlProgress.value = 'تعذّر تحميل النص الآن.'
   }
+  const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' })
+  const url = URL.createObjectURL(blob)
+  triggerDownload(url, `quran-juz-${juzNum}.txt`)
+  setTimeout(() => URL.revokeObjectURL(url), 3000)
+  dlProgress.value = `تم تنزيل نص الجزء ${toArDigits(juzNum)} بنجاح.`
 }
 
 function playFullSurahInGlobalPlayer(surahNum) {
@@ -538,43 +611,37 @@ function playFullSurahInGlobalPlayer(surahNum) {
   })
 }
 
-/* ==================== 6. البحث في آيات القرآن الكريم ==================== */
+/* ==================== 6. البحث الفوري في كامل القرآن من الذاكرة (< 10ms) ==================== */
 const quranQuery = ref('')
-const searchResults = ref([])
-const searchLoading = ref(false)
-const searchError = ref('')
-
-async function runQuranSearch() {
-  const term = quranQuery.value.trim()
-  if (term.length < 2) return
-  searchLoading.value = true
-  searchError.value = ''
-  searchResults.value = []
-  try {
-    const res = await fetch(`https://api.alquran.cloud/v1/search/${encodeURIComponent(term)}/all/quran-simple-clean`)
-    if (!res.ok) throw new Error('HTTP ' + res.status)
-    const json = await res.json()
-    searchResults.value = (json.data?.matches || []).slice(0, 60)
-  } catch {
-    searchError.value = 'لم يُعثر على نتائج مطابقة لهذا البحث.'
-  } finally {
-    searchLoading.value = false
+const searchResults = computed(() => {
+  const q = normalizeAr(quranQuery.value)
+  if (q.length < 2) return []
+  const rMap = activeRiwayahMap.value
+  const out = []
+  for (let p = 1; p <= 604 && out.length < 60; p++) {
+    for (const m of pagesMeta.value[p] || []) {
+      const txt = rMap.get(m.key) || ''
+      if (normalizeAr(txt).includes(q)) {
+        out.push({ ...m, page: p, text: txt })
+        if (out.length >= 60) break
+      }
+    }
   }
-}
+  return out
+})
 
-// تقليب الصفحات بأسهم لوحة المفاتيح
 function onKey(e) {
   if (activeSection.value !== 'read') return
   const tag = e.target.tagName
   if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA') return
-  if (e.key === 'ArrowLeft' && currentPage.value < 604) openPage(currentPage.value + 1)
-  if (e.key === 'ArrowRight' && currentPage.value > 1) openPage(currentPage.value - 1)
+  if (e.key === 'ArrowLeft' && currentPage.value < 604) goToPage(currentPage.value + 1)
+  if (e.key === 'ArrowRight' && currentPage.value > 1) goToPage(currentPage.value - 1)
 }
 
-onMounted(() => {
-  loadSurahsList()
-  loadPage(currentPage.value)
-  if (activeSection.value === 'qiraat') loadRiwayat()
+onMounted(async () => {
+  await initMushaf()
+  if (qs.prefs.showTafsir) loadPageTafsirIfNeeded(currentPage.value)
+  if (activeSection.value === 'qiraat') loadRiwayatAudio()
   window.addEventListener('keydown', onKey)
 })
 
@@ -588,14 +655,14 @@ onBeforeUnmount(() => {
   <div class="page quran-page">
     <header class="page-head q-head">
       <div>
-        <h1>المصحف الشريف</h1>
-        <p>مصحف المدينة المنورة صفحة بصفحة (٦٠٤ صفحة)، ومصحف القراءات بـ ٢٠ رواية، وتحميل مخصص من آية إلى آية.</p>
+        <h1>المصحف الشريف والقراءات</h1>
+        <p>قراءة فورية صفحة بصفحة (٦٠٤ صفحة) بـ ٨ روايات معتمدة بدون أي تحميل أثناء التقليب، مع صوتيات ٢٠ رواية وتحميل من آية إلى آية.</p>
       </div>
       <button
         v-if="qs.lastRead && activeSection !== 'read'"
         type="button"
         class="btn btn-primary"
-        @click="openPage(qs.lastRead.page || 1)"
+        @click="goToPage(qs.lastRead.page || 1)"
       >
         <i class="ti ti-bookmark" aria-hidden="true"></i>
         متابعة: صفحة {{ toArDigits(qs.lastRead.page || 1) }}
@@ -618,13 +685,28 @@ onBeforeUnmount(() => {
       </button>
     </nav>
 
-    <!-- ==================== 1. المصحف صفحة بصفحة (1 – 604) ==================== -->
+    <!-- ==================== 1. مصحف القراءة والقراءات (صفحة بصفحة — 0ms) ==================== -->
     <section v-if="activeSection === 'read'" class="reader-wrap">
+      <!-- شريط اختيار الرواية للقراءة بضغطة واحدة -->
+      <div class="riwayah-bar" role="group" aria-label="اختر الرواية للقراءة">
+        <span class="rb-lbl"><i class="ti ti-book"></i> الرواية:</span>
+        <button
+          v-for="rw in READING_RIWAYAT"
+          :key="rw.id"
+          type="button"
+          class="rw-pill"
+          :class="{ on: qs.prefs.riwayahId === rw.id }"
+          @click="qs.prefs.riwayahId = rw.id"
+        >
+          {{ rw.short }}
+        </button>
+        <span v-if="riwayahSwitching" class="rw-loading">جاري التبديل...</span>
+      </div>
+
       <div class="ctrl-card">
         <div class="ctrl-row">
-          <!-- الانتقال برقم الصفحة -->
-          <form class="page-jump" @submit.prevent="openPage(pageInput)">
-            <button type="button" class="mini-btn" :disabled="currentPage <= 1" aria-label="الصفحة السابقة" @click="openPage(currentPage - 1)">
+          <form class="page-jump" @submit.prevent="goToPage(pageInput)">
+            <button type="button" class="mini-btn" :disabled="currentPage <= 1" aria-label="الصفحة السابقة" @click="goToPage(currentPage - 1)">
               <i class="ti ti-chevron-right"></i>
             </button>
             <label class="pj-lbl">
@@ -632,12 +714,11 @@ onBeforeUnmount(() => {
               <input v-model.number="pageInput" type="number" min="1" max="604" class="pj-in" />
               <span>/ ٦٠٤</span>
             </label>
-            <button type="button" class="mini-btn" :disabled="currentPage >= 604" aria-label="الصفحة التالية" @click="openPage(currentPage + 1)">
+            <button type="button" class="mini-btn" :disabled="currentPage >= 604" aria-label="الصفحة التالية" @click="goToPage(currentPage + 1)">
               <i class="ti ti-chevron-left"></i>
             </button>
           </form>
 
-          <!-- انتقال لسورة -->
           <select class="q-select" aria-label="انتقال إلى سورة" @change="$event.target.value && openSurahPage(Number($event.target.value))">
             <option value="">انتقال إلى سورة...</option>
             <option v-for="s in surahs" :key="s.number" :value="s.number">
@@ -645,7 +726,6 @@ onBeforeUnmount(() => {
             </option>
           </select>
 
-          <!-- انتقال لجزء -->
           <select class="q-select sm" aria-label="انتقال إلى جزء" @change="$event.target.value && openJuzPage(Number($event.target.value))">
             <option value="">الجزء ({{ toArDigits(pageJuz) }})</option>
             <option v-for="j in QURAN_JUZS" :key="j.juz" :value="j.juz">{{ toArDigits(j.juz) }}. {{ j.name }}</option>
@@ -684,17 +764,16 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <!-- شريط التلاوة المتزامنة -->
       <div class="recite-bar">
         <button type="button" class="play-btn" @click="toggleRecitation">
           <i class="ti" :class="isReciting ? 'ti-player-pause' : 'ti-player-play'" aria-hidden="true"></i>
-          {{ isReciting ? 'إيقاف التلاوة' : 'تلاوة هذه الصفحة' }}
+          {{ isReciting ? 'إيقاف التلاوة' : 'تلاوة الصفحة' }}
         </button>
 
         <span v-if="playingAyahIdx >= 0" class="recite-status">
           {{ pageAyahs[playingAyahIdx]?.surahName }} — آية {{ toArDigits(pageAyahs[playingAyahIdx]?.numberInSurah) }}
         </span>
-        <span v-else class="recite-status muted">اضغط على أي آية للتلاوة والتفسير · قلب الصفحات بالأسهم ← →</span>
+        <span v-else class="recite-status muted">اسحب يمينًا أو يسارًا لتقليب الصفحات فورًا · اضغط على أي آية للتفسير والتلاوة</span>
 
         <div class="recite-extra">
           <button type="button" class="mini-pill" title="تكرار الآية للحفظ" @click="cycleRepeat">
@@ -709,21 +788,28 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div v-if="loadingPage" class="empty">جاري تحميل الصفحة {{ toArDigits(currentPage) }}...</div>
-      <div v-else-if="pageError" class="empty">
-        <p>{{ pageError }}</p>
-        <button type="button" class="btn btn-primary" style="margin-top:10px" @click="loadPage(currentPage)">إعادة المحاولة</button>
+      <div v-if="initLoading" class="empty">جاري تجهيز المصحف كاملًا للمرة الأولى (بعدها التنقل بين كل ٦٠٤ صفحة فوري بدون تحميل)...</div>
+      <div v-else-if="initError" class="empty">
+        <p>{{ initError }}</p>
+        <button type="button" class="btn btn-primary" style="margin-top:10px" @click="initMushaf">إعادة المحاولة</button>
       </div>
 
-      <!-- ورقة المصحف (صفحة واحدة من 604) -->
-      <article v-else class="mushaf-sheet" :class="`theme-${qs.prefs.theme}`">
+      <!-- ورقة المصحف الفورية -->
+      <article
+        v-else
+        class="mushaf-sheet"
+        :class="`theme-${qs.prefs.theme}`"
+        @touchstart.passive="onTouchStart"
+        @touchend.passive="onTouchEnd"
+      >
         <div class="page-top-strip">
           <span>{{ pageSurahs.join(' · ') }}</span>
-          <strong>صفحة {{ toArDigits(currentPage) }}</strong>
+          <strong>
+            صفحة {{ toArDigits(currentPage) }} · {{ READING_RIWAYAT.find(r => r.id === qs.prefs.riwayahId)?.name }}
+          </strong>
           <span>الجزء {{ toArDigits(pageJuz) }}</span>
         </div>
 
-        <!-- وضع صفحة المصحف المتصلة -->
         <template v-if="qs.prefs.viewMode === 'mushaf'">
           <div v-for="block in pageBlocks" :key="`${block.surahNumber}-${block.items[0]?.numberInSurah}`" class="mushaf-block">
             <div v-if="block.startsAtOne" class="surah-banner">
@@ -754,7 +840,6 @@ onBeforeUnmount(() => {
             </div>
           </div>
 
-          <!-- لوحة إجراءات الآية المحددة -->
           <div v-if="selectedAyahObj" class="ayah-popover">
             <div class="ap-head">
               <strong>{{ selectedAyahObj.surahName }} — آية {{ toArDigits(selectedAyahObj.numberInSurah) }}</strong>
@@ -787,7 +872,6 @@ onBeforeUnmount(() => {
           </div>
         </template>
 
-        <!-- وضع آية بآية مع التفسير -->
         <div v-else class="verses-list">
           <div
             v-for="(a, idx) in pageAyahs"
@@ -824,28 +908,27 @@ onBeforeUnmount(() => {
           </div>
         </div>
 
-        <!-- التنقل بين الصفحات -->
         <div class="surah-nav">
-          <button v-if="currentPage > 1" type="button" class="btn btn-soft" @click="openPage(currentPage - 1)">
-            <i class="ti ti-chevron-right"></i> الصفحة السابقة ({{ toArDigits(currentPage - 1) }})
+          <button v-if="currentPage > 1" type="button" class="btn btn-soft" @click="goToPage(currentPage - 1)">
+            <i class="ti ti-chevron-right"></i> السابقة ({{ toArDigits(currentPage - 1) }})
           </button>
           <span v-else></span>
           <span class="page-num-foot">صفحة {{ toArDigits(currentPage) }} من ٦٠٤</span>
-          <button v-if="currentPage < 604" type="button" class="btn btn-primary" @click="openPage(currentPage + 1)">
-            الصفحة التالية ({{ toArDigits(currentPage + 1) }}) <i class="ti ti-chevron-left"></i>
+          <button v-if="currentPage < 604" type="button" class="btn btn-primary" @click="goToPage(currentPage + 1)">
+            التالية ({{ toArDigits(currentPage + 1) }}) <i class="ti ti-chevron-left"></i>
           </button>
         </div>
       </article>
     </section>
 
-    <!-- ==================== 2. مصحف القراءات والروايات (20 رواية) ==================== -->
+    <!-- ==================== 2. صوتيات القراءات والروايات (20 رواية) ==================== -->
     <section v-else-if="activeSection === 'qiraat'" class="panel">
       <div class="ctrl-card">
         <div class="ctrl-row">
           <label class="dl-lbl">
             اختر الرواية / القراءة (٢٠ رواية معتمدة):
             <select :value="selectedRewayaId" class="q-select" @change="loadQiraatReciters(Number($event.target.value))">
-              <option v-for="rw in riwayat" :key="rw.id" :value="rw.id">{{ rw.name }}</option>
+              <option v-for="rw in riwayatAudio" :key="rw.id" :value="rw.id">{{ rw.name }}</option>
             </select>
           </label>
           <label class="dl-lbl">
@@ -872,7 +955,7 @@ onBeforeUnmount(() => {
           <span class="sc-num">{{ toArDigits(s.number) }}</span>
           <div class="dl-info">
             <strong>{{ s.name }}</strong>
-            <small>{{ selectedQiraatReciter?.name }} · {{ riwayat.find(r => r.id === selectedRewayaId)?.name }}</small>
+            <small>{{ selectedQiraatReciter?.name }} · {{ riwayatAudio.find(r => r.id === selectedRewayaId)?.name }}</small>
           </div>
           <div class="dl-acts">
             <button type="button" class="pill-btn" @click="playQiraatSurah(s)">
@@ -888,7 +971,6 @@ onBeforeUnmount(() => {
 
     <!-- ==================== 3. مركز التحميل (من آية إلى آية + أجزاء وسور) ==================== -->
     <section v-else-if="activeSection === 'downloads'" class="panel">
-      <!-- أ) تحميل نطاق آيات محدد (من آية كذا إلى آية كذا) -->
       <div class="ctrl-card range-card">
         <h3 style="margin:0;font-size:17px"><i class="ti ti-scissors"></i> تحميل نطاق آيات محدد (من آية إلى آية)</h3>
         <p style="margin:0;font-size:13.5px;color:var(--text-2)">حدّد السورة والقارئ وبداية ونهاية الآيات، وسيتم دمجها وتنزيلها في ملف MP3 واحد مباشرة.</p>
@@ -933,7 +1015,6 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <!-- ب) تحميل أجزاء وسور كاملة -->
       <div class="ctrl-card">
         <h3 style="margin:0;font-size:17px"><i class="ti ti-books"></i> تحميل أجزاء وسور كاملة</h3>
         <div class="ctrl-row">
@@ -991,7 +1072,7 @@ onBeforeUnmount(() => {
             <span class="sc-num">{{ toArDigits(s.number) }}</span>
             <span class="sc-info">
               <strong>{{ s.name }}</strong>
-              <small>{{ s.revelationType === 'Meccan' ? 'مكية' : 'مدنية' }} · {{ toArDigits(s.numberOfAyahs) }} آية</small>
+              <small>{{ s.revelationType === 'Meccan' ? 'مكية' : 'مدنية' }} · {{ toArDigits(s.numberOfAyahs) }} آية · ص {{ toArDigits(s.startPage) }}</small>
             </span>
           </button>
           <a :href="surahMp3Url(qs.prefs.reciterId, s.number)" target="_blank" rel="noopener" download class="sc-dl" title="تحميل MP3">
@@ -1024,28 +1105,26 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <!-- ==================== 6. البحث والعلامات ==================== -->
+    <!-- ==================== 6. البحث الفوري والعلامات ==================== -->
     <section v-else-if="activeSection === 'search'" class="panel">
-      <form class="ctrl-row" @submit.prevent="runQuranSearch">
+      <div class="ctrl-row">
         <div class="search-box">
           <i class="ti ti-search"></i>
-          <input v-model="quranQuery" type="search" placeholder="ابحث عن أي كلمة أو جملة في القرآن الكريم..." />
+          <input v-model="quranQuery" type="search" placeholder="ابحث فوريًا في كل آيات القرآن الكريم (مثل: الصبر، الوالدين، الرحمة)..." />
         </div>
-        <button type="submit" class="btn btn-primary">بحث</button>
-      </form>
+      </div>
 
-      <p v-if="searchLoading" class="empty">جاري البحث في آيات القرآن الكريم...</p>
-      <p v-else-if="searchError" class="empty">{{ searchError }}</p>
+      <p v-if="quranQuery.trim().length >= 2 && !searchResults.length" class="empty">لا توجد آيات مطابقة لهذا البحث.</p>
       <div v-else-if="searchResults.length" class="results-list">
         <button
           v-for="m in searchResults"
-          :key="`${m.surah.number}:${m.numberInSurah}`"
+          :key="m.key"
           type="button"
           class="res-card"
-          @click="openSurahPage(m.surah.number, m.numberInSurah)"
+          @click="goToPage(m.page, m.key)"
         >
           <p class="res-text">{{ m.text }}</p>
-          <small>{{ m.surah.name }} — الآية {{ toArDigits(m.numberInSurah) }}</small>
+          <small>{{ m.surahName }} — الآية {{ toArDigits(m.numberInSurah) }} (صفحة {{ toArDigits(m.page) }})</small>
         </button>
       </div>
 
@@ -1069,7 +1148,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.quran-page { gap: 18px; }
+.quran-page { gap: 16px; }
 .q-head { flex-direction: row; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
 .q-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -1080,6 +1159,22 @@ onBeforeUnmount(() => {
   color: var(--text-2); font-size: 14px; font-weight: 500; transition: .15s var(--ease);
 }
 .q-tab.active { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+
+.riwayah-bar {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  padding: 10px 12px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+.rb-lbl { font-size: 13.5px; font-weight: 600; color: var(--primary); display: inline-flex; align-items: center; gap: 5px; margin-inline-end: 4px; }
+.rw-pill {
+  padding: 5px 12px; border-radius: 999px; font-size: 13.5px; font-weight: 500;
+  background: var(--bg); border: 1px solid var(--border); color: var(--text-2);
+  transition: .12s var(--ease); flex-shrink: 0;
+}
+.rw-pill:hover { border-color: var(--primary); color: var(--primary); }
+.rw-pill.on { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+.rw-loading { font-size: 12.5px; color: var(--text-3); margin-inline-start: auto; }
 
 .ctrl-card {
   background: var(--surface); border: 1px solid var(--border);
@@ -1100,10 +1195,7 @@ onBeforeUnmount(() => {
   border-radius: 999px; padding: 2px 6px;
 }
 .pj-lbl { display: inline-flex; align-items: center; gap: 5px; font-size: 13.5px; color: var(--text-2); }
-.pj-in {
-  width: 56px; text-align: center; border: 0; background: var(--surface);
-  border-radius: 8px; padding: 4px; font-weight: 700; font-size: 14px;
-}
+.pj-in { width: 56px; text-align: center; border: 0; background: var(--surface); border-radius: 8px; padding: 4px; font-weight: 700; font-size: 14px; }
 
 .seg { display: inline-flex; background: var(--bg); border: 1px solid var(--border); padding: 3px; border-radius: 999px; gap: 2px; }
 .seg button { height: 30px; padding: 0 11px; border-radius: 999px; font-size: 13px; color: var(--text-2); }
@@ -1123,7 +1215,7 @@ onBeforeUnmount(() => {
 .pill-btn.on { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
 
 .recite-bar {
-  position: sticky; top: 68px; z-index: 8;
+  position: sticky; top: 68px; z-index: 8; margin: 10px 0;
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
   padding: 10px 14px; border-radius: var(--radius);
   background: color-mix(in srgb, var(--surface) 92%, transparent);
@@ -1156,7 +1248,7 @@ onBeforeUnmount(() => {
 .page-top-strip {
   display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;
   font-size: 13.5px; padding-bottom: 10px; border-bottom: 1px solid rgba(128, 128, 128, 0.2);
-  opacity: .82;
+  opacity: .85;
 }
 .page-top-strip strong { color: var(--primary); font-size: 15px; }
 .mushaf-block { display: flex; flex-direction: column; gap: 12px; }
@@ -1261,8 +1353,8 @@ onBeforeUnmount(() => {
 .bm-open { flex: 1; text-align: right; }
 
 @media (max-width: 900px) {
-  .q-tabs { flex-wrap: nowrap; overflow-x: auto; margin-inline: -16px; padding: 2px 16px 6px; scrollbar-width: none; }
-  .q-tabs::-webkit-scrollbar { display: none; }
+  .q-tabs, .riwayah-bar { flex-wrap: nowrap; overflow-x: auto; margin-inline: -16px; padding: 6px 16px; scrollbar-width: none; border-radius: 0; border-inline: 0; }
+  .q-tabs::-webkit-scrollbar, .riwayah-bar::-webkit-scrollbar { display: none; }
   .mushaf-sheet { padding: 16px 14px; }
   .recite-bar { top: 60px; }
 }

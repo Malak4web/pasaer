@@ -21,6 +21,7 @@ function save(key, value) {
 
 export const useQuranStore = defineStore('quran', () => {
   const savedPrefs = load(PREFS_KEY, {
+    riwayahId: 'ara-quranuthmanihaf',
     reciterId: 'ar.husary',
     tafsirId: 'ar.muyassar',
     viewMode: 'mushaf', // 'mushaf' | 'verses'
@@ -30,6 +31,7 @@ export const useQuranStore = defineStore('quran', () => {
     repeatCount: 1, // 1 | 3 | 5 | 0 (infinite)
     rate: 1
   })
+  if (!savedPrefs.riwayahId) savedPrefs.riwayahId = 'ara-quranuthmanihaf'
   if (savedPrefs.reciterId === 'ar.mahermuaiqly' || savedPrefs.reciterId === 'ar.yasseraldossari') {
     savedPrefs.reciterId = 'ar.husary'
   }
