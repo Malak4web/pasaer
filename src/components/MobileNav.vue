@@ -15,12 +15,13 @@ const site = computed(() => store.site)
 
 const mobileTabs = [
   { to: '/', label: 'الرئيسية', icon: 'ti-home', exact: true },
+  { to: '/quran', label: 'المصحف', icon: 'ti-book-2' },
   { to: '/audio', label: 'الصوتيات', icon: 'ti-headphones' },
-  { to: '/videos', label: 'المرئيات', icon: 'ti-player-play' },
-  { to: '/tools', label: 'الأدوات', icon: 'ti-compass' }
+  { to: '/videos', label: 'المرئيات', icon: 'ti-player-play' }
 ]
 
 const moreActive = computed(() =>
+  route.path.startsWith('/tools') ||
   route.path.startsWith('/lessons') ||
   route.path.startsWith('/series') ||
   route.path.startsWith('/posts') ||
@@ -54,6 +55,14 @@ function playRadio() {
       </div>
 
       <div class="sheet-quick">
+        <RouterLink to="/tools" class="q-tile">
+          <i class="ti ti-compass"></i>
+          <span>أدوات المسلم</span>
+        </RouterLink>
+        <button type="button" class="q-tile radio" @click="playRadio">
+          <i class="ti ti-radio"></i>
+          <span>إذاعة القرآن مباشر</span>
+        </button>
         <RouterLink to="/lessons" class="q-tile">
           <i class="ti ti-book"></i>
           <span>الدروس والسلاسل</span>
@@ -61,14 +70,6 @@ function playRadio() {
         <RouterLink to="/posts" class="q-tile">
           <i class="ti ti-notes"></i>
           <span>المنشورات</span>
-        </RouterLink>
-        <button type="button" class="q-tile radio" @click="playRadio">
-          <i class="ti ti-radio"></i>
-          <span>إذاعة القرآن مباشر</span>
-        </button>
-        <RouterLink to="/tools?tab=prayer" class="q-tile">
-          <i class="ti ti-clock"></i>
-          <span>مواقيت الصلاة</span>
         </RouterLink>
       </div>
 
