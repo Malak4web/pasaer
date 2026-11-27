@@ -260,4 +260,64 @@ class PublicController extends Controller
             'next' => $pick($siblings->get($i + 1)),
         ];
     }
+
+    /** دمج وبث نطاق آيات محدد كملف MP3 واحد مباشر بدون أي تخزين على السيرفر */
+    public function quranDownloadRange(Request $request)
+    {
+        $allowedReciters = [
+            'ar.husary',
+            'ar.minshawi',
+            'ar.abdulbasitmurattal',
+            'ar.alafasy',
+            'ar.abdurrahmaansudais',
+            'ar.shaatree',
+            'ar.ahmedajamy',
+            'ar.hudhaify',
+        ];
+
+        $data = $request->validate([
+            'reciter' => ['required', 'string', 'in:'.implode(',', $allowedReciters)],
+            'from' => ['required', 'integer', 'min:1', 'max:6236'],
+            'to' => ['required', 'integer', 'min:1', 'max:6236', 'gte:from'],
+            'name' => ['nullable', 'string', 'max:80'],
+        ]);
+
+        $from = (int) $data['from'];
+        $to = (int) $data['to'];
+        if (($to - $from + 1) > 60) {
+            return response()->json(['message' => 'الحد الأقصى للدمج المباشر 60 آية في المرة الواحدة (لتحميل سورة كاملة استخدم زر تحميل السورة).'], 422);
+        }
+
+        $reciter = $data['reciter'];
+        $safeName = preg_replace('/[^a-zA-Z0-9._-]/', '', (string) ($data['name'] ?? "quran-{$from}-{$to}.mp3"));
+        if (! str_ends_with($safeName, '.mp3')) {
+            $safeName .= '.mp3';
+        }
+
+        return response()->streamDownload(function () use ($reciter, $from, $to) {
+            $ctx = stream_context_create([
+                'http' => [
+                    'timeout' => 12,
+                    'header' => "User-Agent: Mozilla/5.0\r\n",
+                ],
+            ]);
+
+            for ($n = $from; $n <= $to; $n++) {
+                $chunk = @file_get_contents("https://cdn.islamic.network/quran/audio/128/{$reciter}/{$n}.mp3", false, $ctx);
+                if ($chunk === false) {
+                    $chunk = @file_get_contents("https://cdn.islamic.network/quran/audio/64/{$reciter}/{$n}.mp3", false, $ctx);
+                }
+                if ($chunk !== false) {
+                    echo $chunk;
+                    if (ob_get_level() > 0) {
+                        @ob_flush();
+                    }
+                    flush();
+                }
+            }
+        }, $safeName, [
+            'Content-Type' => 'audio/mpeg',
+            'Cache-Control' => 'no-store',
+        ]);
+    }
 }

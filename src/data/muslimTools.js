@@ -43,20 +43,6 @@ export const RADIO_STATIONS = [
     isLive: true
   },
   {
-    id: 'radio-maher',
-    title: 'الشيخ ماهر المعيقلي',
-    subtitle: 'المصحف المرتّل — بث مباشر',
-    src: 'https://backup.qurango.net/radio/maher',
-    isLive: true
-  },
-  {
-    id: 'radio-dosari',
-    title: 'الشيخ ياسر الدوسري',
-    subtitle: 'المصحف المرتّل — بث مباشر',
-    src: 'https://backup.qurango.net/radio/yasser_aldosari',
-    isLive: true
-  },
-  {
     id: 'radio-tafseer',
     title: 'إذاعة التفسير المختصر',
     subtitle: 'تلاوة وتفسير ميسّر لآيات القرآن',

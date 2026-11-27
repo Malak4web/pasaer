@@ -20,18 +20,20 @@ function save(key, value) {
 }
 
 export const useQuranStore = defineStore('quran', () => {
-  const prefs = ref(
-    load(PREFS_KEY, {
-      reciterId: 'ar.husary',
-      tafsirId: 'ar.muyassar',
-      viewMode: 'mushaf', // 'mushaf' | 'verses'
-      theme: 'paper', // 'light' | 'paper' | 'dark'
-      fontSize: 28,
-      showTafsir: false,
-      repeatCount: 1, // 1 | 3 | 5 | 0 (infinite)
-      rate: 1
-    })
-  )
+  const savedPrefs = load(PREFS_KEY, {
+    reciterId: 'ar.husary',
+    tafsirId: 'ar.muyassar',
+    viewMode: 'mushaf', // 'mushaf' | 'verses'
+    theme: 'paper', // 'light' | 'paper' | 'dark'
+    fontSize: 28,
+    showTafsir: false,
+    repeatCount: 1, // 1 | 3 | 5 | 0 (infinite)
+    rate: 1
+  })
+  if (savedPrefs.reciterId === 'ar.mahermuaiqly' || savedPrefs.reciterId === 'ar.yasseraldossari') {
+    savedPrefs.reciterId = 'ar.husary'
+  }
+  const prefs = ref(savedPrefs)
 
   // [{ key: '2:255', surah: 2, surahName: 'سورة البقرة', ayah: 255, text: '...', savedAt }]
   const bookmarks = ref(load(BOOKMARKS_KEY, []))

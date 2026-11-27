@@ -27,4 +27,5 @@ Route::middleware('throttle:120,1')->group(function () {
     Route::get('series/{id}', [P::class, 'series'])->whereNumber('id');
 
     Route::get('topics/{slug}', [P::class, 'topic']);
+    Route::get('quran/download-range', [P::class, 'quranDownloadRange'])->middleware('throttle:15,1');
 });

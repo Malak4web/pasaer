@@ -3,11 +3,20 @@ export const QURAN_RECITERS = [
   { id: 'ar.minshawi', name: 'محمد صديق المنشاوي (المرتّل)', mp3Base: 'https://server10.mp3quran.net/minsh/' },
   { id: 'ar.abdulbasitmurattal', name: 'عبد الباسط عبد الصمد (المرتّل)', mp3Base: 'https://server7.mp3quran.net/basit/' },
   { id: 'ar.alafasy', name: 'مشاري راشد العفاسي', mp3Base: 'https://server8.mp3quran.net/afs/' },
-  { id: 'ar.mahermuaiqly', name: 'ماهر المعيقلي', mp3Base: 'https://server12.mp3quran.net/maher/' },
   { id: 'ar.abdurrahmaansudais', name: 'عبد الرحمن السديس', mp3Base: 'https://server11.mp3quran.net/sds/' },
   { id: 'ar.shaatree', name: 'أبو بكر الشاطري', mp3Base: 'https://server11.mp3quran.net/shatri/' },
   { id: 'ar.ahmedajamy', name: 'أحمد بن علي العجمي', mp3Base: 'https://server10.mp3quran.net/ajm/' },
   { id: 'ar.hudhaify', name: 'علي بن عبد الرحمن الحذيفي', mp3Base: 'https://server9.mp3quran.net/hthfi/' }
+]
+
+// قائمة الاستبعاد لأي قراءات أو إذاعات خارجية
+export const EXCLUDED_RECITER_KEYWORDS = ['الدوسري', 'المعيقلي', 'dosari', 'muaiqly', 'maher']
+
+// الصفحات الافتتاحية لكل جزء (مصحف المدينة المنورة ٦٠٤ صفحة)
+export const JUZ_START_PAGES = [
+  1, 22, 42, 62, 82, 102, 121, 142, 162, 182,
+  201, 222, 242, 262, 282, 302, 322, 342, 362, 382,
+  402, 422, 442, 462, 482, 502, 522, 542, 562, 582
 ]
 
 export const QURAN_TAFSIRS = [
