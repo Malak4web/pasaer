@@ -298,9 +298,12 @@ jobs:
             # 5. Run migrations if DB is already configured in .env
             ${PHP_BIN} artisan migrate --force || echo "::warning::Migrations skipped/failed — configure DB in .env and re-run if this is the first deploy."
 
-            # 6. Import classified Archive.org audios (links only — zero audio files on server; idempotent)
+            # 6. Import classified Archive.org audios & YouTube videos (links only — zero media files on server; idempotent)
             if [ -f database/data/mahmoud_azhary_audios.json ]; then
               ${PHP_BIN} artisan audios:import database/data/mahmoud_azhary_audios.json --status=published || echo "::warning::Audio import skipped/failed."
+            fi
+            if [ -f database/data/mahmoud_azhary_videos.json ]; then
+              ${PHP_BIN} artisan videos:import database/data/mahmoud_azhary_videos.json --status=published || echo "::warning::Video import skipped/failed."
             fi
 
             # 7. Cache & optimize

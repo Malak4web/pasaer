@@ -9,4 +9,5 @@ scripts/sync.log
 scripts/qr_login.html
 scripts/synced_audios.json
 scripts/synced_audios.xlsx
+scripts/youtube_videos_raw.json
 telegram-audios.xlsx

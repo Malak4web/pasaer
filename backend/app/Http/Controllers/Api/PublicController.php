@@ -78,10 +78,39 @@ class PublicController extends Controller
     public function videos(Request $request)
     {
         $q = Video::published()->with('topic', 'series')
-            ->when($this->topicId($request), fn ($q, $v) => $q->where('topic_id', $v));
-        $q = $request->sort === 'popular' ? $q->orderByDesc('views') : $q->latest('published_at');
+            ->when($this->topicId($request), fn ($q, $v) => $q->where('topic_id', $v))
+            ->when($request->filled('series'), fn ($q) => $q->where('series_id', (int) $request->series))
+            ->when($request->filled('q'), fn ($q) => $q->search((string) $request->q))
+            ->when($request->length === 'short', fn ($q) => $q->where('duration', '>', 0)->where('duration', '<', 600))
+            ->when($request->length === 'medium', fn ($q) => $q->whereBetween('duration', [600, 1800]))
+            ->when($request->length === 'long', fn ($q) => $q->where('duration', '>', 1800));
 
-        return $this->paginated($q->paginate(24));
+        if ($request->filled('series') && $request->sort !== 'popular') {
+            $q = $q->orderBy('series_order')->orderBy('published_at');
+        } else {
+            $q = $request->sort === 'popular' ? $q->orderByDesc('views') : $q->latest('published_at');
+        }
+
+        $payload = $this->paginated($q->paginate(24));
+
+        // تضمين السلاسل المرئية في الصفحة الأولى للفلترة السريعة
+        if ((int) $request->input('page', 1) === 1) {
+            $videoSeries = Series::where('kind', 'video')
+                ->with('topic')
+                ->withCount(['videos as items_count' => fn ($q) => $q->published()])
+                ->having('items_count', '>', 0)
+                ->orderBy('sort_order')
+                ->get()
+                ->map(fn (Series $s) => [
+                    'id' => $s->id,
+                    'title' => $s->title,
+                    'count' => $s->items_count,
+                    'topic' => $s->topic ? ['slug' => $s->topic->slug, 'name' => $s->topic->name] : null,
+                ]);
+            $payload['series'] = $videoSeries;
+        }
+
+        return $payload;
     }
 
     public function video(int $id)
