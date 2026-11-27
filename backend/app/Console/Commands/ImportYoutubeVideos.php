@@ -42,7 +42,7 @@ class ImportYoutubeVideos extends Command
         }
 
         if (! empty($raw['channel_url'])) {
-            Setting::set('youtube_channel_url', (string) $raw['channel_url']);
+            Setting::put(['youtube_channel_url' => (string) $raw['channel_url']]);
         }
 
         // خريطة المواضيع الموجودة (وإنشاء أي موضوع ناقص)
